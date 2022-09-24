@@ -1,5 +1,5 @@
 import 'package:im_core/src/enums.dart';
-import 'package:im_core/src/entities/message_content/message_content.dart';
+import 'package:im_core/src/entities/message_contents/message_content.dart';
 
 ///视频消息
 class VideoContentDto extends MessageContent {

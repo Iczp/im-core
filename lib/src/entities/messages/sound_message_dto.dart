@@ -1,6 +1,6 @@
 import 'package:im_core/src/enums/message_type_enum.dart';
 import 'package:im_core/src/entities/messages/message_dto.dart';
-import 'package:im_core/src/entities/message_content/sound_content_dto.dart';
+import 'package:im_core/src/entities/message_contents/sound_content_dto.dart';
 
 /// 语消息
 class SoundMessageDto extends MessageDto<SoundContentDto> {
