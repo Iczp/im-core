@@ -10,11 +10,14 @@ class CmdContentDto extends MessageContent {
     required this.text,
     this.url,
   });
-  // 执行的命令
+
+  /// 执行的命令
   final String cmd;
-  // 文本内容
+
+  /// 文本内容
   final String text;
-  // 文本内容
+
+  /// 文本内容
   final String? url;
 
   ///

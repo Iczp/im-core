@@ -8,7 +8,8 @@ class TextContentDto extends MessageContent {
     super.id,
     required this.text,
   });
-  // 文本内容
+
+  /// 文本内容
   final String text;
 
   ///

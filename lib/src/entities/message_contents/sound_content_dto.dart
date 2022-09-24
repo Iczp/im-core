@@ -11,7 +11,7 @@ class SoundContentDto extends MessageContent {
     this.url,
   }) : assert(url == null || path == null, 'url or path is null');
 
-  // 文本内容
+  /// 文本内容
   final String? text;
 
   ///文件网络地址
