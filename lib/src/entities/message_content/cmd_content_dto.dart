@@ -1,5 +1,5 @@
-import 'package:im_core/enums/message_type_enum.dart';
-import 'package:im_core/entities/message_content/message_content.dart';
+import 'package:im_core/src/enums/message_type_enum.dart';
+import 'package:im_core/src/entities/message_content/message_content.dart';
 
 ///文本消息内容
 class CmdContentDto extends MessageContent {

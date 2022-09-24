@@ -1,4 +1,4 @@
-import 'package:im_core/enums/message_type_enum.dart';
+import 'package:im_core/src/enums/message_type_enum.dart';
 
 ///消息内容
 abstract class MessageContent {

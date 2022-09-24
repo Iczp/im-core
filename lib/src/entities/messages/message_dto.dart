@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:im_core/src/id_input.dart';
-import 'package:im_core/enums/enums.dart';
+import 'package:im_core/src/enums.dart';
 
 /// 消息
 class MessageDto<TContent> extends IdInput<String?> {

@@ -1,4 +1,4 @@
-import 'package:im_core/enums/enums.dart';
+import 'package:im_core/src/enums.dart';
 
 ///媒体实体
 class MediaInput {

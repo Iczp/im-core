@@ -1,4 +1,4 @@
-import 'package:im_core/enums/media_type_enum.dart';
+import 'package:im_core/src/enums/media_type_enum.dart';
 
 ///媒体实体
 class MediaDto {

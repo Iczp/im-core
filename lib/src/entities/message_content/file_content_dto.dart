@@ -1,5 +1,5 @@
-import 'package:im_core/enums/enums.dart';
-import 'package:im_core/entities/message_content/message_content.dart';
+import 'package:im_core/src/enums.dart';
+import 'package:im_core/src/entities/message_content/message_content.dart';
 
 /// 文件消息
 class FileContentDto extends MessageContent {
