@@ -1,4 +1,4 @@
-import 'package:im_core/entities/id_input.dart';
+import 'package:im_core/src/id_input.dart';
 import 'package:im_core/enums/enums.dart';
 
 import 'meida_input.dart';
