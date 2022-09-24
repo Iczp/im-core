@@ -1,39 +1,40 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# 更新实现模型【json_serializable 6.4.0】
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
+组件：[json_serializable](https://pub.flutter-io.cn/packages/json_serializable)
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
 
-## Features
+## 运行代码生成器
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+### 设计时组件依赖：build_runner
 
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
-
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
-```dart
-const like = 'sample';
+```
+flutter pub add build_runner -d   
 ```
 
-## Additional information
+### 成生文件
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+将注释添加到代码后，您需要运行代码生成器来生成缺少的`.g.dart`生成的 dart 文件。
+
+使用 Dart 包，
+
+```
+dart run build_runner build
+```
+
+在包目录中运行。
+
+使用 Flutter 包，
+
+```bash
+flutter pub run build_runner build
+```
+
+在您的包目录中运行。
+
+### 更新文件
+
+```bash
+flutter pub run build_runner build --delete-conflicting-outputs
+```
+

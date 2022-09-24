@@ -13,8 +13,8 @@ AppUserDto _$AppUserDtoFromJson(Map<String, dynamic> json) => AppUserDto(
       name: json['name'] as String,
       portrait: json['portrait'] as String?,
       nick: json['nick'] as String?,
-      gender: $enumDecodeNullable(_$GendersEnumMap, json['gender']) ??
-          Genders.undefined,
+      gender:
+          $enumDecodeNullable(_$GendersEnumMap, json['gender']) ?? Genders.boy,
       isPublic: json['isPublic'] as bool? ?? false,
       isStatic: json['isStatic'] as bool? ?? false,
       isActive: json['isActive'] as bool? ?? true,
@@ -36,9 +36,9 @@ AppUserDto _$AppUserDtoFromJson(Map<String, dynamic> json) => AppUserDto(
 Map<String, dynamic> _$AppUserDtoToJson(AppUserDto instance) =>
     <String, dynamic>{
       'id': instance.id,
+      'name': instance.name,
       'tenantId': instance.tenantId,
       'account': instance.account,
-      'name': instance.name,
       'portrait': instance.portrait,
       'nick': instance.nick,
       'gender': _$GendersEnumMap[instance.gender]!,
