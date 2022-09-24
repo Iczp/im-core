@@ -1,6 +1,6 @@
-import 'package:im_core/src/id_input.dart';
-import 'package:im_core/src/entities/media/meida_input.dart';
-import 'package:im_core/src/enums/media_type_enum.dart';
+import '../id_input.dart';
+import '../entities/media/meida_input.dart';
+import '../enums/media_type_enum.dart';
 
 ///
 class ReadedDto extends IdInput<String?> {

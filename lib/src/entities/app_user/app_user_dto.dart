@@ -1,8 +1,7 @@
-import 'package:im_core/src/enums/gender_enum.dart';
-import 'package:im_core/src/enums/media_type_enum.dart';
-import '../department/department_dto.dart';
-import 'package:im_core/src/entities/media/meida_dto.dart';
-import 'package:im_core/src/entities/position/position_dto.dart';
+import '../../enums.dart';
+import '../department.dart';
+import '../media/meida_dto.dart';
+import '../position.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'app_user_dto.g.dart';

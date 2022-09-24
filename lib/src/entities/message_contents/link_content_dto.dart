@@ -1,5 +1,5 @@
-import 'package:im_core/src/enums.dart';
-import 'package:im_core/src/entities/message_contents/message_content.dart';
+import '../../enums.dart';
+import '../../entities/message_contents/message_content.dart';
 
 ///Link
 class LinkContentDto extends MessageContent {
