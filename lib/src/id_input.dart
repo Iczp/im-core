@@ -1,3 +1,4 @@
+///
 class IdInput<TKey> {
   ///
   final TKey? id;

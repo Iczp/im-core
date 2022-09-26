@@ -1,3 +1,4 @@
+///
 class IdListInput<TKey> {
   ///
   List<TKey>? idList;
