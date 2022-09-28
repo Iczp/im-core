@@ -8,9 +8,8 @@ part of 'app_user_dto.dart';
 
 AppUserDto _$AppUserDtoFromJson(Map<String, dynamic> json) => AppUserDto(
       id: json['id'] as String,
-      tenantId: json['tenantId'] as String?,
-      account: json['account'] as String,
       name: json['name'] as String,
+      account: json['account'] as String,
       portrait: json['portrait'] as String?,
       nick: json['nick'] as String?,
       gender:
@@ -31,15 +30,16 @@ AppUserDto _$AppUserDtoFromJson(Map<String, dynamic> json) => AppUserDto(
       departmentList: (json['departmentList'] as List<dynamic>?)
           ?.map((e) => DepartmentDto.fromJson(e as Map<String, dynamic>))
           .toList(),
+      tenantId: json['tenantId'] as String?,
     );
 
 Map<String, dynamic> _$AppUserDtoToJson(AppUserDto instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
+      'portrait': instance.portrait,
       'tenantId': instance.tenantId,
       'account': instance.account,
-      'portrait': instance.portrait,
       'nick': instance.nick,
       'gender': _$GendersEnumMap[instance.gender]!,
       'isPublic': instance.isPublic,

@@ -1,8 +1,9 @@
-import '../../enums.dart';
-import '../department.dart';
-import '../media/meida_dto.dart';
-import '../position.dart';
 import 'package:json_annotation/json_annotation.dart';
+
+import '../../enums.dart';
+import '../department/department_dto.dart';
+import '../medias/media_dto.dart';
+import '../position/position_dto.dart';
 
 part 'app_user_dto.g.dart';
 
@@ -12,12 +13,12 @@ part 'app_user_dto.g.dart';
 ///这个标注是告诉生成器，这个类是需要生成Model类的
 @JsonSerializable()
 class AppUserDto extends MediaDto {
+  ///
   AppUserDto({
     required super.id,
-    this.tenantId,
-    required this.account,
     required super.name,
-    this.portrait,
+    required this.account,
+    super.portrait,
     this.nick,
     this.gender = Genders.boy,
     this.isPublic = false,
@@ -30,6 +31,7 @@ class AppUserDto extends MediaDto {
     this.roleIdList,
     this.positionList,
     this.departmentList,
+    this.tenantId,
   });
 
   @override
@@ -84,5 +86,6 @@ class AppUserDto extends MediaDto {
       _$AppUserDtoFromJson(json);
 
   ///ToJson
+  @override
   Map<String, dynamic> toJson() => _$AppUserDtoToJson(this);
 }

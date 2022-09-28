@@ -3,7 +3,7 @@ import 'package:json_annotation/json_annotation.dart';
 part 'department_dto.g.dart';
 
 ///部门
-@JsonSerializable()
+@JsonSerializable(explicitToJson: true)
 class DepartmentDto {
   const DepartmentDto({
     required this.id,

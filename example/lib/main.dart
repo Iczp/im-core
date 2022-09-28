@@ -51,7 +51,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
-  MediaDto mediaDto = const MediaDto(id: 'ddd', name: 'test');
+  MediaDto mediaDto = MediaDto(id: 'ddd', name: 'test');
 
   void _incrementCounter() {
     setState(() {

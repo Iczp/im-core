@@ -1,5 +1,5 @@
-import '../id_input.dart';
-import '../entities/media/meida_input.dart';
+import 'base/id_input.dart';
+import 'medias/meida_input.dart';
 import '../enums/media_type_enum.dart';
 
 ///
