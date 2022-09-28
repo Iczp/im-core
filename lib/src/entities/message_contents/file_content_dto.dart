@@ -1,7 +1,12 @@
+import 'package:json_annotation/json_annotation.dart';
+
 import '../../enums.dart';
 import '../../entities/message_contents/message_content.dart';
 
+part 'file_content_dto.g.dart';
+
 /// 文件消息
+@JsonSerializable()
 class FileContentDto extends MessageContent {
   ///
   FileContentDto({
@@ -40,27 +45,34 @@ class FileContentDto extends MessageContent {
   /// 文件后缀名
   final String? suffix;
 
-  ///
-  factory FileContentDto.fromJson(Map<String, dynamic> json) => FileContentDto(
-        id: json['id'],
-        path: json['path'],
-        url: json['url'],
-        fileName: json['fileName'],
-        contentLength: json['contentLength'],
-        contentType: json['contentType'],
-        suffix: json['suffix'],
-        actionUrl: json['actionUrl'],
-      );
+  ///FromJson
+  factory FileContentDto.fromJson(Map<String, dynamic> json) =>
+      _$FileContentDtoFromJson(json);
 
-  ///
-  Map<String, dynamic> toJson() => <String, dynamic>{
-        'id': id,
-        'path': path,
-        'url': url,
-        'fileName': fileName,
-        'contentLength': contentLength,
-        'contentType': contentType,
-        'actionUrl': actionUrl,
-        'suffix': suffix,
-      };
+  ///ToJson
+  Map<String, dynamic> toJson() => _$FileContentDtoToJson(this);
+
+  // ///
+  // factory FileContentDto.fromJson(Map<String, dynamic> json) => FileContentDto(
+  //       id: json['id'],
+  //       path: json['path'],
+  //       url: json['url'],
+  //       fileName: json['fileName'],
+  //       contentLength: json['contentLength'],
+  //       contentType: json['contentType'],
+  //       suffix: json['suffix'],
+  //       actionUrl: json['actionUrl'],
+  //     );
+
+  // ///
+  // Map<String, dynamic> toJson() => <String, dynamic>{
+  //       'id': id,
+  //       'path': path,
+  //       'url': url,
+  //       'fileName': fileName,
+  //       'contentLength': contentLength,
+  //       'contentType': contentType,
+  //       'actionUrl': actionUrl,
+  //       'suffix': suffix,
+  //     };
 }

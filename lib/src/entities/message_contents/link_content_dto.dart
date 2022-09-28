@@ -1,7 +1,12 @@
+import 'package:json_annotation/json_annotation.dart';
+
 import '../../enums.dart';
 import '../../entities/message_contents/message_content.dart';
 
-///Link
+part 'link_content_dto.g.dart';
+
+/// 连接
+@JsonSerializable()
 class LinkContentDto extends MessageContent {
   ///
   LinkContentDto({
@@ -36,25 +41,32 @@ class LinkContentDto extends MessageContent {
   @override
   MessageTypeEnum get messageType => MessageTypeEnum.link;
 
-  ///
-  factory LinkContentDto.fromJson(Map<String, dynamic> json) => LinkContentDto(
-        id: json['id'],
-        url: json['url'],
-        title: json['title'],
-        image: json['image'],
-        description: json['description'],
-        issuerName: json['issuerName'],
-        issuerIcon: json['issuerIcon'],
-      );
+  ///FromJson
+  factory LinkContentDto.fromJson(Map<String, dynamic> json) =>
+      _$LinkContentDtoFromJson(json);
 
-  ///
-  Map<String, dynamic> toJson() => <String, dynamic>{
-        'id': id,
-        'url': url,
-        'title': title,
-        'image': image,
-        'description': description,
-        'issuerName': issuerName,
-        'issuerIcon': issuerIcon,
-      };
+  ///ToJson
+  Map<String, dynamic> toJson() => _$LinkContentDtoToJson(this);
+
+  // ///
+  // factory LinkContentDto.fromJson(Map<String, dynamic> json) => LinkContentDto(
+  //       id: json['id'],
+  //       url: json['url'],
+  //       title: json['title'],
+  //       image: json['image'],
+  //       description: json['description'],
+  //       issuerName: json['issuerName'],
+  //       issuerIcon: json['issuerIcon'],
+  //     );
+
+  // ///
+  // Map<String, dynamic> toJson() => <String, dynamic>{
+  //       'id': id,
+  //       'url': url,
+  //       'title': title,
+  //       'image': image,
+  //       'description': description,
+  //       'issuerName': issuerName,
+  //       'issuerIcon': issuerIcon,
+  //     };
 }

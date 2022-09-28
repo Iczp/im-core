@@ -1,7 +1,12 @@
+import 'package:json_annotation/json_annotation.dart';
+
 import '../../enums/message_type_enum.dart';
 import '../../entities/message_contents/message_content.dart';
 
+part 'cmd_content_dto.g.dart';
+
 ///文本消息内容
+@JsonSerializable()
 class CmdContentDto extends MessageContent {
   ///
   CmdContentDto({
@@ -24,19 +29,26 @@ class CmdContentDto extends MessageContent {
   @override
   MessageTypeEnum get messageType => MessageTypeEnum.text;
 
-  ///
-  factory CmdContentDto.fromJson(Map<String, dynamic> json) => CmdContentDto(
-        id: json['id'],
-        cmd: json['cmd'],
-        text: json['text'],
-        url: json['url'],
-      );
+  ///FromJson
+  factory CmdContentDto.fromJson(Map<String, dynamic> json) =>
+      _$CmdContentDtoFromJson(json);
 
-  ///
-  Map<String, dynamic> toJson() => <String, dynamic>{
-        'id': id,
-        'cmd': cmd,
-        'text': text,
-        'url': url,
-      };
+  ///ToJson
+  Map<String, dynamic> toJson() => _$CmdContentDtoToJson(this);
+
+  // ///
+  // factory CmdContentDto.fromJson(Map<String, dynamic> json) => CmdContentDto(
+  //       id: json['id'],
+  //       cmd: json['cmd'],
+  //       text: json['text'],
+  //       url: json['url'],
+  //     );
+
+  // ///
+  // Map<String, dynamic> toJson() => <String, dynamic>{
+  //       'id': id,
+  //       'cmd': cmd,
+  //       'text': text,
+  //       'url': url,
+  //     };
 }

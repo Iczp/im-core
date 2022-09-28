@@ -1,9 +1,9 @@
 import 'package:json_annotation/json_annotation.dart';
 
 import '../../enums.dart';
-import '../department/department_dto.dart';
+import '../departments/department_dto.dart';
 import '../medias/media_dto.dart';
-import '../position/position_dto.dart';
+import '../positions/position_dto.dart';
 
 part 'app_user_dto.g.dart';
 

@@ -1,7 +1,12 @@
+import 'package:json_annotation/json_annotation.dart';
+
 import '../../enums.dart';
 import '../../entities/message_contents/message_content.dart';
 
+part 'video_content_dto.g.dart';
+
 ///视频消息
+@JsonSerializable()
 class VideoContentDto extends MessageContent {
   ///
   VideoContentDto({
@@ -69,32 +74,39 @@ class VideoContentDto extends MessageContent {
 
   final int duration;
 
+  ///FromJson
   factory VideoContentDto.fromJson(Map<String, dynamic> json) =>
-      VideoContentDto(
-        path: json['path'],
-        url: json['url'],
-        width: json['width'],
-        height: json['height'],
-        size: json['size'],
-        orientation: json['orientation'],
-        imagePath: json['imagePath'],
-        imageUrl: json['imageUrl'],
-        imageWidth: json['imageWidth'],
-        imageHeight: json['imageHeight'],
-        imageSize: json['imageSize'],
-      );
+      _$VideoContentDtoFromJson(json);
 
-  Map<String, dynamic> toJson() => <String, dynamic>{
-        'path': path,
-        'url': url,
-        'width': width,
-        'height': height,
-        'size': size,
-        'orientation': orientation,
-        'imagePath': imagePath,
-        'imageUrl': imageUrl,
-        'imageWidth': imageWidth,
-        'imageHeight': imageHeight,
-        'imageSize': imageSize,
-      };
+  ///ToJson
+  Map<String, dynamic> toJson() => _$VideoContentDtoToJson(this);
+
+  // factory VideoContentDto.fromJson(Map<String, dynamic> json) =>
+  //     VideoContentDto(
+  //       path: json['path'],
+  //       url: json['url'],
+  //       width: json['width'],
+  //       height: json['height'],
+  //       size: json['size'],
+  //       orientation: json['orientation'],
+  //       imagePath: json['imagePath'],
+  //       imageUrl: json['imageUrl'],
+  //       imageWidth: json['imageWidth'],
+  //       imageHeight: json['imageHeight'],
+  //       imageSize: json['imageSize'],
+  //     );
+
+  // Map<String, dynamic> toJson() => <String, dynamic>{
+  //       'path': path,
+  //       'url': url,
+  //       'width': width,
+  //       'height': height,
+  //       'size': size,
+  //       'orientation': orientation,
+  //       'imagePath': imagePath,
+  //       'imageUrl': imageUrl,
+  //       'imageWidth': imageWidth,
+  //       'imageHeight': imageHeight,
+  //       'imageSize': imageSize,
+  //     };
 }

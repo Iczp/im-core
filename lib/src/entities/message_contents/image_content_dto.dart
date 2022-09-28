@@ -1,7 +1,13 @@
 // 语音消息内容
+import 'package:json_annotation/json_annotation.dart';
+
 import '../../enums.dart';
 import '../../entities/message_contents/message_content.dart';
 
+part 'image_content_dto.g.dart';
+
+/// 图片
+@JsonSerializable()
 class ImageContentDto extends MessageContent {
   ///
   @override
@@ -56,36 +62,43 @@ class ImageContentDto extends MessageContent {
   /// 二维码信息
   final String? qrcode;
 
-  ///
+  ///FromJson
   factory ImageContentDto.fromJson(Map<String, dynamic> json) =>
-      ImageContentDto(
-        id: json['id'],
-        text: json['text'],
-        url: json['url'],
-        path: json['path'],
-        actionUrl: json['actionUrl'],
-        thumbnailUrl: json['thumbnailUrl'],
-        thumbnailActionUrl: json['thumbnailActionUrl'],
-        qrientation: json['qrientation'],
-        width: json['width'],
-        height: json['height'],
-        size: json['size'],
-        qrcode: json['qrcode'],
-      );
+      _$ImageContentDtoFromJson(json);
 
-  ///
-  Map<String, dynamic> toJson() => <String, dynamic>{
-        'id': id,
-        'text': text,
-        'url': url,
-        'path': path,
-        'actionUrl': actionUrl,
-        'thumbnailUrl': thumbnailUrl,
-        'thumbnailActionUrl': thumbnailActionUrl,
-        'qrientation': qrientation,
-        'width': width,
-        'height': height,
-        'size': size,
-        'qrcode': qrcode,
-      };
+  ///ToJson
+  Map<String, dynamic> toJson() => _$ImageContentDtoToJson(this);
+
+  // ///
+  // factory ImageContentDto.fromJson(Map<String, dynamic> json) =>
+  //     ImageContentDto(
+  //       id: json['id'],
+  //       text: json['text'],
+  //       url: json['url'],
+  //       path: json['path'],
+  //       actionUrl: json['actionUrl'],
+  //       thumbnailUrl: json['thumbnailUrl'],
+  //       thumbnailActionUrl: json['thumbnailActionUrl'],
+  //       qrientation: json['qrientation'],
+  //       width: json['width'],
+  //       height: json['height'],
+  //       size: json['size'],
+  //       qrcode: json['qrcode'],
+  //     );
+
+  // ///
+  // Map<String, dynamic> toJson() => <String, dynamic>{
+  //       'id': id,
+  //       'text': text,
+  //       'url': url,
+  //       'path': path,
+  //       'actionUrl': actionUrl,
+  //       'thumbnailUrl': thumbnailUrl,
+  //       'thumbnailActionUrl': thumbnailActionUrl,
+  //       'qrientation': qrientation,
+  //       'width': width,
+  //       'height': height,
+  //       'size': size,
+  //       'qrcode': qrcode,
+  //     };
 }

@@ -1,7 +1,13 @@
 // 语音消息内容
+import 'package:json_annotation/json_annotation.dart';
+
 import '../../enums.dart';
 import '../../entities/message_contents/message_content.dart';
 
+part 'sound_content_dto.g.dart';
+
+/// 位置消息
+@JsonSerializable()
 class SoundContentDto extends MessageContent {
   SoundContentDto({
     super.id,
@@ -26,22 +32,29 @@ class SoundContentDto extends MessageContent {
   @override
   MessageTypeEnum get messageType => MessageTypeEnum.sound;
 
-  ///
+  ///FromJson
   factory SoundContentDto.fromJson(Map<String, dynamic> json) =>
-      SoundContentDto(
-        id: json['id'],
-        text: json['text'],
-        url: json['url'],
-        time: json['time'],
-        path: json['path'],
-      );
+      _$SoundContentDtoFromJson(json);
 
-  ///
-  Map<String, dynamic> toJson() => <String, dynamic>{
-        'id': id,
-        'text': text,
-        'url': url,
-        'time': time,
-        'path': path,
-      };
+  ///ToJson
+  Map<String, dynamic> toJson() => _$SoundContentDtoToJson(this);
+
+  // ///
+  // factory SoundContentDto.fromJson(Map<String, dynamic> json) =>
+  //     SoundContentDto(
+  //       id: json['id'],
+  //       text: json['text'],
+  //       url: json['url'],
+  //       time: json['time'],
+  //       path: json['path'],
+  //     );
+
+  // ///
+  // Map<String, dynamic> toJson() => <String, dynamic>{
+  //       'id': id,
+  //       'text': text,
+  //       'url': url,
+  //       'time': time,
+  //       'path': path,
+  //     };
 }

@@ -1,7 +1,12 @@
+import 'package:json_annotation/json_annotation.dart';
+
 import '../../enums/message_type_enum.dart';
 import '../../entities/message_contents/message_content.dart';
 
+part 'text_content_dto.g.dart';
+
 ///文本消息内容
+@JsonSerializable()
 class TextContentDto extends MessageContent {
   ///
   TextContentDto({
@@ -16,15 +21,22 @@ class TextContentDto extends MessageContent {
   @override
   MessageTypeEnum get messageType => MessageTypeEnum.text;
 
-  ///
-  factory TextContentDto.fromJson(Map<String, dynamic> json) => TextContentDto(
-        id: json['id'],
-        text: json['text'],
-      );
+  ///FromJson
+  factory TextContentDto.fromJson(Map<String, dynamic> json) =>
+      _$TextContentDtoFromJson(json);
 
-  ///
-  Map<String, dynamic> toJson() => <String, dynamic>{
-        'id': id,
-        'text': text,
-      };
+  ///ToJson
+  Map<String, dynamic> toJson() => _$TextContentDtoToJson(this);
+
+  // ///
+  // factory TextContentDto.fromJson(Map<String, dynamic> json) => TextContentDto(
+  //       id: json['id'],
+  //       text: json['text'],
+  //     );
+
+  // ///
+  // Map<String, dynamic> toJson() => <String, dynamic>{
+  //       'id': id,
+  //       'text': text,
+  //     };
 }

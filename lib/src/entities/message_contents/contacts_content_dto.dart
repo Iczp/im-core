@@ -1,7 +1,12 @@
+import 'package:json_annotation/json_annotation.dart';
+
 import '../../enums.dart';
 import '../../entities/message_contents/message_content.dart';
 
+part 'contacts_content_dto.g.dart';
+
 ///名片
+@JsonSerializable()
 class ContactsContentDto extends MessageContent {
   ///
   ContactsContentDto({
@@ -36,26 +41,33 @@ class ContactsContentDto extends MessageContent {
   @override
   MessageTypeEnum get messageType => MessageTypeEnum.contacts;
 
-  ///
+  ///FromJson
   factory ContactsContentDto.fromJson(Map<String, dynamic> json) =>
-      ContactsContentDto(
-        id: json['id'],
-        mediaId: json['mediaId'],
-        mediaType: json['mediaType'],
-        title: json['title'],
-        picture: json['picture'],
-        description: json['description'],
-        remark: json['remark'],
-      );
+      _$ContactsContentDtoFromJson(json);
 
-  ///
-  Map<String, dynamic> toJson() => <String, dynamic>{
-        'id': id,
-        'mediaId': mediaId,
-        'mediaType': mediaType,
-        'title': title,
-        'picture': picture,
-        'description': description,
-        'remark': remark,
-      };
+  ///ToJson
+  Map<String, dynamic> toJson() => _$ContactsContentDtoToJson(this);
+
+  // ///
+  // factory ContactsContentDto.fromJson(Map<String, dynamic> json) =>
+  //     ContactsContentDto(
+  //       id: json['id'],
+  //       mediaId: json['mediaId'],
+  //       mediaType: json['mediaType'],
+  //       title: json['title'],
+  //       picture: json['picture'],
+  //       description: json['description'],
+  //       remark: json['remark'],
+  //     );
+
+  // ///
+  // Map<String, dynamic> toJson() => <String, dynamic>{
+  //       'id': id,
+  //       'mediaId': mediaId,
+  //       'mediaType': mediaType,
+  //       'title': title,
+  //       'picture': picture,
+  //       'description': description,
+  //       'remark': remark,
+  //     };
 }

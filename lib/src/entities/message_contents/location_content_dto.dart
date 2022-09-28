@@ -1,7 +1,12 @@
+import 'package:json_annotation/json_annotation.dart';
+
 import '../../enums.dart';
 import '../../entities/message_contents/message_content.dart';
 
+part 'location_content_dto.g.dart';
+
 /// 位置消息
+@JsonSerializable()
 class LocationContentDto extends MessageContent {
   ///
   LocationContentDto({
@@ -36,26 +41,33 @@ class LocationContentDto extends MessageContent {
   @override
   MessageTypeEnum get messageType => MessageTypeEnum.sound;
 
-  ///
+  ///FromJson
   factory LocationContentDto.fromJson(Map<String, dynamic> json) =>
-      LocationContentDto(
-        id: json['id'],
-        provider: json['provider'],
-        name: json['name'],
-        address: json['address'],
-        image: json['image'],
-        latitude: json['latitude'],
-        longitude: json['longitude'],
-      );
+      _$LocationContentDtoFromJson(json);
 
-  ///
-  Map<String, dynamic> toJson() => <String, dynamic>{
-        'id': id,
-        'provider': provider,
-        'name': name,
-        'address': address,
-        'image': image,
-        'latitude': latitude,
-        'longitude': longitude,
-      };
+  ///ToJson
+  Map<String, dynamic> toJson() => _$LocationContentDtoToJson(this);
+
+  // ///
+  // factory LocationContentDto.fromJson(Map<String, dynamic> json) =>
+  //     LocationContentDto(
+  //       id: json['id'],
+  //       provider: json['provider'],
+  //       name: json['name'],
+  //       address: json['address'],
+  //       image: json['image'],
+  //       latitude: json['latitude'],
+  //       longitude: json['longitude'],
+  //     );
+
+  // ///
+  // Map<String, dynamic> toJson() => <String, dynamic>{
+  //       'id': id,
+  //       'provider': provider,
+  //       'name': name,
+  //       'address': address,
+  //       'image': image,
+  //       'latitude': latitude,
+  //       'longitude': longitude,
+  //     };
 }
