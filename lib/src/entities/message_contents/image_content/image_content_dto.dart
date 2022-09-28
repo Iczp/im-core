@@ -1,8 +1,8 @@
 // 语音消息内容
 import 'package:json_annotation/json_annotation.dart';
 
-import '../../enums.dart';
-import '../../entities/message_contents/message_content.dart';
+import '../../../enums.dart';
+import '../message_content.dart';
 
 part 'image_content_dto.g.dart';
 

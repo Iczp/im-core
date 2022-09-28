@@ -1,7 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 
-import '../../enums/message_type_enum.dart';
-import '../../entities/message_contents/message_content.dart';
+import '../../../enums/message_type_enum.dart';
+import '../message_content.dart';
 
 part 'cmd_content_dto.g.dart';
 
