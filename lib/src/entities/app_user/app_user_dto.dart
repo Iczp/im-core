@@ -43,56 +43,40 @@ class AppUserDto extends MediaDto {
 
   final String account;
 
-  /// Picture
-
-  final String? portrait;
-
   /// Nick
-
   final String? nick;
 
   /// 性别
-
   final Genders gender;
 
   /// 是否公开
-
   final bool isPublic;
 
   /// 固定用户
-
   final bool isStatic;
 
   /// 是否激活
-
   final bool isActive;
 
   /// 是否外部的
-
   final bool isExternal;
 
   /// Job
-
   final String? job;
 
   /// Tel
-
   final String? tel;
 
   /// Phone
-
   final String? phone;
 
   ///
-
   final List<String>? roleIdList;
 
   /// 职位
-
   final List<PositionDto>? positionList;
 
   /// 部门
-
   final List<DepartmentDto>? departmentList;
 
   ///FromJson
