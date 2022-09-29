@@ -26,11 +26,17 @@ class MessageDto<TContent> extends IdInput<String?> {
     this.quoteMessage,
     this.state = MessageStateEnum.undefined,
     this.rollbackTime,
-  }) : _globalKey = GlobalKey();
+  })  : _globalKey = GlobalKey(),
+        _contentGlobalKey = GlobalKey(),
+        _layerLink = LayerLink(),
+        _contentLayerLink = LayerLink();
 
   ///
-  MessageDto.clone(
-    GlobalKey globalKey, {
+  MessageDto.clone({
+    required GlobalKey globalKey,
+    required GlobalKey contentGlobalKey,
+    required LayerLink layerLink,
+    required LayerLink contentLayerLink,
     super.id,
     required this.logId,
     required this.type,
@@ -51,10 +57,22 @@ class MessageDto<TContent> extends IdInput<String?> {
     this.quoteMessage,
     this.state = MessageStateEnum.undefined,
     this.rollbackTime,
-  }) : _globalKey = globalKey;
+  })  : _globalKey = globalKey,
+        _contentGlobalKey = contentGlobalKey,
+        _layerLink = layerLink,
+        _contentLayerLink = contentLayerLink;
 
-  ///
+  /// message GlobalKey
   final GlobalKey _globalKey;
+
+  /// message content GlobalKey
+  final GlobalKey _contentGlobalKey;
+
+  /// message LayerLink;
+  final LayerLink _layerLink;
+
+  /// message content LayerLink;
+  final LayerLink _contentLayerLink;
 
   ///
   MessageStateEnum state;
@@ -121,8 +139,17 @@ class MessageDto<TContent> extends IdInput<String?> {
   ///
   DateTime? rollbackTime;
 
-  ///
+  /// message item layerLink
   GlobalKey get globalKey => _globalKey;
+
+  /// message content GlobalKey
+  GlobalKey get contentGlobalKey => _contentGlobalKey;
+
+  /// message item layerLink
+  LayerLink get layerLink => _layerLink;
+
+  ///
+  LayerLink get contentLayerLink => _contentLayerLink;
 
   ///
   get heroTag => 'heroTag_$_globalKey';
