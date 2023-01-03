@@ -12,9 +12,11 @@ environment:
   flutter: ">=1.17.0"
 
 dependencies:
+  dio: ^4.0.6
   flutter:
     sdk: flutter
   json_annotation: ^4.7.0
+  logger: ^1.1.0
   
 
 dev_dependencies:
