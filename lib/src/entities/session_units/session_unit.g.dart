@@ -28,7 +28,9 @@ SessionUnit _$SessionUnitFromJson(Map<String, dynamic> json) => SessionUnit(
       clearTime: json['clearTime'] == null
           ? null
           : DateTime.parse(json['clearTime'] as String),
-    );
+    )
+      ..title = json['title'] as String?
+      ..description = json['description'] as String?;
 
 Map<String, dynamic> _$SessionUnitToJson(SessionUnit instance) =>
     <String, dynamic>{
@@ -41,6 +43,8 @@ Map<String, dynamic> _$SessionUnitToJson(SessionUnit instance) =>
       'reminderAllCount': instance.reminderAllCount,
       'reminderMeCount': instance.reminderMeCount,
       'sorting': instance.sorting,
+      'title': instance.title,
+      'description': instance.description,
       'readedMessageAutoId': instance.readedMessageAutoId,
       'removeTime': instance.removeTime?.toIso8601String(),
       'clearTime': instance.clearTime?.toIso8601String(),

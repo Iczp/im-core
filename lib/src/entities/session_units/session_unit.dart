@@ -1,6 +1,7 @@
-import 'package:im_core/im_core.dart';
-import 'package:im_core/src/entities/chat_objects/chat_object.dart';
 import 'package:json_annotation/json_annotation.dart';
+
+import '../chat_objects/chat_object.dart';
+import '../messages/message_dto.dart';
 
 part 'session_unit.g.dart';
 
@@ -43,6 +44,10 @@ class SessionUnit {
   final int? reminderMeCount;
 
   late final int? sorting;
+
+  late final String? title;
+
+  late final String? description;
 
   late int? readedMessageAutoId;
 
