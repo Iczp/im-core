@@ -1,10 +1,6 @@
 import 'package:im_core/im_core.dart';
+import 'package:im_core/src/entities/chat_objects/chat_object.dart';
 import 'package:json_annotation/json_annotation.dart';
-
-import '../../enums.dart';
-import '../departments/department_dto.dart';
-import '../medias/media_dto.dart';
-import '../positions/position_dto.dart';
 
 part 'session_unit.g.dart';
 
@@ -16,18 +12,27 @@ part 'session_unit.g.dart';
 class SessionUnit {
   ///
   SessionUnit({
+    required this.id,
     required this.sessionId,
     required this.ownerId,
+    this.destination,
     this.lastMessage,
     this.badge,
     this.reminderAllCount,
     this.reminderMeCount,
     this.sorting,
+    this.readedMessageAutoId,
+    this.removeTime,
+    this.clearTime,
   });
+
+  final String id;
 
   final String sessionId;
 
   final String ownerId;
+
+  final ChatObject? destination;
 
   final MessageDto? lastMessage;
 
@@ -37,13 +42,18 @@ class SessionUnit {
 
   final int? reminderMeCount;
 
-  final int? sorting;
+  late final int? sorting;
+
+  late int? readedMessageAutoId;
+
+  late DateTime? removeTime;
+
+  late DateTime? clearTime;
 
   ///FromJson
   factory SessionUnit.fromJson(Map<String, dynamic> json) =>
       _$SessionUnitFromJson(json);
 
   ///ToJson
-  @override
   Map<String, dynamic> toJson() => _$SessionUnitToJson(this);
 }

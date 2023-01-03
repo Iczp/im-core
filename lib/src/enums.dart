@@ -7,3 +7,4 @@ export 'enums/gender_enum.dart';
 export 'enums/input_mode_enum.dart';
 export 'enums/room_type_enum.dart';
 export 'enums/offical_type_enum.dart';
+export 'enums/chat_object_types_enum.dart';
