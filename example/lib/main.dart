@@ -68,11 +68,33 @@ class _MyHomePageState extends State<MyHomePage> {
       // _counter without calling setState(), then the build method would not be
       // called again, and so nothing would appear to happen.
       _counter++;
-      SessionUnitGetList(
-        ownerId: 'b700aef5-d48b-4aac-9bbe-52fdcdfd53cb',
+
+      // SessionUnitGetList(ownerId: 'b700aef5-d48b-4aac-9bbe-52fdcdfd53cb')
+      //     .sendAsync()
+      //     .then((ret) {
+      //   //
+      // });
+
+      // SessionUnitGet(id: '9a731afb-51a2-9c8d-54da-3a08502e076a')
+      //     .sendAsync()
+      //     .then((ret) {
+      //   //
+      // });
+
+      // SessionUnitSetTopping(
+      //   id: '9a731afb-51a2-9c8d-54da-3a08502e076a',
+      //   isTopping: true,
+      // ).sendAsync().then((ret) {
+      //   //
+      // });
+
+      SessionUnitSetReaded(
+        id: '9a731afb-51a2-9c8d-54da-3a08502e076a',
+        messageId: '762a99c5-fe2a-ef7e-103c-3a08502e077b',
       ).sendAsync().then((ret) {
         //
       });
+
       // var service = SessionUnitService();
       // service
       //     .getListAsync(ownerId: 'b700aef5-d48b-4aac-9bbe-52fdcdfd53cb')

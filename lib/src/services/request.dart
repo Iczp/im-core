@@ -24,6 +24,15 @@ abstract class Request<T> {
   String get httpMethod;
 
   ///
+  Map<String, dynamic>? getQueryParameters() {
+    return toJson();
+  }
+
+  dynamic getPostData() {
+    return toJson();
+  }
+
+  ///
   @JsonKey(ignore: true)
   final Options? options;
 
@@ -44,8 +53,8 @@ abstract class Request<T> {
     var isGet = httpMethod.toUpperCase() == 'GET';
     return dio.request(
       apiUrl,
-      data: !isGet ? toJson() : null,
-      queryParameters: isGet ? toJson() : null,
+      data: !isGet ? getPostData() : null,
+      queryParameters: isGet ? getQueryParameters() : null,
       cancelToken: cancelToken,
       options: options ?? Options(method: httpMethod.toLowerCase()),
       onSendProgress: onSendProgress,
@@ -57,5 +66,5 @@ abstract class Request<T> {
   Future<T> sendAsync();
 
   ///
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => <String, dynamic>{};
 }
