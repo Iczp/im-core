@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:dio/dio.dart';
 import 'package:im_core/src/entities/session_units/session_unit.dart';
 import 'package:im_core/src/services/base_dtos/paged_output.dart';
@@ -17,32 +15,31 @@ class SessionUnitService extends ServiceBase {
     Options? options,
     CancelToken? cancelToken,
     ProgressCallback? onReceiveProgress,
-  }) {
+  }) async {
     try {
-      dio
-          .get('/api/app/session-unit',
-              queryParameters: input.toJson(),
-              options: options,
-              cancelToken: cancelToken,
-              onReceiveProgress: onReceiveProgress)
-          .then((res) {
-        Logger().d(res);
+      var res = await dio.get(
+        '/api/app/session-unit',
+        queryParameters: input.toJson(),
+        options: options,
+        cancelToken: cancelToken,
+        onReceiveProgress: onReceiveProgress,
+      );
 
-        var items = <SessionUnit>[];
-        for (var item in res.data['items'] as List<dynamic>) {
-          items.add(SessionUnit.fromJson(item));
-        }
-        Logger().d('items.length:${items.length}');
-        Logger().d(items);
-      }).catchError((error, stackTrace) {
-        Logger().e(error);
-        Logger().e(stackTrace);
-      });
+      Logger().d(res);
+
+      var items = <SessionUnit>[];
+      for (var item in res.data['items'] as List<dynamic>) {
+        items.add(SessionUnit.fromJson(item));
+      }
+      return PagedOuput<SessionUnit>(
+        totalCount: (res.data['totalCount'] as num).toInt(),
+        items: <SessionUnit>[],
+      );
     } catch (e) {
       Logger().w(e);
     }
 
-    return Future.value(PagedOuput<SessionUnit>(
+    return await Future.value(PagedOuput<SessionUnit>(
       totalCount: 0,
       items: <SessionUnit>[],
     ));

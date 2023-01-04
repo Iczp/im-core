@@ -69,11 +69,15 @@ class _MyHomePageState extends State<MyHomePage> {
       // called again, and so nothing would appear to happen.
       _counter++;
 
-      SessionUnitService()
+      var input = SessionUnitGetListInput(
+        ownerId: 'b700aef5-d48b-4aac-9bbe-52fdcdfd53cb',
+      );
+      var service = SessionUnitService();
+      var task = service
           .getListAsync(SessionUnitGetListInput(
             ownerId: 'b700aef5-d48b-4aac-9bbe-52fdcdfd53cb',
           ))
-          .then((value) => {Logger().d(value)});
+          .then((value) => null);
     });
   }
 
