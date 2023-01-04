@@ -43,7 +43,7 @@ class SessionUnit {
 
   final int? reminderMeCount;
 
-  late final int? sorting;
+  late final double? sorting;
 
   late final String? title;
 

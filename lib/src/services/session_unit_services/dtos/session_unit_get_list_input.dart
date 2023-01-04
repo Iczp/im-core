@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import '../../../enums/chat_object_types_enum.dart';
 import '../../base_dtos/paged_input.dart';
 
 part 'session_unit_get_list_input.g.dart';
@@ -11,37 +12,43 @@ class SessionUnitGetListInput extends PagedInput {
     this.ownerId,
     this.destinationId,
     this.destinationObjectType,
-    this.isRemind,
-    this.isBadge,
+    this.isRemind = false,
+    this.isBadge = false,
     this.minAutoId,
     this.maxAutoId,
+    super.maxResultCount = 10,
+    super.skipCount = 0,
+    super.sorting,
+    super.keyword,
   });
 
   ///
-  final String? ownerId;
+  String? ownerId;
 
   ///
-  final String? destinationId;
+  String? destinationId;
 
   ///
-  final bool? destinationObjectType;
+  ChatObjectTypesEnum? destinationObjectType;
 
   ///
-  final bool? isRemind;
+  bool isRemind;
 
   ///
-  final bool? isBadge;
+  bool isBadge;
 
   ///
-  final int? minAutoId;
+  int? minAutoId;
 
   ///
-  final int? maxAutoId;
+  int? maxAutoId;
 
   ///FromJson
+  @override
   factory SessionUnitGetListInput.fromJson(Map<String, dynamic> json) =>
       _$SessionUnitGetListInputFromJson(json);
 
   ///ToJson
+  @override
   Map<String, dynamic> toJson() => _$SessionUnitGetListInputToJson(this);
 }

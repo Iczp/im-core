@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:im_core/im_core.dart';
+import 'package:logger/logger.dart';
 
 void main() {
   runApp(const MyApp());
@@ -53,6 +54,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
   MediaDto mediaDto = MediaDto(id: 'ddd', name: 'test');
 
+  @override
+  void initState() {
+    HttpHelper.init(baseUrl: 'http://10.0.5.20:8044');
+    super.initState();
+  }
+
   void _incrementCounter() {
     setState(() {
       // This call to setState tells the Flutter framework that something has
@@ -61,6 +68,12 @@ class _MyHomePageState extends State<MyHomePage> {
       // _counter without calling setState(), then the build method would not be
       // called again, and so nothing would appear to happen.
       _counter++;
+
+      SessionUnitService()
+          .getListAsync(SessionUnitGetListInput(
+            ownerId: 'b700aef5-d48b-4aac-9bbe-52fdcdfd53cb',
+          ))
+          .then((value) => {Logger().d(value)});
     });
   }
 

@@ -18,8 +18,6 @@ export 'entities/message_contents.dart';
 
 ///
 export 'entities/messages/message_dto.dart';
-export 'entities/messages/sound_message_dto.dart';
-export 'entities/messages/text_message_dto.dart';
 
 ///
 export 'entities/readeds/readed_dto.dart';

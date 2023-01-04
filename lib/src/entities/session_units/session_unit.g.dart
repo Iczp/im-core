@@ -15,12 +15,11 @@ SessionUnit _$SessionUnitFromJson(Map<String, dynamic> json) => SessionUnit(
           : ChatObject.fromJson(json['destination'] as Map<String, dynamic>),
       lastMessage: json['lastMessage'] == null
           ? null
-          : MessageDto<dynamic>.fromJson(
-              json['lastMessage'] as Map<String, dynamic>),
+          : MessageDto.fromJson(json['lastMessage'] as Map<String, dynamic>),
       badge: json['badge'] as int?,
       reminderAllCount: json['reminderAllCount'] as int?,
       reminderMeCount: json['reminderMeCount'] as int?,
-      sorting: json['sorting'] as int?,
+      sorting: (json['sorting'] as num?)?.toDouble(),
       readedMessageAutoId: json['readedMessageAutoId'] as int?,
       removeTime: json['removeTime'] == null
           ? null

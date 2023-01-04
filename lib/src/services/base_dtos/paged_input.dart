@@ -1,22 +1,34 @@
+import 'package:json_annotation/json_annotation.dart';
+
+part 'paged_input.g.dart';
+
 /// paged request input dto
+@JsonSerializable()
 class PagedInput {
   ///
   PagedInput({
     this.maxResultCount = 10,
-    this.skipCount,
+    this.skipCount = 0,
     this.sorting,
     this.keyword,
   });
 
   ///
-  late final int maxResultCount;
+  int maxResultCount;
 
   ///
-  late final int? skipCount;
+  int skipCount;
 
   ///
-  late final String? sorting;
+  String? sorting;
 
   ///
-  late final String? keyword;
+  String? keyword;
+
+  ///FromJson
+  factory PagedInput.fromJson(Map<String, dynamic> json) =>
+      _$PagedInputFromJson(json);
+
+  ///ToJson
+  Map<String, dynamic> toJson() => _$PagedInputToJson(this);
 }

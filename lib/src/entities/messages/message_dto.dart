@@ -1,22 +1,26 @@
 import 'package:flutter/cupertino.dart';
+import 'package:json_annotation/json_annotation.dart';
 import '../base/id_input.dart';
 import '../../enums.dart';
 
+part 'message_dto.g.dart';
+
 /// 消息
-class MessageDto<TContent> extends IdInput<String?> {
+@JsonSerializable()
+class MessageDto extends IdInput<String?> {
   ///
   MessageDto({
     super.id,
-    required this.logId,
+    required this.autoId,
     required this.type,
     this.sessionId,
     this.isReverse = false,
     this.isBanner = false,
-    required this.sender,
-    required this.media,
-    this.senderType = MediaTypeEnum.personal,
-    required this.receiver,
-    this.receiverType = MediaTypeEnum.personal,
+    required this.senderId,
+    // required this.media,
+    // this.senderType = MediaTypeEnum.personal,
+    required this.receiverId,
+    // this.receiverType = MediaTypeEnum.personal,
     required this.content,
     required this.sendTime,
     this.forwardMessageId,
@@ -38,16 +42,16 @@ class MessageDto<TContent> extends IdInput<String?> {
     required LayerLink layerLink,
     required LayerLink contentLayerLink,
     super.id,
-    required this.logId,
+    required this.autoId,
     required this.type,
     this.sessionId,
     this.isReverse = false,
     this.isBanner = false,
-    required this.sender,
-    required this.media,
-    this.senderType = MediaTypeEnum.personal,
-    required this.receiver,
-    this.receiverType = MediaTypeEnum.personal,
+    required this.senderId,
+    // required this.media,
+    // this.senderType = MediaTypeEnum.personal,
+    required this.receiverId,
+    // this.receiverType = MediaTypeEnum.personal,
     required this.content,
     required this.sendTime,
     this.forwardMessageId,
@@ -81,10 +85,10 @@ class MessageDto<TContent> extends IdInput<String?> {
   String? _loginUserId;
 
   /// 消息Id,有序
-  double logId;
+  double autoId;
 
   /// 消息类型
-  final MessageTypeEnum type;
+  final MessageTypeEnum? type;
 
   /// 会话Id
   final String? sessionId;
@@ -96,27 +100,27 @@ class MessageDto<TContent> extends IdInput<String?> {
   final bool isBanner;
 
   ///  发送人
-  final String sender;
+  final String senderId;
 
-  /// 媒体类型
-  /// 0:未定义, 1:个人, 2:群, 3:订阅号,
-  /// 4:公众号, 5:部门群, 6:课程群,
-  /// 7:任务群,8:服务号群组,9:工程项目群,10工程标准群
-  final MediaTypeEnum media;
+  // /// 媒体类型
+  // /// 0:未定义, 1:个人, 2:群, 3:订阅号,
+  // /// 4:公众号, 5:部门群, 6:课程群,
+  // /// 7:任务群,8:服务号群组,9:工程项目群,10工程标准群
+  // final MediaTypeEnum media;
 
-  /// 发送人媒体类型
-  final MediaTypeEnum senderType;
+  // /// 发送人媒体类型
+  // final MediaTypeEnum senderType;
 
   /// 接收Id(接收人UserId || 群 RoomId)
-  final String receiver;
+  final String receiverId;
 
-  /// 接收人媒体类型
-  final MediaTypeEnum receiverType;
+  // /// 接收人媒体类型
+  // final MediaTypeEnum receiverType;
 
   /// final List<String>? receiverList;
 
   /// 消息内容
-  final TContent content;
+  final dynamic content;
 
   /// 转发来源Id(转发才有)
   final String? forwardMessageId;
@@ -134,7 +138,7 @@ class MessageDto<TContent> extends IdInput<String?> {
   late final MessageDto? quoteMessage;
 
   /// 发送时间
-  final DateTime sendTime;
+  final DateTime? sendTime;
 
   ///
   DateTime? rollbackTime;
@@ -156,7 +160,7 @@ class MessageDto<TContent> extends IdInput<String?> {
 
   ///
   bool isSelf() {
-    return _loginUserId != null && sender == _loginUserId;
+    return _loginUserId != null && senderId == _loginUserId;
   }
 
   ///
@@ -168,7 +172,7 @@ class MessageDto<TContent> extends IdInput<String?> {
   }
 
   ///设置登录用户loginUserId
-  MessageDto<TContent> setLoginUserId(loginUserId) {
+  MessageDto setLoginUserId(loginUserId) {
     _loginUserId = loginUserId;
     return this;
   }
@@ -180,53 +184,14 @@ class MessageDto<TContent> extends IdInput<String?> {
 
   ///
   void setLogId(double value) {
-    logId = value;
+    autoId = value;
   }
 
-  ///
-  factory MessageDto.fromJson(Map<String, dynamic> json) => MessageDto(
-        id: json['id'],
-        logId: json['logId'],
-        type: json['type'],
-        sessionId: json['sessionId'],
-        isReverse: json['isReverse'],
-        isBanner: json['isBanner'],
-        sender: json['sender'],
-        senderType: json['senderType'],
-        media: json['media'],
-        receiver: json['receiver'],
-        receiverType: json['receiverType'],
-        content: json['content'],
-        sendTime: json['sendTime'],
-        forwardMessageId: json['forwardMessageId'],
-        keyName: json['keyName'],
-        keyValue: json['keyValue'],
-        // forwardMessage: json['forwardMessage'],
-        quoteMessage: MessageDto.fromJson(json['quoteMessage']),
-        state: json['state'],
-        rollbackTime: json['state'],
-      );
+  ///FromJson
+  factory MessageDto.fromJson(Map<String, dynamic> json) =>
+      _$MessageDtoFromJson(json);
 
-  Map<String, dynamic> toJson() => <String, dynamic>{
-        'id': id,
-        'logId': logId,
-        'type': type,
-        'sessionId': sessionId,
-        'isReverse': isReverse,
-        'isBanner': isBanner,
-        'sender': sender,
-        'media': media,
-        'senderType': senderType,
-        'receiver': receiver,
-        'receiverType': receiverType,
-        'content': content,
-        'sendTime': sendTime,
-        'forwardMessageId': forwardMessageId,
-        'keyName': keyName,
-        'keyValue': keyValue,
-        // 'forwardMessage': forwardMessage?.toJson(),
-        'quoteMessage': quoteMessage?.toJson(),
-        'state': state,
-        'rollbackTime': rollbackTime,
-      };
+  ///ToJson
+
+  Map<String, dynamic> toJson() => _$MessageDtoToJson(this);
 }
