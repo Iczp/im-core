@@ -10,7 +10,7 @@ class SessionUnitGet extends RequestGet<SessionUnit> {
 
   ///
   SessionUnitGet({
-    required super.id,
+    required this.id,
     super.options,
     super.cancelToken,
     super.onReceiveProgress,
@@ -22,4 +22,7 @@ class SessionUnitGet extends RequestGet<SessionUnit> {
     var res = await request();
     return SessionUnit.fromJson(res.data);
   }
+
+  ///
+  final String id;
 }

@@ -1,6 +1,8 @@
+import 'package:dio/dio.dart';
+
 import '../request_post.dart';
 
-class SessionUnitSetReaded extends RequestPost {
+class SessionUnitSetReaded extends RequestPost<bool> {
   ///
   @override
   String get apiUrl =>
@@ -8,8 +10,9 @@ class SessionUnitSetReaded extends RequestPost {
 
   ///
   @override
-  Future submit() async {
+  Future<bool> submit() async {
     await request();
+    return isForce; // ret.data as bool? ?? false;
   }
 
   @override

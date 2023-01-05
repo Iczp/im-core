@@ -95,6 +95,12 @@ class _MyHomePageState extends State<MyHomePage> {
         //
       });
 
+      SessionUnitGetBadge(ownerId: 'b700aef5-d48b-4aac-9bbe-52fdcdfd53cb')
+          .submit()
+          .then((value) {
+        Logger().d(value);
+      });
+
       // var service = SessionUnitService();
       // service
       //     .getListAsync(ownerId: 'b700aef5-d48b-4aac-9bbe-52fdcdfd53cb')

@@ -49,7 +49,7 @@ abstract class Request<T> {
   final ProgressCallback? onReceiveProgress;
 
   ///
-  Future<Response> request() {
+  Future<Response<dynamic>> request() {
     var isGet = httpMethod.toUpperCase() == 'GET';
     return dio.request(
       apiUrl,

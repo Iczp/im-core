@@ -1,8 +1,9 @@
 // import 'package:json_annotation/json_annotation.dart';
 
-import 'package:im_core/im_core.dart';
 import 'package:json_annotation/json_annotation.dart';
 
+import '../../entities/messages/message_dto.dart';
+import '../../enums/message_type_enum.dart';
 import '../base_dtos/paged_output.dart';
 import '../request_get_list.dart';
 
