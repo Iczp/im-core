@@ -18,8 +18,8 @@ class SessionUnitGetList extends RequestGetList<PagedOuput<SessionUnit>> {
     this.ownerId,
     this.destinationId,
     this.destinationObjectType,
-    this.isRemind = false,
-    this.isBadge = false,
+    this.isRemind,
+    this.isBadge,
     this.minAutoId,
     this.maxAutoId,
     super.maxResultCount = 10,
@@ -44,10 +44,10 @@ class SessionUnitGetList extends RequestGetList<PagedOuput<SessionUnit>> {
   ChatObjectTypesEnum? destinationObjectType;
 
   ///
-  bool isRemind;
+  bool? isRemind;
 
   ///
-  bool isBadge;
+  bool? isBadge;
 
   ///
   int? minAutoId;

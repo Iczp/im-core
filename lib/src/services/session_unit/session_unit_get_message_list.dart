@@ -1,5 +1,6 @@
 // import 'package:json_annotation/json_annotation.dart';
 
+import 'package:im_core/src/extensions/map_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 import '../../entities/messages/message_dto.dart';
@@ -20,7 +21,7 @@ class SessionUnitGetMessageList extends RequestGetList<PagedOuput<MessageDto>> {
     this.id,
     this.senderId,
     this.messageType,
-    this.isRemind = false,
+    this.isRemind,
     this.minAutoId,
     this.maxAutoId,
     super.maxResultCount = 10,
@@ -45,7 +46,8 @@ class SessionUnitGetMessageList extends RequestGetList<PagedOuput<MessageDto>> {
   final MessageTypeEnum? messageType;
 
   ///
-  final bool isRemind;
+  @JsonKey(defaultValue: null)
+  final bool? isRemind;
 
   ///
   final int? minAutoId;
@@ -63,7 +65,7 @@ class SessionUnitGetMessageList extends RequestGetList<PagedOuput<MessageDto>> {
 
   ///
   @override
-  Map<String, dynamic>? getQueryParameters() => toJson();
+  Map<String, dynamic>? getQueryParameters() => toJson().removeKey('id');
 
   ///
   @override

@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:json_annotation/json_annotation.dart';
-
+import 'package:im_core/src/extensions/map_extension.dart';
 import 'http_helper.dart';
 
 abstract class Request<T> {
@@ -46,11 +46,10 @@ abstract class Request<T> {
 
   ///
   Future<Response<dynamic>> request() {
-    var isGet = httpMethod.toUpperCase() == 'GET';
     return dio.request(
       apiUrl,
-      data: !isGet ? getPostData() : null,
-      queryParameters: isGet ? getQueryParameters() : null,
+      data: getPostData(),
+      queryParameters: getQueryParameters()?.removeNullValue(),
       cancelToken: cancelToken,
       options: options ?? Options(method: httpMethod.toLowerCase()),
       onSendProgress: onSendProgress,

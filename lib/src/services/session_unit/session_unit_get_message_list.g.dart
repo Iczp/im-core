@@ -13,7 +13,7 @@ SessionUnitGetMessageList _$SessionUnitGetMessageListFromJson(
       senderId: json['senderId'] as String?,
       messageType:
           $enumDecodeNullable(_$MessageTypeEnumEnumMap, json['messageType']),
-      isRemind: json['isRemind'] as bool? ?? false,
+      isRemind: json['isRemind'] as bool?,
       minAutoId: json['minAutoId'] as int?,
       maxAutoId: json['maxAutoId'] as int?,
       maxResultCount: json['maxResultCount'] as int? ?? 10,

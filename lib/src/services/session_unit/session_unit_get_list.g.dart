@@ -12,8 +12,8 @@ SessionUnitGetList _$SessionUnitGetListFromJson(Map<String, dynamic> json) =>
       destinationId: json['destinationId'] as String?,
       destinationObjectType: $enumDecodeNullable(
           _$ChatObjectTypesEnumEnumMap, json['destinationObjectType']),
-      isRemind: json['isRemind'] as bool? ?? false,
-      isBadge: json['isBadge'] as bool? ?? false,
+      isRemind: json['isRemind'] as bool?,
+      isBadge: json['isBadge'] as bool?,
       minAutoId: json['minAutoId'] as int?,
       maxAutoId: json['maxAutoId'] as int?,
       maxResultCount: json['maxResultCount'] as int? ?? 10,
