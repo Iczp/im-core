@@ -57,22 +57,19 @@ Map<String, dynamic> _$MessageDtoToJson(MessageDto instance) =>
     };
 
 const _$MessageTypeEnumEnumMap = {
-  MessageTypeEnum.undefined: 'undefined',
   MessageTypeEnum.text: 'text',
+  MessageTypeEnum.cmd: 'cmd',
   MessageTypeEnum.image: 'image',
   MessageTypeEnum.sound: 'sound',
   MessageTypeEnum.video: 'video',
+  MessageTypeEnum.file: 'file',
   MessageTypeEnum.link: 'link',
-  MessageTypeEnum.wordflow: 'wordflow',
   MessageTypeEnum.location: 'location',
   MessageTypeEnum.contacts: 'contacts',
-  MessageTypeEnum.cmd: 'cmd',
-  MessageTypeEnum.course: 'course',
   MessageTypeEnum.redenvelope: 'redenvelope',
   MessageTypeEnum.html: 'html',
   MessageTypeEnum.article: 'article',
   MessageTypeEnum.history: 'history',
-  MessageTypeEnum.file: 'file',
   MessageTypeEnum.notice: 'notice',
 };
 

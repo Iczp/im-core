@@ -70,7 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
       _counter++;
 
       // SessionUnitGetList(ownerId: 'b700aef5-d48b-4aac-9bbe-52fdcdfd53cb')
-      //     .sendAsync()
+      //     .submit()
       //     .then((ret) {
       //   //
       // });
@@ -88,17 +88,23 @@ class _MyHomePageState extends State<MyHomePage> {
       //   //
       // });
 
-      SessionUnitSetReaded(
-        id: '9a731afb-51a2-9c8d-54da-3a08502e076a',
-        messageId: '762a99c5-fe2a-ef7e-103c-3a08502e077b',
-      ).submit().then((ret) {
-        //
-      });
+      // SessionUnitSetReaded(
+      //   id: '9a731afb-51a2-9c8d-54da-3a08502e076a',
+      //   messageId: '762a99c5-fe2a-ef7e-103c-3a08502e077b',
+      // ).submit().then((ret) {
+      //   //
+      // });
 
-      SessionUnitGetBadge(ownerId: 'b700aef5-d48b-4aac-9bbe-52fdcdfd53cb')
+      // SessionUnitGetBadge(ownerId: 'b700aef5-d48b-4aac-9bbe-52fdcdfd53cb')
+      //     .submit()
+      //     .then((value) {
+      //   Logger().d(value);
+      // });
+
+      SessionUnitGetMessageList(id: '9a731afb-51a2-9c8d-54da-3a08502e076a')
           .submit()
-          .then((value) {
-        Logger().d(value);
+          .then((ret) {
+        //
       });
 
       // var service = SessionUnitService();
