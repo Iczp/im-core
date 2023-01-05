@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'package:im_core/src/extensions/map_extension.dart';
+import '../../src/extensions/map_extension.dart';
 import 'http_helper.dart';
 
 abstract class Request<T> {
@@ -26,6 +26,7 @@ abstract class Request<T> {
   ///
   Map<String, dynamic>? getQueryParameters() => null;
 
+  ///
   dynamic getPostData() => null;
 
   ///
