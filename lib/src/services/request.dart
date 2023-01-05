@@ -49,7 +49,7 @@ abstract class Request<T> {
   final ProgressCallback? onReceiveProgress;
 
   ///
-  Future<Response> requestAsync() {
+  Future<Response> request() {
     var isGet = httpMethod.toUpperCase() == 'GET';
     return dio.request(
       apiUrl,
@@ -63,7 +63,7 @@ abstract class Request<T> {
   }
 
   ///
-  Future<T> sendAsync();
+  Future<T> submit();
 
   ///
   Map<String, dynamic> toJson() => <String, dynamic>{};

@@ -18,8 +18,8 @@ class SessionUnitGet extends RequestGet<SessionUnit> {
   });
 
   @override
-  Future<SessionUnit> sendAsync() async {
-    var res = await requestAsync();
+  Future<SessionUnit> submit() async {
+    var res = await request();
     return SessionUnit.fromJson(res.data);
   }
 }

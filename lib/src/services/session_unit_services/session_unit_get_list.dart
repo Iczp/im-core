@@ -63,8 +63,8 @@ class SessionUnitGetList extends RequestGetList<PagedOuput<SessionUnit>> {
   Map<String, dynamic> toJson() => _$SessionUnitGetListToJson(this);
 
   @override
-  Future<PagedOuput<SessionUnit>> sendAsync() async {
-    var res = await requestAsync();
+  Future<PagedOuput<SessionUnit>> submit() async {
+    var res = await request();
     return PagedOuput<SessionUnit>(
       totalCount: getTotalCount(res.data),
       items: getItems(res.data).map((x) => SessionUnit.fromJson(x)).toList(),

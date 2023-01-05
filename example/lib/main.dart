@@ -91,7 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
       SessionUnitSetReaded(
         id: '9a731afb-51a2-9c8d-54da-3a08502e076a',
         messageId: '762a99c5-fe2a-ef7e-103c-3a08502e077b',
-      ).sendAsync().then((ret) {
+      ).submit().then((ret) {
         //
       });
 
