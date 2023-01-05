@@ -13,9 +13,6 @@ class SessionUnitGetMessage extends RequestGet<MessageDto> {
     return MessageDto.fromJson(ret.data);
   }
 
-  @override
-  getPostData() => null;
-
   ///
   SessionUnitGetMessage({
     required this.id,

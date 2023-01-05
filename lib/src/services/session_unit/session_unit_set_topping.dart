@@ -1,6 +1,6 @@
 import '../request_post.dart';
 
-class SessionUnitSetTopping extends RequestPost {
+class SessionUnitSetTopping extends RequestPost<bool> {
   ///
   @override
   String get apiUrl =>
@@ -8,12 +8,10 @@ class SessionUnitSetTopping extends RequestPost {
 
   ///
   @override
-  Future submit() async {
+  Future<bool> submit() async {
     await request();
+    return isTopping;
   }
-
-  @override
-  getPostData() => null;
 
   ///
   SessionUnitSetTopping({

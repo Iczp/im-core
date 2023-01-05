@@ -11,9 +11,6 @@ class SessionUnitDeleteMessage extends RequestPost {
     await request();
   }
 
-  @override
-  getPostData() => null;
-
   ///
   SessionUnitDeleteMessage({
     required this.id,

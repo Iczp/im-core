@@ -11,6 +11,7 @@ part 'session_unit_get_message_list.g.dart';
 
 @JsonSerializable()
 class SessionUnitGetMessageList extends RequestGetList<PagedOuput<MessageDto>> {
+  ///
   @override
   String get apiUrl => '/api/app/session-unit/$id/message-list';
 
@@ -60,6 +61,11 @@ class SessionUnitGetMessageList extends RequestGetList<PagedOuput<MessageDto>> {
   @override
   Map<String, dynamic> toJson() => _$SessionUnitGetMessageListToJson(this);
 
+  ///
+  @override
+  Map<String, dynamic>? getQueryParameters() => toJson();
+
+  ///
   @override
   Future<PagedOuput<MessageDto>> submit() async {
     var res = await request();

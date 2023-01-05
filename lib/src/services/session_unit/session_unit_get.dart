@@ -5,6 +5,7 @@ import '../request_get.dart';
 
 // @JsonSerializable()
 class SessionUnitGet extends RequestGet<SessionUnit> {
+  ///
   @override
   String get apiUrl => '/api/app/session-unit/$id';
 

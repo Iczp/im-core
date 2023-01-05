@@ -1,6 +1,7 @@
 import '../request_get.dart';
 
 class SessionUnitGetBadge extends RequestGet<int> {
+  ///
   @override
   String get apiUrl => '/api/app/session-unit/badge/$ownerId';
 

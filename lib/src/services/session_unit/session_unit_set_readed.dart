@@ -1,5 +1,3 @@
-import 'package:dio/dio.dart';
-
 import '../request_post.dart';
 
 class SessionUnitSetReaded extends RequestPost<bool> {

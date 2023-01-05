@@ -11,9 +11,6 @@ class SessionUnitClearMessage extends RequestPost {
     await request();
   }
 
-  @override
-  getPostData() => null;
-
   ///
   SessionUnitClearMessage({
     required this.id,

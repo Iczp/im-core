@@ -9,6 +9,7 @@ part 'session_unit_get_list.g.dart';
 
 @JsonSerializable()
 class SessionUnitGetList extends RequestGetList<PagedOuput<SessionUnit>> {
+  ///
   @override
   String get apiUrl => '/api/app/session-unit';
 
@@ -62,6 +63,11 @@ class SessionUnitGetList extends RequestGetList<PagedOuput<SessionUnit>> {
   @override
   Map<String, dynamic> toJson() => _$SessionUnitGetListToJson(this);
 
+  ///
+  @override
+  Map<String, dynamic>? getQueryParameters() => toJson();
+
+  ///
   @override
   Future<PagedOuput<SessionUnit>> submit() async {
     var res = await request();

@@ -7,6 +7,7 @@ import '../service_base.dart';
 import 'dtos/session_unit_get_list_input.dart';
 
 class SessionUnitService extends ServiceBase {
+  ///
   @override
   String? servicePath = '/api/app/session-unit';
 

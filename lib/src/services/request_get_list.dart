@@ -2,6 +2,7 @@ import 'request.dart';
 import 'base_dtos/paged_output.dart';
 
 abstract class RequestGetList<T extends PagedOuput> extends Request<T> {
+  ///
   @override
   String get httpMethod => 'GET';
 

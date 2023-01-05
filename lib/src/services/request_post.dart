@@ -6,10 +6,6 @@ abstract class RequestPost<T> extends Request<T> {
   String get httpMethod => 'POST';
 
   ///
-  @override
-  Map<String, dynamic>? getQueryParameters() => null;
-
-  ///
   RequestPost({
     super.options,
     super.cancelToken,

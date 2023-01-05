@@ -24,13 +24,9 @@ abstract class Request<T> {
   String get httpMethod;
 
   ///
-  Map<String, dynamic>? getQueryParameters() {
-    return toJson();
-  }
+  Map<String, dynamic>? getQueryParameters() => null;
 
-  dynamic getPostData() {
-    return toJson();
-  }
+  dynamic getPostData() => null;
 
   ///
   @JsonKey(ignore: true)
