@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:json_annotation/json_annotation.dart';
 import '../base/id_input.dart';
-import '../../enums.dart';
+import '../../../enums.dart';
 
 part 'message_dto.g.dart';
 

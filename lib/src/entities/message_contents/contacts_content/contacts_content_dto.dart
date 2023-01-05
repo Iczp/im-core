@@ -1,6 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
-import '../../../enums.dart';
+import '../../../../enums.dart';
 import '../message_content.dart';
 
 part 'contacts_content_dto.g.dart';

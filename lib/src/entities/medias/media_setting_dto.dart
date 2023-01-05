@@ -1,7 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 
 import '../base/id_input.dart';
-import '../../enums.dart';
+import '../../../enums.dart';
 import 'meida_input.dart';
 
 part 'media_setting_dto.g.dart';

@@ -1,9 +1,9 @@
 library im_core;
 
-export 'src/entities.dart';
+export 'entities.dart';
 
-export 'src/enums.dart';
+export 'enums.dart';
 
-export 'src/extensions.dart';
+export 'extensions.dart';
 
-export 'src/services.dart';
+export 'services.dart';
