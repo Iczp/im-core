@@ -10,14 +10,14 @@ ReadedDto _$ReadedDtoFromJson(Map<String, dynamic> json) => ReadedDto(
       mediaType: $enumDecode(_$MediaTypeEnumEnumMap, json['mediaType']),
       mediaId: json['mediaId'] as String,
       ownerUserId: json['ownerUserId'] as String?,
-      logId: (json['logId'] as num?)?.toDouble(),
+      autoId: (json['autoId'] as num?)?.toDouble(),
     );
 
 Map<String, dynamic> _$ReadedDtoToJson(ReadedDto instance) => <String, dynamic>{
       'mediaType': _$MediaTypeEnumEnumMap[instance.mediaType]!,
       'mediaId': instance.mediaId,
       'ownerUserId': instance.ownerUserId,
-      'logId': instance.logId,
+      'autoId': instance.autoId,
     };
 
 const _$MediaTypeEnumEnumMap = {

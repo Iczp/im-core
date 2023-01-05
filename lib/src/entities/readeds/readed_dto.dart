@@ -14,7 +14,7 @@ class ReadedDto extends IdInput<String?> {
     required this.mediaType,
     required this.mediaId,
     this.ownerUserId,
-    this.logId,
+    this.autoId,
   });
 
   ///
@@ -32,7 +32,7 @@ class ReadedDto extends IdInput<String?> {
   final String? ownerUserId;
 
   ///
-  final double? logId;
+  final double? autoId;
 
   ///FromJson
   factory ReadedDto.fromJson(Map<String, dynamic> json) =>

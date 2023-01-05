@@ -69,7 +69,7 @@ class SessionUnitGetList extends RequestGetList<PagedOuput<SessionUnit>> {
 
   ///
   @override
-  Future<PagedOuput<SessionUnit>> submit() async {
+  Future<PagedOuput<SessionUnit>> fetch() async {
     var res = await request();
     return PagedOuput<SessionUnit>(
       totalCount: getTotalCount(res.data),

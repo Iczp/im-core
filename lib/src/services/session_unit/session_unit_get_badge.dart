@@ -15,7 +15,7 @@ class SessionUnitGetBadge extends RequestGet<int> {
   });
 
   @override
-  Future<int> submit() async {
+  Future<int> fetch() async {
     var res = await request();
     return (res.data as num).toInt();
   }

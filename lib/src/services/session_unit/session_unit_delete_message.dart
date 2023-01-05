@@ -7,7 +7,7 @@ class SessionUnitDeleteMessage extends RequestPost {
 
   ///
   @override
-  Future submit() async {
+  Future fetch() async {
     await request();
   }
 

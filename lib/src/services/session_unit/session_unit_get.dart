@@ -19,7 +19,7 @@ class SessionUnitGet extends RequestGet<SessionUnit> {
   });
 
   @override
-  Future<SessionUnit> submit() async {
+  Future<SessionUnit> fetch() async {
     var res = await request();
     return SessionUnit.fromJson(res.data);
   }

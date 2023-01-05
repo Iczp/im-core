@@ -21,3 +21,12 @@ export 'src/entities/messages/message_dto.dart';
 
 ///
 export 'src/entities/readeds/readed_dto.dart';
+
+///
+export 'src/entities/chat_objects/chat_object.dart';
+
+export 'src/entities/session_units/session_unit.dart';
+
+export 'src/entities/session_unit_roles/session_unit_role.dart';
+
+export 'src/entities/session_unit_tags/session_unit_tag.dart';

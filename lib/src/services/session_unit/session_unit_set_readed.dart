@@ -8,7 +8,7 @@ class SessionUnitSetReaded extends RequestPost<bool> {
 
   ///
   @override
-  Future<bool> submit() async {
+  Future<bool> fetch() async {
     await request();
     return isForce; // ret.data as bool? ?? false;
   }
