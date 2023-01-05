@@ -101,7 +101,14 @@ class _MyHomePageState extends State<MyHomePage> {
       //   Logger().d(value);
       // });
 
-      SessionUnitGetMessageList(id: '9a731afb-51a2-9c8d-54da-3a08502e076a')
+      // SessionUnitGetMessageList(id: '9a731afb-51a2-9c8d-54da-3a08502e076a')
+      //     .submit()
+      //     .then((ret) {
+      //   //
+      // });
+
+      SessionUnitGetSessionMemberList(
+              id: '9a731afb-51a2-9c8d-54da-3a08502e076a')
           .submit()
           .then((ret) {
         //

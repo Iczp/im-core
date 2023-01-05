@@ -4,10 +4,6 @@ import '../../enums/chat_object_types_enum.dart';
 
 part 'chat_object.g.dart';
 
-/// <summary>
-/// 用户
-/// </summary>
-///这个标注是告诉生成器，这个类是需要生成Model类的
 @JsonSerializable()
 class ChatObject {
   ///
