@@ -1,6 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 
 import '../chat_objects/chat_object.dart';
+import '../entity.dart';
 import '../messages/message_dto.dart';
 
 part 'session_unit.g.dart';
@@ -10,7 +11,7 @@ part 'session_unit.g.dart';
 /// </summary>
 ///这个标注是告诉生成器，这个类是需要生成Model类的
 @JsonSerializable()
-class SessionUnit {
+class SessionUnit extends Entity {
   ///
   SessionUnit({
     required this.id,
