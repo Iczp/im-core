@@ -6,4 +6,8 @@ abstract class Entity {
 
   ///
   GlobalKey get globalKey => _globalKey;
+
+  // void setGlobalKey(GlobalKey key) {
+  //   _globalKey = key;
+  // }
 }
