@@ -36,19 +36,19 @@ class SessionUnit extends Entity {
 
   final ChatObject? destination;
 
-  final MessageDto? lastMessage;
+  late MessageDto? lastMessage;
 
-  final int? badge;
+  late int? badge;
 
-  final int? reminderAllCount;
+  late int? reminderAllCount;
 
-  final int? reminderMeCount;
+  late int? reminderMeCount;
 
-  late final double? sorting;
+  late double? sorting;
 
-  late final String? title;
+  late String? title;
 
-  late final String? description;
+  late String? description;
 
   late int? readedMessageAutoId;
 
