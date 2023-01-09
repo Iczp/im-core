@@ -6,7 +6,7 @@ import '../../enums/chat_object_types_enum.dart';
 part 'chat_object.g.dart';
 
 @JsonSerializable()
-class ChatObject extends Entity with IFromJson<ChatObject> {
+class ChatObject extends Entity {
   ///
   ChatObject({
     this.id,
@@ -32,11 +32,4 @@ class ChatObject extends Entity with IFromJson<ChatObject> {
 
   ///ToJson
   Map<String, dynamic> toJson() => _$ChatObjectToJson(this);
-
-  @override
-  fromJson(Map<String, dynamic> json) => ChatObject.fromJson(json);
-}
-
-abstract class IFromJson<T> {
-  fromJson(Map<String, dynamic> json);
 }

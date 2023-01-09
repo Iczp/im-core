@@ -8,12 +8,7 @@ extension MessageDtoExtension on MessageDto {
   }
 
   ///
-  T getContent<T extends IFromJson>() {
-    switch (this.messageType) {
-      case MessageTypeEnum.text:
-      return fromJson()
-        break;
-    }
+  T getContent<T>() {
     return content as T;
   }
 }
