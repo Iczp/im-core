@@ -12,6 +12,7 @@ SessionUnitGetList _$SessionUnitGetListFromJson(Map<String, dynamic> json) =>
       destinationId: json['destinationId'] as String?,
       destinationObjectType: $enumDecodeNullable(
           _$ChatObjectTypesEnumEnumMap, json['destinationObjectType']),
+      isTopping: json['isTopping'] as bool?,
       isRemind: json['isRemind'] as bool?,
       isBadge: json['isBadge'] as bool?,
       minAutoId: json['minAutoId'] as int?,
@@ -32,6 +33,7 @@ Map<String, dynamic> _$SessionUnitGetListToJson(SessionUnitGetList instance) =>
       'destinationId': instance.destinationId,
       'destinationObjectType':
           _$ChatObjectTypesEnumEnumMap[instance.destinationObjectType],
+      'isTopping': instance.isTopping,
       'isRemind': instance.isRemind,
       'isBadge': instance.isBadge,
       'minAutoId': instance.minAutoId,
