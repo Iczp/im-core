@@ -32,4 +32,8 @@ class ChatObject extends Entity {
 
   ///ToJson
   Map<String, dynamic> toJson() => _$ChatObjectToJson(this);
+
+  @override
+  ChatObject mapToEntity(Map<String, dynamic> json) =>
+      _$ChatObjectFromJson(json);
 }

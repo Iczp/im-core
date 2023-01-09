@@ -1,7 +1,8 @@
 import '../../enums/message_type_enum.dart';
+import '../entity.dart';
 
 ///消息内容
-abstract class MessageContent {
+abstract class MessageContent extends Entity {
   ///
   final String? id;
 

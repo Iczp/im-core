@@ -10,4 +10,9 @@ abstract class Entity {
   // void setGlobalKey(GlobalKey key) {
   //   _globalKey = key;
   // }
+
+  mapToEntity(Map<String, dynamic> json);
+  // {
+  //   throw UnimplementedError('Unimplemented method ToEntity');
+  // }
 }

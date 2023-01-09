@@ -39,6 +39,9 @@ class SoundContentDto extends MessageContent {
   ///ToJson
   Map<String, dynamic> toJson() => _$SoundContentDtoToJson(this);
 
+  @override
+  mapToEntity(Map<String, dynamic> json) => _$SoundContentDtoFromJson(json);
+
   // ///
   // factory SoundContentDto.fromJson(Map<String, dynamic> json) =>
   //     SoundContentDto(

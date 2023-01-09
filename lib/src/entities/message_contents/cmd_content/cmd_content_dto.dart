@@ -36,6 +36,9 @@ class CmdContentDto extends MessageContent {
   ///ToJson
   Map<String, dynamic> toJson() => _$CmdContentDtoToJson(this);
 
+  @override
+  mapToEntity(Map<String, dynamic> json) => _$CmdContentDtoFromJson(json);
+
   // ///
   // factory CmdContentDto.fromJson(Map<String, dynamic> json) => CmdContentDto(
   //       id: json['id'],

@@ -8,7 +8,17 @@ extension MessageDtoExtension on MessageDto {
   }
 
   ///
-  T getContent<T>() {
-    return content as T;
+  T getContent<T extends Entity>() {
+    var content = this.content;
+    // switch (this.messageType) {
+    //   case MessageTypeEnum.text:
+
+    //     break;
+    // }
+    // return content as T;
+
+    return content is T
+        ? this.content
+        : (content as T).mapToEntity(this.content);
   }
 }

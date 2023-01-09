@@ -69,6 +69,9 @@ class ImageContentDto extends MessageContent {
   ///ToJson
   Map<String, dynamic> toJson() => _$ImageContentDtoToJson(this);
 
+  @override
+  mapToEntity(Map<String, dynamic> json) => _$ImageContentDtoFromJson(json);
+
   // ///
   // factory ImageContentDto.fromJson(Map<String, dynamic> json) =>
   //     ImageContentDto(

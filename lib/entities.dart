@@ -1,3 +1,5 @@
+export 'src/entities/entity.dart';
+
 ///
 export 'src/entities/base/id_input.dart';
 export 'src/entities/base/id_list_input.dart';

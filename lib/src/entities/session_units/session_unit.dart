@@ -62,4 +62,7 @@ class SessionUnit extends Entity {
 
   ///ToJson
   Map<String, dynamic> toJson() => _$SessionUnitToJson(this);
+
+  @override
+  mapToEntity(Map<String, dynamic> json) => _$SessionUnitFromJson(json);
 }

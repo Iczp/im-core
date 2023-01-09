@@ -81,6 +81,9 @@ class VideoContentDto extends MessageContent {
   ///ToJson
   Map<String, dynamic> toJson() => _$VideoContentDtoToJson(this);
 
+  @override
+  mapToEntity(Map<String, dynamic> json) => _$VideoContentDtoFromJson(json);
+
   // factory VideoContentDto.fromJson(Map<String, dynamic> json) =>
   //     VideoContentDto(
   //       path: json['path'],

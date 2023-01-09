@@ -48,6 +48,9 @@ class LocationContentDto extends MessageContent {
   ///ToJson
   Map<String, dynamic> toJson() => _$LocationContentDtoToJson(this);
 
+  @override
+  mapToEntity(Map<String, dynamic> json) => _$LocationContentDtoFromJson(json);
+
   // ///
   // factory LocationContentDto.fromJson(Map<String, dynamic> json) =>
   //     LocationContentDto(

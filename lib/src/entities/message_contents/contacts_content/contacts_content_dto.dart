@@ -48,6 +48,9 @@ class ContactsContentDto extends MessageContent {
   ///ToJson
   Map<String, dynamic> toJson() => _$ContactsContentDtoToJson(this);
 
+  @override
+  mapToEntity(Map<String, dynamic> json) => _$ContactsContentDtoFromJson(json);
+
   // ///
   // factory ContactsContentDto.fromJson(Map<String, dynamic> json) =>
   //     ContactsContentDto(

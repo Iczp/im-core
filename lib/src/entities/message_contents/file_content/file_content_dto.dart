@@ -52,6 +52,9 @@ class FileContentDto extends MessageContent {
   ///ToJson
   Map<String, dynamic> toJson() => _$FileContentDtoToJson(this);
 
+  @override
+  mapToEntity(Map<String, dynamic> json) => _$FileContentDtoFromJson(json);
+
   // ///
   // factory FileContentDto.fromJson(Map<String, dynamic> json) => FileContentDto(
   //       id: json['id'],
