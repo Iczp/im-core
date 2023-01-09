@@ -9,7 +9,7 @@ part of 'session_unit_get_message_list.dart';
 SessionUnitGetMessageList _$SessionUnitGetMessageListFromJson(
         Map<String, dynamic> json) =>
     SessionUnitGetMessageList(
-      id: json['id'] as String?,
+      id: json['id'] as String,
       senderId: json['senderId'] as String?,
       messageType:
           $enumDecodeNullable(_$MessageTypeEnumEnumMap, json['messageType']),
@@ -38,18 +38,18 @@ Map<String, dynamic> _$SessionUnitGetMessageListToJson(
     };
 
 const _$MessageTypeEnumEnumMap = {
-  MessageTypeEnum.text: 'text',
-  MessageTypeEnum.cmd: 'cmd',
-  MessageTypeEnum.image: 'image',
-  MessageTypeEnum.sound: 'sound',
-  MessageTypeEnum.video: 'video',
-  MessageTypeEnum.file: 'file',
-  MessageTypeEnum.link: 'link',
-  MessageTypeEnum.location: 'location',
-  MessageTypeEnum.contacts: 'contacts',
-  MessageTypeEnum.redenvelope: 'redenvelope',
-  MessageTypeEnum.html: 'html',
-  MessageTypeEnum.article: 'article',
-  MessageTypeEnum.history: 'history',
-  MessageTypeEnum.notice: 'notice',
+  MessageTypeEnum.text: 0,
+  MessageTypeEnum.cmd: 1,
+  MessageTypeEnum.image: 2,
+  MessageTypeEnum.sound: 3,
+  MessageTypeEnum.video: 4,
+  MessageTypeEnum.file: 5,
+  MessageTypeEnum.link: 6,
+  MessageTypeEnum.location: 7,
+  MessageTypeEnum.contacts: 8,
+  MessageTypeEnum.redenvelope: 9,
+  MessageTypeEnum.html: 10,
+  MessageTypeEnum.article: 11,
+  MessageTypeEnum.history: 12,
+  MessageTypeEnum.notice: 13,
 };

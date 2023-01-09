@@ -12,7 +12,7 @@ class MessageDto extends IdInput<String?> {
   MessageDto({
     super.id,
     required this.autoId,
-    required this.type,
+    required this.messageType,
     this.sessionId,
     this.isReverse = false,
     this.isBanner = false,
@@ -22,7 +22,7 @@ class MessageDto extends IdInput<String?> {
     required this.receiverId,
     // this.receiverType = MediaTypeEnum.personal,
     required this.content,
-    required this.sendTime,
+    required this.creationTime,
     this.forwardMessageId,
     this.keyName,
     this.keyValue,
@@ -43,7 +43,7 @@ class MessageDto extends IdInput<String?> {
     required LayerLink contentLayerLink,
     super.id,
     required this.autoId,
-    required this.type,
+    required this.messageType,
     this.sessionId,
     this.isReverse = false,
     this.isBanner = false,
@@ -53,7 +53,7 @@ class MessageDto extends IdInput<String?> {
     required this.receiverId,
     // this.receiverType = MediaTypeEnum.personal,
     required this.content,
-    required this.sendTime,
+    required this.creationTime,
     this.forwardMessageId,
     this.keyName,
     this.keyValue,
@@ -88,7 +88,7 @@ class MessageDto extends IdInput<String?> {
   double autoId;
 
   /// 消息类型
-  final MessageTypeEnum? type;
+  final MessageTypeEnum? messageType;
 
   /// 会话Id
   final String? sessionId;
@@ -138,7 +138,7 @@ class MessageDto extends IdInput<String?> {
   late final MessageDto? quoteMessage;
 
   /// 发送时间
-  final DateTime? sendTime;
+  final DateTime creationTime;
 
   ///
   DateTime? rollbackTime;

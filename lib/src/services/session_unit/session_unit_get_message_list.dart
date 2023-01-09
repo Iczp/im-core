@@ -18,7 +18,7 @@ class SessionUnitGetMessageList extends RequestGetList<PagedOuput<MessageDto>> {
 
   ///
   SessionUnitGetMessageList({
-    this.id,
+    required this.id,
     this.senderId,
     this.messageType,
     this.isRemind,
@@ -37,7 +37,7 @@ class SessionUnitGetMessageList extends RequestGetList<PagedOuput<MessageDto>> {
 
   ///
 
-  final String? id;
+  final String id;
 
   ///
   final String? senderId;
