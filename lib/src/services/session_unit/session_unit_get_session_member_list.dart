@@ -51,7 +51,7 @@ class SessionUnitGetSessionMemberList
 
   ///
   @override
-  Future<PagedOuput<SessionUnitOwner>> fetch() async {
+  Future<PagedOuput<SessionUnitOwner>> submit() async {
     var res = await request();
     return PagedOuput<SessionUnitOwner>(
       totalCount: getTotalCount(res.data),

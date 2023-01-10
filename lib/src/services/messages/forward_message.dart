@@ -17,7 +17,7 @@ class ForwardMessage extends RequestPost<List<String>> {
 
   ///
   @override
-  Future<List<String>> fetch() async {
+  Future<List<String>> submit() async {
     var res = await request();
     return res.data as List<String>;
   }

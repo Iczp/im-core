@@ -69,7 +69,7 @@ abstract class Request<T> {
   }
 
   ///
-  Future<T> fetch();
+  Future<T> submit();
 
   ///
   Map<String, dynamic> toJson() => <String, dynamic>{};

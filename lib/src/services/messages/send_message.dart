@@ -11,7 +11,7 @@ abstract class SendMessage<T extends MessageContent>
 
   ///
   @override
-  Future<MessageDto> fetch() async {
+  Future<MessageDto> submit() async {
     var res = await request();
     return MessageDto.fromJson(res.data);
   }

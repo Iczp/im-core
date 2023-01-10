@@ -103,7 +103,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
       SessionUnitGetSessionMemberList(
               id: '9a731afb-51a2-9c8d-54da-3a08502e076a')
-          .fetch()
+          .submit()
           .then((ret) {
         //
       });
@@ -138,7 +138,7 @@ class _MyHomePageState extends State<MyHomePage> {
               onTap: () {
                 SessionUnitGetList(
                   ownerId: 'b700aef5-d48b-4aac-9bbe-52fdcdfd53cb',
-                ).fetch().then((ret) {
+                ).submit().then((ret) {
                   //
                 });
               },
@@ -154,7 +154,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   content: TextContentDto(
                     text: 'text',
                   ),
-                ).fetch().then((ret) {
+                ).submit().then((ret) {
                   //
                 });
               },
@@ -170,7 +170,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   content: SoundContentDto(
                     text: 'text',
                   ),
-                ).fetch().then((ret) {
+                ).submit().then((ret) {
                   //
                 });
               },

@@ -8,7 +8,7 @@ class SessionUnitSetTopping extends RequestPost<bool> {
 
   ///
   @override
-  Future<bool> fetch() async {
+  Future<bool> submit() async {
     await request();
     return isTopping;
   }

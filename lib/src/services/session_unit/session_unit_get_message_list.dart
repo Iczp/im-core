@@ -62,7 +62,7 @@ class SessionUnitGetMessageList extends RequestGetList<PagedOuput<MessageDto>> {
 
   ///
   @override
-  Future<PagedOuput<MessageDto>> fetch() async {
+  Future<PagedOuput<MessageDto>> submit() async {
     var res = await request();
     return PagedOuput<MessageDto>(
       totalCount: getTotalCount(res.data),

@@ -7,7 +7,7 @@ class SessionUnitClearMessage extends RequestPost {
 
   ///
   @override
-  Future fetch() async {
+  Future submit() async {
     await request();
   }
 
