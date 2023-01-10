@@ -160,6 +160,22 @@ class _MyHomePageState extends State<MyHomePage> {
               },
               child: const ListTile(title: Text('SendTextMessage')),
             ),
+            InkWell(
+              onTap: () {
+                SendSoundMessage(
+                  sessionUnitId: '',
+                  senderId: '4fcdafb6-429a-4038-4755-3a085f58c154',
+                  receiverId: '0d1c42e5-bcc1-bdc8-355e-3a085097a2db',
+                  ignoreConnections: [],
+                  content: SoundContentDto(
+                    text: 'text',
+                  ),
+                ).fetch().then((ret) {
+                  //
+                });
+              },
+              child: const ListTile(title: Text('SendTextMessage')),
+            ),
           ],
         ),
       ),
