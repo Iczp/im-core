@@ -20,6 +20,5 @@ class SessionUnitGetBadge extends RequestGet<int> {
     return (res.data as num).toInt();
   }
 
-  ///
   final String ownerId;
 }

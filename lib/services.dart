@@ -27,3 +27,20 @@ export 'src/services/session_unit/session_unit_get_message.dart';
 export 'src/services/session_unit/session_unit_get_message_list.dart';
 
 export 'src/services/session_unit/session_unit_get_session_member_list.dart';
+
+///
+export 'src/services/messages/send_text_message.dart';
+
+export 'src/services/messages/send_cmd_message.dart';
+
+export 'src/services/messages/send_html_message.dart';
+
+export 'src/services/messages/send_link_message.dart';
+
+export 'src/services/messages/send_image_message.dart';
+
+export 'src/services/messages/send_sound_message.dart';
+
+export 'src/services/messages/send_video_message.dart';
+
+export 'src/services/messages/send_file_message.dart';

@@ -23,9 +23,7 @@ class SessionUnitGetMessage extends RequestGet<MessageDto> {
     super.onSendProgress,
   });
 
-  ///
   final String id;
 
-  ///
   final String messageId;
 }

@@ -35,24 +35,17 @@ class SessionUnitGetMessageList extends RequestGetList<PagedOuput<MessageDto>> {
   })  : assert(skipCount >= 0),
         assert(maxResultCount > 0 && maxResultCount < 1000);
 
-  ///
-
   final String id;
 
-  ///
   final String? senderId;
 
-  ///
   final MessageTypeEnum? messageType;
 
-  ///
   @JsonKey(defaultValue: null)
   final bool? isRemind;
 
-  ///
   final int? minAutoId;
 
-  ///
   final int? maxAutoId;
 
   ///FromJson

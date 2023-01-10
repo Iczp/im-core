@@ -50,26 +50,4 @@ class LinkContentDto extends MessageContent {
 
   @override
   mapToEntity(Map<String, dynamic> json) => _$LinkContentDtoFromJson(json);
-
-  // ///
-  // factory LinkContentDto.fromJson(Map<String, dynamic> json) => LinkContentDto(
-  //       id: json['id'],
-  //       url: json['url'],
-  //       title: json['title'],
-  //       image: json['image'],
-  //       description: json['description'],
-  //       issuerName: json['issuerName'],
-  //       issuerIcon: json['issuerIcon'],
-  //     );
-
-  // ///
-  // Map<String, dynamic> toJson() => <String, dynamic>{
-  //       'id': id,
-  //       'url': url,
-  //       'title': title,
-  //       'image': image,
-  //       'description': description,
-  //       'issuerName': issuerName,
-  //       'issuerIcon': issuerIcon,
-  //     };
 }

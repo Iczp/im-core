@@ -30,14 +30,10 @@ class SessionUnitGetSessionMemberList
   })  : assert(skipCount >= 0),
         assert(maxResultCount > 0 && maxResultCount < 1000);
 
-  ///
-
   final String? id;
 
-  ///
   final String? tagId;
 
-  ///
   final String? roleId;
 
   ///FromJson

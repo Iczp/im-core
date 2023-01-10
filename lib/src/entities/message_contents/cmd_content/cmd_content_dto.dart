@@ -27,7 +27,7 @@ class CmdContentDto extends MessageContent {
 
   ///
   @override
-  MessageTypeEnum get messageType => MessageTypeEnum.text;
+  MessageTypeEnum get messageType => MessageTypeEnum.cmd;
 
   ///FromJson
   factory CmdContentDto.fromJson(Map<String, dynamic> json) =>

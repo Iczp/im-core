@@ -23,9 +23,7 @@ class SessionUnitSetTopping extends RequestPost<bool> {
     super.onSendProgress,
   });
 
-  ///
   final String id;
 
-  ///
   final bool isTopping;
 }

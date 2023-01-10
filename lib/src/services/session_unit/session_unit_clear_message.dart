@@ -20,6 +20,5 @@ class SessionUnitClearMessage extends RequestPost {
     super.onSendProgress,
   });
 
-  ///
   final String id;
 }

@@ -11,7 +11,7 @@ part 'image_content_dto.g.dart';
 class ImageContentDto extends MessageContent {
   ///
   @override
-  MessageTypeEnum get messageType => MessageTypeEnum.image;
+  MessageTypeEnum get messageType => MessageTypeEnum.link;
 
   ///
   ImageContentDto({
@@ -71,37 +71,4 @@ class ImageContentDto extends MessageContent {
 
   @override
   mapToEntity(Map<String, dynamic> json) => _$ImageContentDtoFromJson(json);
-
-  // ///
-  // factory ImageContentDto.fromJson(Map<String, dynamic> json) =>
-  //     ImageContentDto(
-  //       id: json['id'],
-  //       text: json['text'],
-  //       url: json['url'],
-  //       path: json['path'],
-  //       actionUrl: json['actionUrl'],
-  //       thumbnailUrl: json['thumbnailUrl'],
-  //       thumbnailActionUrl: json['thumbnailActionUrl'],
-  //       qrientation: json['qrientation'],
-  //       width: json['width'],
-  //       height: json['height'],
-  //       size: json['size'],
-  //       qrcode: json['qrcode'],
-  //     );
-
-  // ///
-  // Map<String, dynamic> toJson() => <String, dynamic>{
-  //       'id': id,
-  //       'text': text,
-  //       'url': url,
-  //       'path': path,
-  //       'actionUrl': actionUrl,
-  //       'thumbnailUrl': thumbnailUrl,
-  //       'thumbnailActionUrl': thumbnailActionUrl,
-  //       'qrientation': qrientation,
-  //       'width': width,
-  //       'height': height,
-  //       'size': size,
-  //       'qrcode': qrcode,
-  //     };
 }

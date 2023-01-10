@@ -24,6 +24,5 @@ class SessionUnitGet extends RequestGet<SessionUnit> {
     return SessionUnit.fromJson(res.data);
   }
 
-  ///
   final String id;
 }

@@ -21,9 +21,7 @@ class SessionUnitDeleteMessage extends RequestPost {
     super.onSendProgress,
   });
 
-  ///
   final String id;
 
-  ///
   final String messageId;
 }

@@ -11,9 +11,6 @@ class SessionUnitRemoveSession extends RequestPost {
     await request();
   }
 
-  @override
-  getPostData() => null;
-
   ///
   SessionUnitRemoveSession({
     required this.id,
@@ -23,6 +20,5 @@ class SessionUnitRemoveSession extends RequestPost {
     super.onSendProgress,
   });
 
-  ///
   final String id;
 }

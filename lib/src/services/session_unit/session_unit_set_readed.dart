@@ -13,9 +13,6 @@ class SessionUnitSetReaded extends RequestPost<bool> {
     return isForce; // ret.data as bool? ?? false;
   }
 
-  @override
-  getPostData() => null;
-
   ///
   SessionUnitSetReaded({
     required this.id,
@@ -27,12 +24,9 @@ class SessionUnitSetReaded extends RequestPost<bool> {
     super.onSendProgress,
   });
 
-  ///
   final String id;
 
-  ///
   final String messageId;
 
-  ///
   final bool isForce;
 }

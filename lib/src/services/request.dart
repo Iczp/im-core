@@ -4,6 +4,16 @@ import 'package:json_annotation/json_annotation.dart';
 import '../../src/extensions/map_extension.dart';
 import 'http_helper.dart';
 
+enum HttpMethod { get, post, put, delete, patch }
+
+const _$HttpMethod = {
+  HttpMethod.get: 'GET',
+  HttpMethod.post: 'POST',
+  HttpMethod.put: 'PUT',
+  HttpMethod.delete: 'DELETE',
+  HttpMethod.patch: 'PATCH',
+};
+
 abstract class Request<T> {
   ///
   Request({
@@ -21,7 +31,7 @@ abstract class Request<T> {
   Dio get dio => HttpHelper.dio;
 
   ///
-  String get httpMethod;
+  HttpMethod get httpMethod;
 
   ///
   Map<String, dynamic>? getQueryParameters() => null;
@@ -52,7 +62,7 @@ abstract class Request<T> {
       data: getPostData(),
       queryParameters: getQueryParameters()?.removeNullValue(),
       cancelToken: cancelToken,
-      options: options ?? Options(method: httpMethod.toLowerCase()),
+      options: options ?? Options(method: _$HttpMethod[httpMethod]),
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,
     );

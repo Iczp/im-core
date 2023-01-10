@@ -36,7 +36,6 @@ class VideoContentDto extends MessageContent {
   final String? url;
 
   /// 视频封面Width
-
   final int width;
 
   /// 视频Height
@@ -44,34 +43,27 @@ class VideoContentDto extends MessageContent {
   final int height;
 
   /// 视频大小
-
   final int size;
 
   ///方向
   final int orientation;
 
   /// 视频封面(本地)
-
   final String? imagePath;
 
   /// 视频封面
-
   final String? imageUrl;
 
   /// 视频Width
-
   final int imageWidth;
 
   /// Height
-
   final int imageHeight;
 
   /// 封面大小
-
   final int imageSize;
 
   /// 选定视频的时间长度，单位为 （毫秒）
-
   final int duration;
 
   ///FromJson
@@ -83,33 +75,4 @@ class VideoContentDto extends MessageContent {
 
   @override
   mapToEntity(Map<String, dynamic> json) => _$VideoContentDtoFromJson(json);
-
-  // factory VideoContentDto.fromJson(Map<String, dynamic> json) =>
-  //     VideoContentDto(
-  //       path: json['path'],
-  //       url: json['url'],
-  //       width: json['width'],
-  //       height: json['height'],
-  //       size: json['size'],
-  //       orientation: json['orientation'],
-  //       imagePath: json['imagePath'],
-  //       imageUrl: json['imageUrl'],
-  //       imageWidth: json['imageWidth'],
-  //       imageHeight: json['imageHeight'],
-  //       imageSize: json['imageSize'],
-  //     );
-
-  // Map<String, dynamic> toJson() => <String, dynamic>{
-  //       'path': path,
-  //       'url': url,
-  //       'width': width,
-  //       'height': height,
-  //       'size': size,
-  //       'orientation': orientation,
-  //       'imagePath': imagePath,
-  //       'imageUrl': imageUrl,
-  //       'imageWidth': imageWidth,
-  //       'imageHeight': imageHeight,
-  //       'imageSize': imageSize,
-  //     };
 }

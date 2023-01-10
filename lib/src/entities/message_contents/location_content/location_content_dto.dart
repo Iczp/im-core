@@ -39,7 +39,7 @@ class LocationContentDto extends MessageContent {
 
   ///
   @override
-  MessageTypeEnum get messageType => MessageTypeEnum.sound;
+  MessageTypeEnum get messageType => MessageTypeEnum.location;
 
   ///FromJson
   factory LocationContentDto.fromJson(Map<String, dynamic> json) =>
@@ -50,27 +50,4 @@ class LocationContentDto extends MessageContent {
 
   @override
   mapToEntity(Map<String, dynamic> json) => _$LocationContentDtoFromJson(json);
-
-  // ///
-  // factory LocationContentDto.fromJson(Map<String, dynamic> json) =>
-  //     LocationContentDto(
-  //       id: json['id'],
-  //       provider: json['provider'],
-  //       name: json['name'],
-  //       address: json['address'],
-  //       image: json['image'],
-  //       latitude: json['latitude'],
-  //       longitude: json['longitude'],
-  //     );
-
-  // ///
-  // Map<String, dynamic> toJson() => <String, dynamic>{
-  //       'id': id,
-  //       'provider': provider,
-  //       'name': name,
-  //       'address': address,
-  //       'image': image,
-  //       'latitude': latitude,
-  //       'longitude': longitude,
-  //     };
 }

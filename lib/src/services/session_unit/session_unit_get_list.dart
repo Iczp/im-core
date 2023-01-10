@@ -34,30 +34,21 @@ class SessionUnitGetList extends RequestGetList<PagedOuput<SessionUnit>> {
   })  : assert(skipCount >= 0),
         assert(maxResultCount > 0 && maxResultCount < 1000);
 
-  ///
+  final String? ownerId;
 
-  String? ownerId;
+  final String? destinationId;
 
-  ///
-  String? destinationId;
+  final ChatObjectTypesEnum? destinationObjectType;
 
-  ///
-  ChatObjectTypesEnum? destinationObjectType;
+  final bool? isTopping;
 
-  ///
-  bool? isTopping;
+  final bool? isRemind;
 
-  ///
-  bool? isRemind;
+  final bool? isBadge;
 
-  ///
-  bool? isBadge;
+  final int? minAutoId;
 
-  ///
-  int? minAutoId;
-
-  ///
-  int? maxAutoId;
+  final int? maxAutoId;
 
   ///FromJson
   factory SessionUnitGetList.fromJson(Map<String, dynamic> json) =>

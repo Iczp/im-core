@@ -8,3 +8,5 @@ export 'message_contents/location_content/location_content_dto.dart';
 export 'message_contents/sound_content/sound_content_dto.dart';
 export 'message_contents/text_content/text_content_dto.dart';
 export 'message_contents/video_content/video_content_dto.dart';
+export 'message_contents/html_content/html_content_dto.dart';
+export 'message_contents/history_content/history_content_input.dart';

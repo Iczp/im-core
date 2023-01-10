@@ -30,16 +30,4 @@ class TextContentDto extends MessageContent {
 
   @override
   mapToEntity(Map<String, dynamic> json) => _$TextContentDtoFromJson(json);
-
-  // ///
-  // factory TextContentDto.fromJson(Map<String, dynamic> json) => TextContentDto(
-  //       id: json['id'],
-  //       text: json['text'],
-  //     );
-
-  // ///
-  // Map<String, dynamic> toJson() => <String, dynamic>{
-  //       'id': id,
-  //       'text': text,
-  //     };
 }

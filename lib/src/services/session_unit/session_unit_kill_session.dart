@@ -11,10 +11,6 @@ class SessionUnitKillSession extends RequestPost {
     await request();
   }
 
-  @override
-  getPostData() => null;
-
-  ///
   SessionUnitKillSession({
     required this.id,
     super.options,
@@ -23,6 +19,5 @@ class SessionUnitKillSession extends RequestPost {
     super.onSendProgress,
   });
 
-  ///
   final String id;
 }

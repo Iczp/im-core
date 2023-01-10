@@ -3,7 +3,7 @@ import 'request.dart';
 abstract class RequestGet<T> extends Request<T> {
   ///
   @override
-  String get httpMethod => 'GET';
+  HttpMethod get httpMethod => HttpMethod.get;
 
   ///
   RequestGet({
