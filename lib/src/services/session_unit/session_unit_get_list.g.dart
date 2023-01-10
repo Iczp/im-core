@@ -41,13 +41,13 @@ Map<String, dynamic> _$SessionUnitGetListToJson(SessionUnitGetList instance) =>
     };
 
 const _$ChatObjectTypesEnumEnumMap = {
-  ChatObjectTypesEnum.personal: 'personal',
-  ChatObjectTypesEnum.room: 'room',
-  ChatObjectTypesEnum.official: 'official',
-  ChatObjectTypesEnum.subscription: 'subscription',
-  ChatObjectTypesEnum.square: 'square',
-  ChatObjectTypesEnum.robot: 'robot',
-  ChatObjectTypesEnum.shopKeeper: 'shopKeeper',
-  ChatObjectTypesEnum.shopWaiter: 'shopWaiter',
-  ChatObjectTypesEnum.customer: 'customer',
+  ChatObjectTypesEnum.personal: 1,
+  ChatObjectTypesEnum.room: 2,
+  ChatObjectTypesEnum.official: 3,
+  ChatObjectTypesEnum.subscription: 4,
+  ChatObjectTypesEnum.square: 5,
+  ChatObjectTypesEnum.robot: 6,
+  ChatObjectTypesEnum.shopKeeper: 7,
+  ChatObjectTypesEnum.shopWaiter: 8,
+  ChatObjectTypesEnum.customer: 9,
 };

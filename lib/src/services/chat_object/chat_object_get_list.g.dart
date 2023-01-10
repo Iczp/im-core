@@ -1,26 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'chat_object.dart';
+part of 'chat_object_get_list.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-ChatObject _$ChatObjectFromJson(Map<String, dynamic> json) => ChatObject(
-      id: json['id'] as String,
-      name: json['name'] as String?,
-      portrait: json['portrait'] as String?,
-      code: json['code'] as String?,
+ChatObjectGetList _$ChatObjectGetListFromJson(Map<String, dynamic> json) =>
+    ChatObjectGetList(
       objectType:
           $enumDecodeNullable(_$ChatObjectTypesEnumEnumMap, json['objectType']),
+      maxResultCount: json['maxResultCount'] as int? ?? 10,
+      skipCount: json['skipCount'] as int? ?? 0,
+      sorting: json['sorting'] as String?,
+      keyword: json['keyword'] as String?,
     );
 
-Map<String, dynamic> _$ChatObjectToJson(ChatObject instance) =>
+Map<String, dynamic> _$ChatObjectGetListToJson(ChatObjectGetList instance) =>
     <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-      'portrait': instance.portrait,
-      'code': instance.code,
+      'maxResultCount': instance.maxResultCount,
+      'skipCount': instance.skipCount,
+      'sorting': instance.sorting,
+      'keyword': instance.keyword,
       'objectType': _$ChatObjectTypesEnumEnumMap[instance.objectType],
     };
 

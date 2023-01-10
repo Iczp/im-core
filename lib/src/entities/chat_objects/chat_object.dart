@@ -9,14 +9,14 @@ part 'chat_object.g.dart';
 class ChatObject extends Entity {
   ///
   ChatObject({
-    this.id,
+    required this.id,
     this.name,
     this.portrait,
     this.code,
-    this.chatObjectType,
+    this.objectType,
   });
 
-  final String? id;
+  final String id;
 
   final String? name;
 
@@ -24,7 +24,7 @@ class ChatObject extends Entity {
 
   final String? code;
 
-  final ChatObjectTypesEnum? chatObjectType;
+  final ChatObjectTypesEnum? objectType;
 
   ///FromJson
   factory ChatObject.fromJson(Map<String, dynamic> json) =>

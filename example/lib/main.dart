@@ -154,7 +154,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   content: TextContentDto(
                     text: 'text',
                   ),
-                ).submit().then((ret) {
+                ).submit().then((_) {
                   //
                 });
               },
@@ -169,12 +169,24 @@ class _MyHomePageState extends State<MyHomePage> {
                   ignoreConnections: [],
                   content: SoundContentDto(
                     text: 'text',
+                    time: 123,
+                    url: 'app://test?id=123',
                   ),
-                ).submit().then((ret) {
+                ).submit().then((_) {
                   //
                 });
               },
-              child: const ListTile(title: Text('SendTextMessage')),
+              child: const ListTile(title: Text('SendSoundMessage')),
+            ),
+            InkWell(
+              onTap: () {
+                ChatObjectGetList(
+                  objectType: ChatObjectTypesEnum.personal,
+                ).submit().then((_) {
+                  Logger().w('totalCount:${_.totalCount}');
+                });
+              },
+              child: const ListTile(title: Text('ChatObjectGetList')),
             ),
           ],
         ),

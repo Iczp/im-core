@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:json_annotation/json_annotation.dart';
 
 import '../chat_objects/chat_object.dart';
@@ -17,8 +19,10 @@ class SessionUnit extends Entity {
     required this.id,
     required this.sessionId,
     required this.ownerId,
+    this.rename,
     this.destination,
     this.lastMessage,
+    this.lastMessageAutoId,
     this.badge,
     this.reminderAllCount,
     this.reminderMeCount,
@@ -26,6 +30,7 @@ class SessionUnit extends Entity {
     this.readedMessageAutoId,
     this.removeTime,
     this.clearTime,
+    this.isImmersed = false,
   });
 
   final String id;
@@ -34,9 +39,13 @@ class SessionUnit extends Entity {
 
   final String ownerId;
 
+  final String? rename;
+
   final ChatObject? destination;
 
   late MessageDto? lastMessage;
+
+  late int? lastMessageAutoId;
 
   late int? badge;
 
@@ -55,6 +64,8 @@ class SessionUnit extends Entity {
   late DateTime? removeTime;
 
   late DateTime? clearTime;
+
+  late bool isImmersed;
 
   ///FromJson
   factory SessionUnit.fromJson(Map<String, dynamic> json) =>

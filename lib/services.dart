@@ -44,3 +44,6 @@ export 'src/services/messages/send_sound_message.dart';
 export 'src/services/messages/send_video_message.dart';
 
 export 'src/services/messages/send_file_message.dart';
+
+///
+export 'src/services/chat_object/chat_object_get_list.dart';
