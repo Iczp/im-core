@@ -7,12 +7,13 @@ abstract class Entity {
   ///
   GlobalKey get globalKey => _globalKey;
 
-  // void setGlobalKey(GlobalKey key) {
-  //   _globalKey = key;
-  // }
+  ///Layer TransformEngineLayer was previously used as oldLayer
+  final LayerLink _layerLink = LayerLink();
 
-  mapToEntity(Map<String, dynamic> json);
-  // {
-  //   throw UnimplementedError('Unimplemented method ToEntity');
-  // }
+  ///Layer TransformEngineLayer was previously used as oldLayer
+  LayerLink get layerLink => _layerLink;
+
+  mapToEntity(Map<String, dynamic> json) {
+    throw UnimplementedError('Unimplemented method "mapToEntity"');
+  }
 }
