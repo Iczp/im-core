@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:json_annotation/json_annotation.dart';
 
 import '../chat_objects/chat_object.dart';
@@ -13,7 +11,7 @@ part 'session_unit.g.dart';
 /// </summary>
 ///这个标注是告诉生成器，这个类是需要生成Model类的
 @JsonSerializable()
-class SessionUnit extends Entity {
+class SessionUnit extends Entity implements Comparable<SessionUnit> {
   ///
   SessionUnit({
     required this.id,
@@ -76,4 +74,28 @@ class SessionUnit extends Entity {
 
   @override
   mapToEntity(Map<String, dynamic> json) => _$SessionUnitFromJson(json);
+
+  int getLastMessageAutoId() {
+    if (lastMessage != null) {
+      return lastMessage!.autoId.toInt();
+    }
+    return lastMessageAutoId ?? 0;
+  }
+
+  @override
+  int compareTo(SessionUnit other) {
+    var lastMessageAutoId = getLastMessageAutoId();
+    var otherLastMessageAutoId = other.getLastMessageAutoId();
+    return otherLastMessageAutoId - lastMessageAutoId;
+
+    // if (lastMessageAutoId < otherLastMessageAutoId) {
+    //   return 1;
+    //   // return lastMessageAutoId;
+    // } else if (lastMessageAutoId > otherLastMessageAutoId) {
+    //   // return lastMessageAutoId;
+    //   return -1;
+    // } else {
+    //   return 0;
+    // }
+  }
 }
