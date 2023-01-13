@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/cupertino.dart';
 import 'package:json_annotation/json_annotation.dart';
 import '../base/id_input.dart';
@@ -194,4 +196,9 @@ class MessageDto extends IdInput<String?> {
   ///ToJson
 
   Map<String, dynamic> toJson() => _$MessageDtoToJson(this);
+
+  @override
+  String toString() {
+    return jsonEncode(toJson());
+  }
 }
