@@ -1,6 +1,7 @@
+import '../../entities/session_units/session_unit.dart';
 import '../request_post.dart';
 
-class SessionUnitSetReaded extends RequestPost<bool> {
+class SessionUnitSetReaded extends RequestPost<SessionUnit> {
   ///
   @override
   String get apiUrl =>
@@ -8,9 +9,9 @@ class SessionUnitSetReaded extends RequestPost<bool> {
 
   ///
   @override
-  Future<bool> submit() async {
-    await request();
-    return isForce; // ret.data as bool? ?? false;
+  Future<SessionUnit> submit() async {
+    var ret = await request();
+    return SessionUnit.fromJson(ret.data); // ret.data as bool? ?? false;
   }
 
   ///

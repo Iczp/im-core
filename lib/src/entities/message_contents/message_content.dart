@@ -14,4 +14,6 @@ abstract class MessageContent extends Entity {
   ///
   //@mustCallSuper
   MessageTypeEnum get messageType;
+
+  String getBody() => 'getBody';
 }

@@ -6,6 +6,7 @@ import '../base/id_input.dart';
 import '../../../enums.dart';
 
 part 'message_dto.g.dart';
+part 'message_dto.i.dart';
 
 /// 消息
 @JsonSerializable()
@@ -201,4 +202,52 @@ class MessageDto extends IdInput<String?> {
   String toString() {
     return jsonEncode(toJson());
   }
+
+  String getMessageTypeString() => _$MessageTypeStringMap[messageType!]!;
+
+  // String getBody() {
+  //   switch (messageType!) {
+  //     case MessageTypeEnum.text:
+  //       return '';
+  //     case MessageTypeEnum.cmd:
+  //       return '';
+  //     case MessageTypeEnum.image:
+  //       // TODO: Handle this case.
+  //       break;
+  //     case MessageTypeEnum.sound:
+  //       // TODO: Handle this case.
+  //       break;
+  //     case MessageTypeEnum.video:
+  //       // TODO: Handle this case.
+  //       break;
+  //     case MessageTypeEnum.file:
+  //       // TODO: Handle this case.
+  //       break;
+  //     case MessageTypeEnum.link:
+  //       // TODO: Handle this case.
+  //       break;
+  //     case MessageTypeEnum.location:
+  //       // TODO: Handle this case.
+  //       break;
+  //     case MessageTypeEnum.contacts:
+  //       // TODO: Handle this case.
+  //       break;
+  //     case MessageTypeEnum.redenvelope:
+  //       // TODO: Handle this case.
+  //       break;
+  //     case MessageTypeEnum.html:
+  //       // TODO: Handle this case.
+  //       break;
+  //     case MessageTypeEnum.article:
+  //       // TODO: Handle this case.
+  //       break;
+  //     case MessageTypeEnum.history:
+  //       // TODO: Handle this case.
+  //       break;
+  //     case MessageTypeEnum.notice:
+  //       // TODO: Handle this case.
+  //       break;
+  //   }
+  //   return '';
+  // }
 }

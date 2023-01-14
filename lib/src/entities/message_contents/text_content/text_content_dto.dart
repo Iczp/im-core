@@ -17,6 +17,9 @@ class TextContentDto extends MessageContent {
   /// 文本内容
   final String text;
 
+  @override
+  String getBody() => text;
+
   ///
   @override
   MessageTypeEnum get messageType => MessageTypeEnum.text;
