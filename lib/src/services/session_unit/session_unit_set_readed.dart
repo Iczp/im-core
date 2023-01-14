@@ -11,6 +11,7 @@ class SessionUnitSetReaded extends RequestPost<SessionUnit> {
   @override
   Future<SessionUnit> submit() async {
     var ret = await request();
+
     return SessionUnit.fromJson(ret.data); // ret.data as bool? ?? false;
   }
 

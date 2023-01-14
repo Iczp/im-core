@@ -19,3 +19,5 @@ export 'src/enums/offical_type_enum.dart';
 export 'src/enums/chat_object_types_enum.dart';
 
 export 'src/enums/editor_type_enum.dart';
+
+export 'src/enums/week.dart';
