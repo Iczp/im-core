@@ -1,3 +1,8 @@
+export 'src/services/base_dtos/paged_output.dart';
+
+export 'src/services/base_dtos/paged_input.dart';
+
+///
 export 'src/services/http_helper.dart';
 
 export 'src/services/session_unit/session_unit_service.dart';
