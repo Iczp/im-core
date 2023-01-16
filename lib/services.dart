@@ -15,6 +15,8 @@ export 'src/services/session_unit/session_unit_get.dart';
 
 export 'src/services/session_unit/session_unit_set_topping.dart';
 
+export 'src/services/session_unit/session_unit_set_immersed.dart';
+
 export 'src/services/session_unit/session_unit_set_readed.dart';
 
 export 'src/services/session_unit/session_unit_remove_session.dart';

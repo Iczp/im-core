@@ -1,11 +1,11 @@
 import '../../../entities.dart';
 import '../request_post.dart';
 
-class SessionUnitSetTopping extends RequestPost<SessionUnit> {
+class SessionUnitSetImmersed extends RequestPost<SessionUnit> {
   ///
   @override
   String get apiUrl =>
-      '/api/app/session-unit/$id/set-topping?isTopping=$isTopping';
+      '/api/app/session-unit/$id/set-immersed?isImmersed=$isImmersed';
 
   ///
   @override
@@ -15,9 +15,9 @@ class SessionUnitSetTopping extends RequestPost<SessionUnit> {
   }
 
   ///
-  SessionUnitSetTopping({
+  SessionUnitSetImmersed({
     required this.id,
-    required this.isTopping,
+    required this.isImmersed,
     super.options,
     super.cancelToken,
     super.onReceiveProgress,
@@ -26,5 +26,5 @@ class SessionUnitSetTopping extends RequestPost<SessionUnit> {
 
   final String id;
 
-  final bool isTopping;
+  final bool isImmersed;
 }
