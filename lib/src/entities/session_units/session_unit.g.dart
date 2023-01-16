@@ -21,7 +21,7 @@ SessionUnit _$SessionUnitFromJson(Map<String, dynamic> json) => SessionUnit(
       badge: json['badge'] as int?,
       reminderAllCount: json['reminderAllCount'] as int?,
       reminderMeCount: json['reminderMeCount'] as int?,
-      sorting: (json['sorting'] as num?)?.toDouble(),
+      sorting: (json['sorting'] as num?)?.toDouble() ?? 0,
       readedMessageAutoId: json['readedMessageAutoId'] as int?,
       removeTime: json['removeTime'] == null
           ? null

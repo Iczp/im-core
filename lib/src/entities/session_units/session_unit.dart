@@ -24,7 +24,7 @@ class SessionUnit extends Entity implements Comparable<SessionUnit> {
     this.badge,
     this.reminderAllCount,
     this.reminderMeCount,
-    this.sorting,
+    this.sorting = 0,
     this.readedMessageAutoId,
     this.removeTime,
     this.clearTime,
@@ -51,7 +51,7 @@ class SessionUnit extends Entity implements Comparable<SessionUnit> {
 
   late int? reminderMeCount;
 
-  late double? sorting;
+  late double sorting;
 
   late String? title;
 
