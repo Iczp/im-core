@@ -65,6 +65,8 @@ class SessionUnit extends Entity implements Comparable<SessionUnit> {
 
   late bool isImmersed;
 
+  bool get isTopping => sorting != 0;
+
   ///FromJson
   factory SessionUnit.fromJson(Map<String, dynamic> json) =>
       _$SessionUnitFromJson(json);
