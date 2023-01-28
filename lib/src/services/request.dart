@@ -40,19 +40,19 @@ abstract class Request<T> {
   dynamic getPostData() => null;
 
   ///
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   final Options? options;
 
   ///
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   final CancelToken? cancelToken;
 
   /// https://github.com/google/json_serializable.dart/blob/06718b94d8e213e7b057326e3d3c555c940c1362/json_annotation/lib/src/json_key.dart#L45-L49
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   final ProgressCallback? onSendProgress;
 
   ///
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   final ProgressCallback? onReceiveProgress;
 
   ///
