@@ -86,9 +86,14 @@ class SessionUnit extends Entity implements Comparable<SessionUnit> {
 
   @override
   int compareTo(SessionUnit other) {
-    var lastMessageAutoId = getLastMessageAutoId();
-    var otherLastMessageAutoId = other.getLastMessageAutoId();
-    return otherLastMessageAutoId - lastMessageAutoId;
+    var sortBySotring = -sorting.compareTo(other.sorting);
+    if (sortBySotring == 0) {
+      var lastMessageAutoId = getLastMessageAutoId();
+      var otherLastMessageAutoId = other.getLastMessageAutoId();
+      var sortByAutoId = -lastMessageAutoId.compareTo(otherLastMessageAutoId);
+      return sortByAutoId;
+    }
+    return sortBySotring;
 
     // if (lastMessageAutoId < otherLastMessageAutoId) {
     //   return 1;

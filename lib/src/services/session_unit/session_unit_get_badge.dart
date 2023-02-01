@@ -1,3 +1,5 @@
+import 'package:im_core/src/extensions/map_extension.dart';
+
 import '../request_get.dart';
 
 class SessionUnitGetBadge extends RequestGet<int> {
@@ -5,9 +7,15 @@ class SessionUnitGetBadge extends RequestGet<int> {
   @override
   String get apiUrl => '/api/app/session-unit/badge/$ownerId';
 
+  @override
+  Map<String, dynamic>? getQueryParameters() => ({
+        'isImmersed': isImmersed,
+      }).removeNullValue();
+
   ///
   SessionUnitGetBadge({
     required this.ownerId,
+    this.isImmersed,
     super.options,
     super.cancelToken,
     super.onReceiveProgress,
@@ -21,4 +29,6 @@ class SessionUnitGetBadge extends RequestGet<int> {
   }
 
   final String ownerId;
+
+  final bool? isImmersed;
 }
