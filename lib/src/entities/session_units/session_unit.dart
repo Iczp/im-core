@@ -29,6 +29,7 @@ class SessionUnit extends Entity implements Comparable<SessionUnit> {
     this.removeTime,
     this.clearTime,
     this.isImmersed = false,
+    this.isImportant = false,
   });
 
   final String id;
@@ -64,6 +65,8 @@ class SessionUnit extends Entity implements Comparable<SessionUnit> {
   late DateTime? clearTime;
 
   late bool isImmersed;
+
+  late bool isImportant;
 
   bool get isTopping => sorting != 0;
 

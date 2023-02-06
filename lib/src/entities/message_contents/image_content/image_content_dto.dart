@@ -11,7 +11,7 @@ part 'image_content_dto.g.dart';
 class ImageContentDto extends MessageContent {
   ///
   @override
-  MessageTypeEnum get messageType => MessageTypeEnum.link;
+  MessageTypeEnum get messageType => MessageTypeEnum.image;
 
   ///
   ImageContentDto({

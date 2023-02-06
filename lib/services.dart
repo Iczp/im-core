@@ -54,3 +54,7 @@ export 'src/services/messages/send_file_message.dart';
 
 ///
 export 'src/services/chat_object/chat_object_get_list.dart';
+
+export 'src/services/chat_object/chat_object_get.dart';
+
+export 'src/services/chat_object/chat_object_get_many.dart';

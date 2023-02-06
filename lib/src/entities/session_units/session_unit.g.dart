@@ -30,6 +30,7 @@ SessionUnit _$SessionUnitFromJson(Map<String, dynamic> json) => SessionUnit(
           ? null
           : DateTime.parse(json['clearTime'] as String),
       isImmersed: json['isImmersed'] as bool? ?? false,
+      isImportant: json['isImportant'] as bool? ?? false,
     )
       ..title = json['title'] as String?
       ..description = json['description'] as String?;
@@ -53,4 +54,5 @@ Map<String, dynamic> _$SessionUnitToJson(SessionUnit instance) =>
       'removeTime': instance.removeTime?.toIso8601String(),
       'clearTime': instance.clearTime?.toIso8601String(),
       'isImmersed': instance.isImmersed,
+      'isImportant': instance.isImportant,
     };
