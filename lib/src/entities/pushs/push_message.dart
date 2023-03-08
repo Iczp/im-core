@@ -8,16 +8,22 @@ part 'push_message.g.dart';
 @JsonSerializable()
 class PushMessage extends Entity {
   PushMessage({
+    required this.appUserId,
     required this.chatObjectId,
-    required this.payload,
+    required this.sessionUnitId,
     required this.command,
+    required this.payload,
   });
+
+  final String appUserId;
 
   final String chatObjectId;
 
-  final Object payload;
+  final String sessionUnitId;
 
   final String command;
+
+  final Object payload;
 
   ///FromJson
   factory PushMessage.fromJson(Map<String, dynamic> json) =>
