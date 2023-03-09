@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:ffi';
 
 import 'package:flutter/cupertino.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -15,7 +14,7 @@ class MessageDto extends IdInput<int> {
   ///
   MessageDto({
     super.id,
-    required this.autoId,
+    this.autoId,
     required this.messageType,
     this.sessionId,
     this.isReverse = false,
@@ -46,7 +45,7 @@ class MessageDto extends IdInput<int> {
     required LayerLink layerLink,
     required LayerLink contentLayerLink,
     super.id,
-    required this.autoId,
+    this.autoId,
     required this.messageType,
     this.sessionId,
     this.isReverse = false,
@@ -89,7 +88,7 @@ class MessageDto extends IdInput<int> {
   String? _loginUserId;
 
   /// 消息Id,有序
-  double autoId;
+  double? autoId;
 
   /// 消息类型
   final MessageTypeEnum? messageType;
@@ -164,7 +163,7 @@ class MessageDto extends IdInput<int> {
 
   ///
   bool isSelf() {
-    return _loginUserId != null && senderId == _loginUserId;
+    return _loginUserId != null && senderId.toString() == _loginUserId;
   }
 
   ///

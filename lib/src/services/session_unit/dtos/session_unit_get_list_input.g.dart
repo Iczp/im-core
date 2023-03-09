@@ -41,6 +41,7 @@ Map<String, dynamic> _$SessionUnitGetListInputToJson(
     };
 
 const _$ChatObjectTypesEnumEnumMap = {
+  ChatObjectTypesEnum.anonymous: 0,
   ChatObjectTypesEnum.personal: 1,
   ChatObjectTypesEnum.room: 2,
   ChatObjectTypesEnum.official: 3,

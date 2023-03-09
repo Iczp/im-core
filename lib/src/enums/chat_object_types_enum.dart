@@ -1,6 +1,10 @@
 import 'package:json_annotation/json_annotation.dart';
 
 enum ChatObjectTypesEnum {
+  /// 匿名
+  @JsonValue(0)
+  anonymous,
+
   /// 个人
   @JsonValue(1)
   personal,

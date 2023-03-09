@@ -26,15 +26,17 @@ class HttpHelper {
     _dio = Dio(options);
 
     /// Log
-    dio.interceptors.add(LogInterceptor(
-      responseBody: true,
-      requestHeader: true,
-      logPrint: Logger().d,
-    )); //开启请求日志
+    // dio.interceptors.add(LogInterceptor(
+    //   responseBody: true,
+    //   requestHeader: true,
+    //   logPrint: Logger().d,
+    // )); //开启请求日志
 
     /// https://github.com/flutterchina/dio/blob/develop/example/lib/queued_interceptor_crsftoken.dart
     _dio!.interceptors.add(QueuedInterceptorsWrapper(
       onRequest: (options, handler) {
+        Logger().i('request options:${options.uri}');
+        Logger().i('request data:${options.data}');
         // Do something before request is sent
         return handler.next(options); //continue
         // If you want to resolve the request with some custom data，
@@ -43,27 +45,47 @@ class HttpHelper {
         // you can reject a `DioError` object eg: `handler.reject(dioError)`
       },
       onResponse: (response, handler) {
+        Logger().w('response:$response');
         // Do something with response data
         return handler.next(response); // continue
         // If you want to reject the request with a error message,
         // you can reject a `DioError` object eg: `handler.reject(dioError)`
       },
-      onError: (DioError e, handler) {
+      onError: (DioError err, handler) {
         // Do something with response error
-        print('message:' + e.message);
+        print('message:' + err.message);
 
-        print('data:' + e.response?.data);
+        print('data:' + err.response?.data);
 
-        if (e.response != null) {
-          var statusCode = e.response!.statusCode;
-
-          switch (statusCode) {
-            case 400:
-              break;
-          }
+        if (err.type == DioErrorType.connectTimeout) {
+          throw Exception("Connection Timeout Exception");
         }
 
-        return handler.next(e); //continue
+        if (err.response != null) {
+          throw Exception("response is null");
+        }
+
+        var statusCode = err.response!.statusCode;
+        Logger().w('statusCode:$statusCode');
+
+        switch (statusCode) {
+          case 401:
+            // Future.delayed(const Duration(seconds: 2), () {
+            //   handler.next(err);
+            // });
+
+            break;
+          case 400:
+          case 403:
+            break;
+
+          case 500:
+            break;
+          default:
+            break;
+        }
+
+        return handler.next(err); //continue
         // If you want to resolve the request with some custom data，
         // you can resolve a `Response` object eg: `handler.resolve(response)`.
       },

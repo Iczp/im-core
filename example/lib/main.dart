@@ -132,13 +132,15 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Text(
               '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+              style: Theme.of(context).textTheme.bodyLarge,
             ),
             InkWell(
               onTap: () {
                 SessionUnitGetList(
-                  ownerId: 'b700aef5-d48b-4aac-9bbe-52fdcdfd53cb',
-                ).submit().then((ret) {
+                  ownerId: 100,
+                ).submit().then((_) {
+                  Logger().w('totalCount:${_.totalCount}');
+
                   //
                 });
               },
@@ -148,8 +150,8 @@ class _MyHomePageState extends State<MyHomePage> {
               onTap: () {
                 SendTextMessage(
                   sessionUnitId: '',
-                  senderId: '4fcdafb6-429a-4038-4755-3a085f58c154',
-                  receiverId: '0d1c42e5-bcc1-bdc8-355e-3a085097a2db',
+                  senderId: 100,
+                  receiverId: 101,
                   ignoreConnections: [],
                   content: TextContentDto(
                     text: 'text',
@@ -164,8 +166,8 @@ class _MyHomePageState extends State<MyHomePage> {
               onTap: () {
                 SendSoundMessage(
                   sessionUnitId: '',
-                  senderId: '4fcdafb6-429a-4038-4755-3a085f58c154',
-                  receiverId: '0d1c42e5-bcc1-bdc8-355e-3a085097a2db',
+                  senderId: 100,
+                  receiverId: 101,
                   ignoreConnections: [],
                   content: SoundContentDto(
                     text: 'text',

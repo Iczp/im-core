@@ -36,7 +36,7 @@ class SessionUnit extends Entity implements Comparable<SessionUnit> {
 
   final String sessionId;
 
-  final String ownerId;
+  final int ownerId;
 
   final String? rename;
 
@@ -82,7 +82,7 @@ class SessionUnit extends Entity implements Comparable<SessionUnit> {
 
   int getLastMessageAutoId() {
     if (lastMessage != null) {
-      return lastMessage!.autoId.toInt();
+      return lastMessage!.id!;
     }
     return lastMessageAutoId ?? 0;
   }

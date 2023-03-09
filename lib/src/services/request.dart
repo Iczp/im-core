@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:json_annotation/json_annotation.dart';
 import '../../src/extensions/map_extension.dart';
 import 'http_helper.dart';
@@ -56,8 +57,8 @@ abstract class Request<T> {
   final ProgressCallback? onReceiveProgress;
 
   ///
-  Future<Response<dynamic>> request() {
-    return dio.request(
+  Future<Response<dynamic>> request() async {
+    var ret = await dio.request(
       apiUrl,
       data: getPostData(),
       queryParameters: getQueryParameters()?.removeNullValue(),
@@ -66,6 +67,8 @@ abstract class Request<T> {
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,
     );
+
+    return ret;
   }
 
   ///

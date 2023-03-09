@@ -8,8 +8,8 @@ part of 'session_unit_get_list.dart';
 
 SessionUnitGetList _$SessionUnitGetListFromJson(Map<String, dynamic> json) =>
     SessionUnitGetList(
-      ownerId: json['ownerId'] as String?,
-      destinationId: json['destinationId'] as String?,
+      ownerId: json['ownerId'] as int?,
+      destinationId: json['destinationId'] as int?,
       destinationObjectType: $enumDecodeNullable(
           _$ChatObjectTypesEnumEnumMap, json['destinationObjectType']),
       isTopping: json['isTopping'] as bool?,
@@ -41,6 +41,7 @@ Map<String, dynamic> _$SessionUnitGetListToJson(SessionUnitGetList instance) =>
     };
 
 const _$ChatObjectTypesEnumEnumMap = {
+  ChatObjectTypesEnum.anonymous: 0,
   ChatObjectTypesEnum.personal: 1,
   ChatObjectTypesEnum.room: 2,
   ChatObjectTypesEnum.official: 3,

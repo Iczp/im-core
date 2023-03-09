@@ -1,4 +1,3 @@
-import 'package:im_core/src/entities/messages/message_dto.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 import '../../../entities.dart';

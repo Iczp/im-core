@@ -34,9 +34,9 @@ class SessionUnitGetList extends RequestGetList<PagedOuput<SessionUnit>> {
   })  : assert(skipCount >= 0),
         assert(maxResultCount > 0 && maxResultCount < 1000);
 
-  final String? ownerId;
+  final int? ownerId;
 
-  final String? destinationId;
+  final int? destinationId;
 
   final ChatObjectTypesEnum? destinationObjectType;
 

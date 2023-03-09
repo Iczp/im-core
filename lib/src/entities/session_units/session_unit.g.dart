@@ -9,7 +9,7 @@ part of 'session_unit.dart';
 SessionUnit _$SessionUnitFromJson(Map<String, dynamic> json) => SessionUnit(
       id: json['id'] as String,
       sessionId: json['sessionId'] as String,
-      ownerId: json['ownerId'] as String,
+      ownerId: json['ownerId'] as int,
       rename: json['rename'] as String?,
       destination: json['destination'] == null
           ? null
