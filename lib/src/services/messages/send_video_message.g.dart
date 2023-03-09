@@ -8,11 +8,11 @@ part of 'send_video_message.dart';
 
 SendVideoMessage _$SendVideoMessageFromJson(Map<String, dynamic> json) =>
     SendVideoMessage(
-      senderId: json['senderId'] as String,
-      receiverId: json['receiverId'] as String,
+      senderId: json['senderId'] as int,
+      receiverId: json['receiverId'] as int,
       keyName: json['keyName'] as String?,
       keyValue: json['keyValue'] as String?,
-      quoteMessageId: json['quoteMessageId'] as String?,
+      quoteMessageId: json['quoteMessageId'] as int?,
       content:
           VideoContentDto.fromJson(json['content'] as Map<String, dynamic>),
       sessionUnitId: json['sessionUnitId'] as String,

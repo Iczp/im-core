@@ -8,8 +8,8 @@ part of 'forward_message.dart';
 
 ForwardMessage _$ForwardMessageFromJson(Map<String, dynamic> json) =>
     ForwardMessage(
-      sourceMessageId: json['sourceMessageId'] as String,
-      senderId: json['senderId'] as String,
+      sourceMessageId: json['sourceMessageId'] as int,
+      senderId: json['senderId'] as int,
       sessionUnitId: json['sessionUnitId'] as String,
       ignoreConnections: (json['ignoreConnections'] as List<dynamic>?)
           ?.map((e) => e as String)

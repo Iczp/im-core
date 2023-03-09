@@ -7,18 +7,18 @@ part of 'message_dto.dart';
 // **************************************************************************
 
 MessageDto _$MessageDtoFromJson(Map<String, dynamic> json) => MessageDto(
-      id: json['id'] as String?,
+      id: json['id'] as int?,
       autoId: (json['autoId'] as num).toDouble(),
       messageType:
           $enumDecodeNullable(_$MessageTypeEnumEnumMap, json['messageType']),
       sessionId: json['sessionId'] as String?,
       isReverse: json['isReverse'] as bool? ?? false,
       isBanner: json['isBanner'] as bool? ?? false,
-      senderId: json['senderId'] as String,
-      receiverId: json['receiverId'] as String,
+      senderId: json['senderId'] as int,
+      receiverId: json['receiverId'] as int,
       content: json['content'],
       creationTime: DateTime.parse(json['creationTime'] as String),
-      forwardMessageId: json['forwardMessageId'] as String?,
+      forwardMessageId: json['forwardMessageId'] as int?,
       keyName: json['keyName'] as String?,
       keyValue: json['keyValue'] as String?,
       forwardMessage: json['forwardMessage'] == null

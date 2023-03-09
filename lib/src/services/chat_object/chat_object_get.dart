@@ -21,5 +21,5 @@ class ChatObjectGet extends RequestGet<ChatObject> {
     return ChatObject.fromJson(res.data);
   }
 
-  final String id;
+  final int id;
 }

@@ -29,5 +29,5 @@ class ChatObjectGetMany extends RequestGet<List<ChatObject>> {
     return (res.data as List).map((e) => ChatObject.fromJson(e)).toList();
   }
 
-  final List<String> idList;
+  final List<int> idList;
 }

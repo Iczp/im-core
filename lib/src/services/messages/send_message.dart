@@ -36,15 +36,15 @@ abstract class SendMessage<T extends MessageContent>
 
   final List<String>? ignoreConnections;
 
-  final String senderId;
+  final int senderId;
 
-  final String receiverId;
+  final int receiverId;
 
   final String? keyName;
 
   final String? keyValue;
 
-  final String? quoteMessageId;
+  final int? quoteMessageId;
 
   final T content;
 }

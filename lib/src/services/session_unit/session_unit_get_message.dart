@@ -25,5 +25,5 @@ class SessionUnitGetMessage extends RequestGet<MessageDto> {
 
   final String id;
 
-  final String messageId;
+  final int messageId;
 }

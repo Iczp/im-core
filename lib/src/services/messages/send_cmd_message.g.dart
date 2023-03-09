@@ -8,11 +8,11 @@ part of 'send_cmd_message.dart';
 
 SendCmdMessage _$SendCmdMessageFromJson(Map<String, dynamic> json) =>
     SendCmdMessage(
-      senderId: json['senderId'] as String,
-      receiverId: json['receiverId'] as String,
+      senderId: json['senderId'] as int,
+      receiverId: json['receiverId'] as int,
       keyName: json['keyName'] as String?,
       keyValue: json['keyValue'] as String?,
-      quoteMessageId: json['quoteMessageId'] as String?,
+      quoteMessageId: json['quoteMessageId'] as int?,
       content: CmdContentDto.fromJson(json['content'] as Map<String, dynamic>),
       sessionUnitId: json['sessionUnitId'] as String,
       ignoreConnections: (json['ignoreConnections'] as List<dynamic>?)

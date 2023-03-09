@@ -10,7 +10,7 @@ SessionUnitGetMessageList _$SessionUnitGetMessageListFromJson(
         Map<String, dynamic> json) =>
     SessionUnitGetMessageList(
       id: json['id'] as String,
-      senderId: json['senderId'] as String?,
+      senderId: json['senderId'] as int?,
       messageType:
           $enumDecodeNullable(_$MessageTypeEnumEnumMap, json['messageType']),
       isRemind: json['isRemind'] as bool?,

@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:im_core/src/entities/entity.dart';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -16,7 +18,7 @@ class ChatObject extends Entity {
     this.objectType,
   });
 
-  final String id;
+  final int id;
 
   final String? name;
 

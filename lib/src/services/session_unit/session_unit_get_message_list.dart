@@ -37,7 +37,7 @@ class SessionUnitGetMessageList extends RequestGetList<PagedOuput<MessageDto>> {
 
   final String id;
 
-  final String? senderId;
+  final int? senderId;
 
   final MessageTypeEnum? messageType;
 

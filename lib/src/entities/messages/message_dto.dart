@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:ffi';
 
 import 'package:flutter/cupertino.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -10,7 +11,7 @@ part 'message_dto.i.dart';
 
 /// 消息
 @JsonSerializable()
-class MessageDto extends IdInput<String?> {
+class MessageDto extends IdInput<int> {
   ///
   MessageDto({
     super.id,
@@ -103,7 +104,7 @@ class MessageDto extends IdInput<String?> {
   final bool isBanner;
 
   ///  发送人
-  final String senderId;
+  final int senderId;
 
   // /// 媒体类型
   // /// 0:未定义, 1:个人, 2:群, 3:订阅号,
@@ -115,7 +116,7 @@ class MessageDto extends IdInput<String?> {
   // final MediaTypeEnum senderType;
 
   /// 接收Id(接收人UserId || 群 RoomId)
-  final String receiverId;
+  final int receiverId;
 
   // /// 接收人媒体类型
   // final MediaTypeEnum receiverType;
@@ -126,7 +127,7 @@ class MessageDto extends IdInput<String?> {
   final dynamic content;
 
   /// 转发来源Id(转发才有)
-  final String? forwardMessageId;
+  final int? forwardMessageId;
 
   /// 扩展（键名）根据业务自义，如:"courseId"、"course-userId"、"erp-userId"
   final String? keyName;
@@ -204,50 +205,4 @@ class MessageDto extends IdInput<String?> {
   }
 
   String getMessageTypeString() => _$MessageTypeStringMap[messageType!]!;
-
-  // String getBody() {
-  //   switch (messageType!) {
-  //     case MessageTypeEnum.text:
-  //       return '';
-  //     case MessageTypeEnum.cmd:
-  //       return '';
-  //     case MessageTypeEnum.image:
-  //       // TODO: Handle this case.
-  //       break;
-  //     case MessageTypeEnum.sound:
-  //       // TODO: Handle this case.
-  //       break;
-  //     case MessageTypeEnum.video:
-  //       // TODO: Handle this case.
-  //       break;
-  //     case MessageTypeEnum.file:
-  //       // TODO: Handle this case.
-  //       break;
-  //     case MessageTypeEnum.link:
-  //       // TODO: Handle this case.
-  //       break;
-  //     case MessageTypeEnum.location:
-  //       // TODO: Handle this case.
-  //       break;
-  //     case MessageTypeEnum.contacts:
-  //       // TODO: Handle this case.
-  //       break;
-  //     case MessageTypeEnum.redenvelope:
-  //       // TODO: Handle this case.
-  //       break;
-  //     case MessageTypeEnum.html:
-  //       // TODO: Handle this case.
-  //       break;
-  //     case MessageTypeEnum.article:
-  //       // TODO: Handle this case.
-  //       break;
-  //     case MessageTypeEnum.history:
-  //       // TODO: Handle this case.
-  //       break;
-  //     case MessageTypeEnum.notice:
-  //       // TODO: Handle this case.
-  //       break;
-  //   }
-  //   return '';
-  // }
 }

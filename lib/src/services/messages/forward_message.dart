@@ -6,7 +6,7 @@ import '../request_post.dart';
 part 'forward_message.g.dart';
 
 @JsonSerializable()
-class ForwardMessage extends RequestPost<List<String>> {
+class ForwardMessage extends RequestPost<List<int>> {
   ///
   @override
   String get apiUrl => '/api/app/message/forward-message';
@@ -17,9 +17,9 @@ class ForwardMessage extends RequestPost<List<String>> {
 
   ///
   @override
-  Future<List<String>> submit() async {
+  Future<List<int>> submit() async {
     var res = await request();
-    return res.data as List<String>;
+    return res.data as List<int>;
   }
 
   ///FromJson
@@ -44,9 +44,9 @@ class ForwardMessage extends RequestPost<List<String>> {
 
   final String sessionUnitId;
 
-  final String senderId;
+  final int senderId;
 
-  final String sourceMessageId;
+  final int sourceMessageId;
 
   final List<String>? ignoreConnections;
 }
