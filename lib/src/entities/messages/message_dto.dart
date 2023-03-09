@@ -10,7 +10,7 @@ part 'message_dto.i.dart';
 
 /// 消息
 @JsonSerializable()
-class MessageDto extends IdInput<int> {
+class MessageDto extends IdInput<int?> {
   ///
   MessageDto({
     super.id,

@@ -13,6 +13,7 @@ ChatObject _$ChatObjectFromJson(Map<String, dynamic> json) => ChatObject(
       code: json['code'] as String?,
       objectType:
           $enumDecodeNullable(_$ChatObjectTypesEnumEnumMap, json['objectType']),
+      appUserId: json['appUserId'] as String?,
     );
 
 Map<String, dynamic> _$ChatObjectToJson(ChatObject instance) =>
@@ -21,6 +22,7 @@ Map<String, dynamic> _$ChatObjectToJson(ChatObject instance) =>
       'name': instance.name,
       'portrait': instance.portrait,
       'code': instance.code,
+      'appUserId': instance.appUserId,
       'objectType': _$ChatObjectTypesEnumEnumMap[instance.objectType],
     };
 

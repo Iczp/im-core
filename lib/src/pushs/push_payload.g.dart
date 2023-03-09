@@ -1,24 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'push_message.dart';
+part of 'push_payload.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-PushMessage _$PushMessageFromJson(Map<String, dynamic> json) => PushMessage(
+PushPayload _$PushPayloadFromJson(Map<String, dynamic> json) => PushPayload(
       appUserId: json['appUserId'] as String,
-      chatObjectId: json['chatObjectId'] as String,
-      sessionUnitId: json['sessionUnitId'] as String,
+      scopes: (json['scopes'] as List<dynamic>)
+          .map((e) => ScopeUnit.fromJson(e as Map<String, dynamic>))
+          .toList(),
       command: json['command'] as String,
       payload: json['payload'] as Object,
     );
 
-Map<String, dynamic> _$PushMessageToJson(PushMessage instance) =>
+Map<String, dynamic> _$PushPayloadToJson(PushPayload instance) =>
     <String, dynamic>{
       'appUserId': instance.appUserId,
-      'chatObjectId': instance.chatObjectId,
-      'sessionUnitId': instance.sessionUnitId,
+      'scopes': instance.scopes,
       'command': instance.command,
       'payload': instance.payload,
     };

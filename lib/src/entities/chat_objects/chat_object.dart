@@ -14,6 +14,7 @@ class ChatObject extends Entity {
     this.portrait,
     this.code,
     this.objectType,
+    this.appUserId,
   });
 
   final int id;
@@ -23,6 +24,8 @@ class ChatObject extends Entity {
   final String? portrait;
 
   final String? code;
+
+  final String? appUserId;
 
   final ChatObjectTypesEnum? objectType;
 
