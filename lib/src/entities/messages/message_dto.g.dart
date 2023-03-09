@@ -8,7 +8,6 @@ part of 'message_dto.dart';
 
 MessageDto _$MessageDtoFromJson(Map<String, dynamic> json) => MessageDto(
       id: json['id'] as int?,
-      autoId: (json['autoId'] as num?)?.toDouble(),
       messageType:
           $enumDecodeNullable(_$MessageTypeEnumEnumMap, json['messageType']),
       sessionId: json['sessionId'] as String?,

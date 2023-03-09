@@ -82,12 +82,14 @@ class MessageDto extends IdInput<int?> {
   final LayerLink _contentLayerLink;
 
   ///
+  @JsonKey(defaultValue: MessageStateEnum.undefined)
   MessageStateEnum state;
 
   ///
   String? _loginUserId;
 
   /// 消息Id,有序
+  @JsonKey(includeFromJson: false, includeToJson: true)
   double? autoId;
 
   /// 消息类型
