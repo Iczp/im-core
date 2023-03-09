@@ -34,9 +34,14 @@ class HttpHelper {
 
     /// https://github.com/flutterchina/dio/blob/develop/example/lib/queued_interceptor_crsftoken.dart
     _dio!.interceptors.add(QueuedInterceptorsWrapper(
-      onRequest: (options, handler) {
+      onRequest: (options, handler) async {
         Logger().i('request options:${options.uri}');
+        // await getToken();
+
+        options.headers['access_token'] = 'test';
+
         Logger().i('request data:${options.data}');
+
         // Do something before request is sent
         return handler.next(options); //continue
         // If you want to resolve the request with some custom data，
@@ -46,12 +51,17 @@ class HttpHelper {
       },
       onResponse: (response, handler) {
         Logger().w('response:$response');
+
+        if (![200, 204].contains(response.statusCode!)) {
+          // return handler
+          //     .reject(DioError(requestOptions: requestOptions)); // continue
+        }
         // Do something with response data
         return handler.next(response); // continue
         // If you want to reject the request with a error message,
         // you can reject a `DioError` object eg: `handler.reject(dioError)`
       },
-      onError: (DioError err, handler) {
+      onError: (DioError err, handler) async {
         // Do something with response error
         print('message:' + err.message);
 
@@ -70,6 +80,7 @@ class HttpHelper {
 
         switch (statusCode) {
           case 401:
+            await getToken();
             // Future.delayed(const Duration(seconds: 2), () {
             //   handler.next(err);
             // });
@@ -92,5 +103,10 @@ class HttpHelper {
     ));
 
     return _dio!;
+  }
+
+  static Future getToken() {
+    Logger().w('getToken');
+    return Future.delayed(const Duration(seconds: 5));
   }
 }
