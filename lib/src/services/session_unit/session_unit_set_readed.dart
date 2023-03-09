@@ -28,7 +28,7 @@ class SessionUnitSetReaded extends RequestPost<SessionUnit> {
 
   final String id;
 
-  final String messageId;
+  final int messageId;
 
   final bool isForce;
 }
