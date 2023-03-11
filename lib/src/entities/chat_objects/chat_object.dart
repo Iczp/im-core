@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:im_core/src/entities/entity.dart';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -39,4 +41,9 @@ class ChatObject extends Entity {
   @override
   ChatObject mapToEntity(Map<String, dynamic> json) =>
       _$ChatObjectFromJson(json);
+
+  @override
+  String toString() {
+    return jsonEncode(toJson());
+  }
 }

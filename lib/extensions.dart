@@ -7,3 +7,5 @@ export 'src/extensions/global_key_extension.dart';
 export 'src/extensions/map_extension.dart';
 
 export 'src/extensions/iterable_extansion.dart';
+
+export 'src/extensions/string_extansion.dart';
