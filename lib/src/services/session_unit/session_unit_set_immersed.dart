@@ -9,9 +9,8 @@ class SessionUnitSetImmersed extends RequestPost<SessionUnit> {
 
   ///
   @override
-  Future<SessionUnit> submit() async {
-    var ret = await request();
-    return SessionUnit.fromJson(ret.data);
+  SessionUnit mapToResult(dynamic data) {
+    return SessionUnit.fromJson(data);
   }
 
   ///

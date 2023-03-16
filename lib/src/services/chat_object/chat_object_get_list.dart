@@ -43,11 +43,10 @@ class ChatObjectGetList extends RequestGetList<PagedOuput<ChatObject>> {
 
   ///
   @override
-  Future<PagedOuput<ChatObject>> submit() async {
-    var res = await request();
+  PagedOuput<ChatObject> mapToResult(dynamic data) {
     return PagedOuput<ChatObject>(
-      totalCount: getTotalCount(res.data),
-      items: getItems(res.data).map((x) => ChatObject.fromJson(x)).toList(),
+      totalCount: getTotalCount(data),
+      items: getItems(data).map((x) => ChatObject.fromJson(x)).toList(),
     );
   }
 }

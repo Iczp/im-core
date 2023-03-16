@@ -32,3 +32,9 @@ export 'src/entities/session_units/session_unit.dart';
 export 'src/entities/session_unit_roles/session_unit_role.dart';
 
 export 'src/entities/session_unit_tags/session_unit_tag.dart';
+
+export 'src/entities/tokens/token_dto.dart';
+
+export 'src/options/http_config.dart';
+
+export 'src/entities/connects/connect_dto.dart';

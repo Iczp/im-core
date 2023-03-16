@@ -1,5 +1,9 @@
 import 'package:dio/dio.dart';
+import 'package:im_core/src/services/auth/token_helper.dart';
+
 import 'package:logger/logger.dart';
+
+import '../options/http_config.dart';
 
 class HttpHelper {
   ///
@@ -7,21 +11,26 @@ class HttpHelper {
 
   static Dio get dio => _dio!;
 
-  static Dio init({
-    required String baseUrl,
-    connectTimeout = 1000 * 30,
-    receiveTimeout = 1000 * 30,
-  }) {
+  static HttpConfig? _httpConfig;
+
+  static HttpConfig get config => _httpConfig!;
+
+  static Dio init(HttpConfig httpConfig) {
+    _httpConfig = httpConfig;
     var options = BaseOptions(
-      baseUrl: baseUrl,
-      connectTimeout: connectTimeout,
-      receiveTimeout: receiveTimeout,
+      baseUrl: httpConfig.apiHost,
+      connectTimeout: httpConfig.connectTimeout,
+      receiveTimeout: httpConfig.receiveTimeout,
     );
     options.contentType = 'application/json';
 
     options.headers['__deviceId__'] = 'IczpNet_123';
 
     options.headers['__version__'] = '1.0';
+
+    TokenHelper.init(Dio(BaseOptions(
+      baseUrl: httpConfig.authHost,
+    )));
 
     _dio = Dio(options);
 
@@ -35,13 +44,18 @@ class HttpHelper {
     /// https://github.com/flutterchina/dio/blob/develop/example/lib/queued_interceptor_crsftoken.dart
     _dio!.interceptors.add(QueuedInterceptorsWrapper(
       onRequest: (options, handler) async {
-        Logger().i('request options:${options.uri}');
-        // await getToken();
+        // options.baseUrl
 
-        options.headers['access_token'] = 'test';
+        try {
+          var accessToken = await TokenHelper.getAccessToken();
+          options.headers['access_token'] = accessToken;
+        } catch (err) {
+          Logger().i(err);
+        }
 
+        Logger().i('request options.headers:${options.headers}');
+        Logger().i('request options.uri:${options.uri}');
         Logger().i('request data:${options.data}');
-
         // Do something before request is sent
         return handler.next(options); //continue
         // If you want to resolve the request with some custom data，
@@ -63,20 +77,25 @@ class HttpHelper {
       },
       onError: (DioError err, handler) async {
         // Do something with response error
-        print('message:' + err.message);
 
-        print('data:' + err.response?.data);
+        print('err:${err}');
+
+        print('message:${err.message}');
+
+        print('data:${err.response?.data}');
 
         if (err.type == DioErrorType.connectTimeout) {
           throw Exception("Connection Timeout Exception");
         }
 
-        if (err.response != null) {
+        if (err.response == null) {
           throw Exception("response is null");
         }
 
         var statusCode = err.response!.statusCode;
         Logger().w('statusCode:$statusCode');
+
+        Map<String, dynamic>? error = err.response!.data;
 
         switch (statusCode) {
           case 401:
@@ -88,6 +107,8 @@ class HttpHelper {
             break;
           case 400:
           case 403:
+            throw Exception(
+                "[$statusCode],runtimeType ${error.runtimeType} $error");
             break;
 
           case 500:

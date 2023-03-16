@@ -17,9 +17,8 @@ class ForwardMessage extends RequestPost<List<int>> {
 
   ///
   @override
-  Future<List<int>> submit() async {
-    var res = await request();
-    return res.data as List<int>;
+  List<int> mapToResult(dynamic data) {
+    return data as List<int>;
   }
 
   ///FromJson

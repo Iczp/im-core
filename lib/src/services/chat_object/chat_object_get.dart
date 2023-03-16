@@ -16,9 +16,8 @@ class ChatObjectGet extends RequestGet<ChatObject> {
   });
 
   @override
-  Future<ChatObject> submit() async {
-    var res = await request();
-    return ChatObject.fromJson(res.data);
+  ChatObject mapToResult(dynamic data) {
+    return ChatObject.fromJson(data);
   }
 
   final int id;

@@ -8,9 +8,8 @@ class SessionUnitGetMessage extends RequestGet<MessageDto> {
 
   ///
   @override
-  Future<MessageDto> submit() async {
-    var ret = await request();
-    return MessageDto.fromJson(ret.data);
+  MessageDto mapToResult(dynamic data) {
+    return MessageDto.fromJson(data);
   }
 
   ///

@@ -62,11 +62,10 @@ class SessionUnitGetMessageList extends RequestGetList<PagedOuput<MessageDto>> {
 
   ///
   @override
-  Future<PagedOuput<MessageDto>> submit() async {
-    var res = await request();
+  PagedOuput<MessageDto> mapToResult(dynamic data) {
     return PagedOuput<MessageDto>(
-      totalCount: getTotalCount(res.data),
-      items: getItems(res.data).map((x) => MessageDto.fromJson(x)).toList(),
+      totalCount: getTotalCount(data),
+      items: getItems(data).map((x) => MessageDto.fromJson(x)).toList(),
     );
   }
 }

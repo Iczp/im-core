@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:logger/logger.dart';
 import '../../src/extensions/map_extension.dart';
 import 'http_helper.dart';
 
@@ -41,6 +42,9 @@ abstract class Request<T> {
   dynamic getPostData() => null;
 
   ///
+  Map<String, dynamic>? get headers => null;
+
+  ///
   @JsonKey(includeFromJson: false, includeToJson: false)
   final Options? options;
 
@@ -58,21 +62,32 @@ abstract class Request<T> {
 
   ///
   Future<Response<dynamic>> request() async {
+    Logger().d('apiUrl', apiUrl);
+    Logger().d('baseUrl', dio.options.baseUrl);
     var ret = await dio.request(
       apiUrl,
       data: getPostData(),
       queryParameters: getQueryParameters()?.removeNullValue(),
       cancelToken: cancelToken,
-      options: options ?? Options(method: _$HttpMethod[httpMethod]),
+      options: options ??
+          Options(method: _$HttpMethod[httpMethod], headers: headers),
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,
     );
-
     return ret;
   }
 
   ///
-  Future<T> submit();
+  Future<T> submit() async {
+    var res = await request();
+    return mapToResult(res.data);
+  }
+
+  ///
+  T mapToResult(dynamic data);
+  // {
+  //   return data;
+  // }
 
   ///
   Map<String, dynamic> toJson() => <String, dynamic>{};

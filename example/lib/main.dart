@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:im_core/im_core.dart';
 import 'package:logger/logger.dart';
 
@@ -56,7 +57,14 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   void initState() {
-    HttpHelper.init(baseUrl: 'http://10.0.5.20:8044');
+    HttpHelper.init(HttpConfig(
+      apiHost: 'http://10.0.5.20:8044',
+      authHost: 'http://10.0.5.20:8043',
+      clientId: 'IM_App',
+      clientSecret: null,
+      username: 'admin',
+      password: '1q2w3E*',
+    ));
     super.initState();
   }
 
@@ -189,6 +197,19 @@ class _MyHomePageState extends State<MyHomePage> {
                 });
               },
               child: const ListTile(title: Text('ChatObjectGetList')),
+            ),
+            InkWell(
+              onTap: () {
+                TokenHelper.login(
+                  username: 'admin',
+                  password: '1q2w3E*',
+                ).then((_) {
+                  Logger().w('refreshToken:${_.refreshToken}');
+                }).catchError((err) {
+                  Logger().w('totalCount:${err}');
+                });
+              },
+              child: const ListTile(title: Text('fetch and refresh token')),
             ),
           ],
         ),

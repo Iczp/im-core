@@ -58,3 +58,12 @@ export 'src/services/chat_object/chat_object_get_list.dart';
 export 'src/services/chat_object/chat_object_get.dart';
 
 export 'src/services/chat_object/chat_object_get_many.dart';
+
+///
+export 'src/services/auth/fetch_token.dart';
+
+export 'src/services/auth/refresh_token.dart';
+
+export 'src/services/auth/token_helper.dart';
+
+export 'src/services/tikets/fetch_ticket.dart';

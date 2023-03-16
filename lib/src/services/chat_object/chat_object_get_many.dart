@@ -24,9 +24,8 @@ class ChatObjectGetMany extends RequestGet<List<ChatObject>> {
   });
 
   @override
-  Future<List<ChatObject>> submit() async {
-    var res = await request();
-    return (res.data as List).map((e) => ChatObject.fromJson(e)).toList();
+  List<ChatObject> mapToResult(dynamic data) {
+    return (data as List).map((e) => ChatObject.fromJson(e)).toList();
   }
 
   final List<int> idList;

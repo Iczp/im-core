@@ -51,12 +51,10 @@ class SessionUnitGetSessionMemberList
 
   ///
   @override
-  Future<PagedOuput<SessionUnitOwner>> submit() async {
-    var res = await request();
+  PagedOuput<SessionUnitOwner> mapToResult(dynamic data) {
     return PagedOuput<SessionUnitOwner>(
-      totalCount: getTotalCount(res.data),
-      items:
-          getItems(res.data).map((x) => SessionUnitOwner.fromJson(x)).toList(),
+      totalCount: getTotalCount(data),
+      items: getItems(data).map((x) => SessionUnitOwner.fromJson(x)).toList(),
     );
   }
 }

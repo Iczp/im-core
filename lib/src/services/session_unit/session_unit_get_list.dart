@@ -64,11 +64,10 @@ class SessionUnitGetList extends RequestGetList<PagedOuput<SessionUnit>> {
 
   ///
   @override
-  Future<PagedOuput<SessionUnit>> submit() async {
-    var res = await request();
+  PagedOuput<SessionUnit> mapToResult(dynamic data) {
     return PagedOuput<SessionUnit>(
-      totalCount: getTotalCount(res.data),
-      items: getItems(res.data).map((x) => SessionUnit.fromJson(x)).toList(),
+      totalCount: getTotalCount(data),
+      items: getItems(data).map((x) => SessionUnit.fromJson(x)).toList(),
     );
   }
 }

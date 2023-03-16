@@ -7,9 +7,7 @@ class SessionUnitKillSession extends RequestPost {
 
   ///
   @override
-  Future submit() async {
-    await request();
-  }
+  mapToResult(dynamic data) {}
 
   SessionUnitKillSession({
     required this.id,

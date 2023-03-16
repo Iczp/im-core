@@ -19,9 +19,8 @@ class SessionUnitGet extends RequestGet<SessionUnit> {
   });
 
   @override
-  Future<SessionUnit> submit() async {
-    var res = await request();
-    return SessionUnit.fromJson(res.data);
+  SessionUnit mapToResult(dynamic data) {
+    return SessionUnit.fromJson(data);
   }
 
   final String id;

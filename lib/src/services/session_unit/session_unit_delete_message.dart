@@ -7,9 +7,7 @@ class SessionUnitDeleteMessage extends RequestPost {
 
   ///
   @override
-  Future submit() async {
-    await request();
-  }
+  void mapToResult(dynamic data) {}
 
   ///
   SessionUnitDeleteMessage({

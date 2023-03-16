@@ -22,10 +22,10 @@ class SessionUnitGetBadge extends RequestGet<int> {
     super.onSendProgress,
   });
 
+  ///
   @override
-  Future<int> submit() async {
-    var res = await request();
-    return (res.data as num).toInt();
+  int mapToResult(dynamic data) {
+    return (data as num).toInt();
   }
 
   final int ownerId;
