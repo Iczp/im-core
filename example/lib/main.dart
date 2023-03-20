@@ -204,12 +204,23 @@ class _MyHomePageState extends State<MyHomePage> {
                   username: 'admin',
                   password: '1q2w3E*',
                 ).then((_) {
-                  Logger().w('refreshToken:${_.refreshToken}');
+                  Logger().w('accessToken:${_.accessToken}');
                 }).catchError((err) {
                   Logger().w('totalCount:${err}');
                 });
               },
-              child: const ListTile(title: Text('fetch and refresh token')),
+              child: const ListTile(title: Text('login fetch token')),
+            ),
+            InkWell(
+              onTap: () {
+                FetchTicket().submit().then((_) {
+                  // Logger().w('FetchTicket:$_');
+                  Fluttertoast.showToast(msg: _.webSocketUrl);
+                }).catchError((err, x) {
+                  Logger().w('FetchTicket:${err},$x');
+                });
+              },
+              child: const ListTile(title: Text('FetchTicket')),
             ),
           ],
         ),

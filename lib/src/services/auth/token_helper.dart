@@ -6,7 +6,7 @@ class TokenHelper {
   ///
   static TokenDto? _token;
 
-  static TokenDto? get token => _token;
+  // static TokenDto? get token => _token;
 
   static Dio? _dio;
 
@@ -14,7 +14,7 @@ class TokenHelper {
 
   static init(Dio dio) => _dio = dio;
 
-  static Future<String> getAccessToken() async {
+  static Future<TokenDto?> getToken() async {
     // token ??= await FetchToken(
     //   clientId: HttpHelper.config.clientId!,
     //   clientSecret: HttpHelper.config.clientSecret,
@@ -24,21 +24,19 @@ class TokenHelper {
     // ).submit();
 
     if (_token == null) {
-      return Future.error('token is null,please login!');
+      Logger().i('token is null,please login!');
+      return null;
     }
     if (_token!.isExpired()) {
-      Logger().i('RefreshToken');
-      try {
-        _token = await RefreshToken(
-          refreshToken: token!.refreshToken!,
-          clientId: HttpHelper.config.clientId!,
-          clientSecret: HttpHelper.config.clientSecret!,
-        ).submit();
-      } catch (err) {
-        return Future.error('RefreshToken fail:$err');
-      }
+      // Logger().w('token isExpired, RefreshToken');
+      // try {
+      //   _token = await refreshToken(refreshToken: _token!.refreshToken!);
+      // } catch (err) {
+      //   Logger().w('RefreshToken fail:$err');
+      //   return null;
+      // }
     }
-    return Future.value(_token!.accessToken);
+    return _token;
   }
 
   static TokenDto setToken(TokenDto token) {
@@ -56,6 +54,15 @@ class TokenHelper {
       username: HttpHelper.config.username!,
       password: HttpHelper.config.password!,
       scope: 'IM offline_access roles profile phone email address',
+    ).submit();
+    return _token!;
+  }
+
+  static Future<TokenDto> refreshToken({required String refreshToken}) async {
+    _token = await RefreshToken(
+      refreshToken: refreshToken,
+      clientId: HttpHelper.config.clientId!,
+      clientSecret: HttpHelper.config.clientSecret!,
     ).submit();
     return _token!;
   }

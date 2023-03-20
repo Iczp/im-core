@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:dio/dio.dart';
 import 'package:im_core/src/services/auth/token_helper.dart';
 
@@ -8,6 +10,8 @@ import '../options/http_config.dart';
 class HttpHelper {
   ///
   static Dio? _dio;
+
+  static int i = 0;
 
   static Dio get dio => _dio!;
 
@@ -47,11 +51,24 @@ class HttpHelper {
         // options.baseUrl
 
         try {
-          var accessToken = await TokenHelper.getAccessToken();
-          options.headers['access_token'] = accessToken;
+          var token = await TokenHelper.getToken();
+          if (token != null) {
+            Logger().i('$i ${token.accessToken}');
+            Logger().i(options.headers['authorization']);
+            i++;
+            options.headers['authorization'] = 'Bearer ${token.accessToken}';
+            Logger().i(token.creationTime);
+
+            Logger().w(options.headers['authorization']);
+          }
         } catch (err) {
           Logger().i(err);
         }
+        // var aaa =
+        //     'Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IkIyMTIyOTg4MDQ2ODM2NjFEQTRGNjY4QzY5RkYwREQxOUFFRkU5NUMiLCJ4NXQiOiJzaElwaUFSb05tSGFUMmFNYWY4TjBacnY2VnciLCJ0eXAiOiJhdCtqd3QifQ.eyJzdWIiOiIzNjBjZmVkYi1lOTJkLTMzMzEtMWZhZC0zYTA4NjM3MWUwZTQiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJhZG1pbiIsImVtYWlsIjoiYWRtaW5AYWJwLmlvIiwicm9sZSI6ImFkbWluIiwiZ2l2ZW5fbmFtZSI6ImFkbWluIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJlbWFpbF92ZXJpZmllZCI6IkZhbHNlIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsImNoYXRfb2JqZWN0X2lkIjpbIjEzIiwiMTQiXSwiY2hhdF9vYmplY3RfY291bnQiOjIsIm9pX3Byc3QiOiJJTV9BcHAiLCJvaV9hdV9pZCI6IjVkNmYwOTQyLWY5OWItMDlmNy0xNjk2LTNhMGEwZWUzMTVjZSIsImNsaWVudF9pZCI6IklNX0FwcCIsIm9pX3Rrbl9pZCI6IjhmOTY0NzdiLWZhMWYtNDYyZS05NDczLTNhMGEwZWUzMTVmMSIsImF1ZCI6IklNIiwic2NvcGUiOiJJTSBvZmZsaW5lX2FjY2VzcyByb2xlcyBwcm9maWxlIHBob25lIGVtYWlsIGFkZHJlc3MiLCJqdGkiOiJkYWYwNzEzMi1jODY3LTRiZjAtOTk3OS1hY2U0YzM5OGI1ODIiLCJleHAiOjE2NzkzNjM0NDcsImlzcyI6Imh0dHA6Ly8xMC4wLjUuMjA6ODA0My8iLCJpYXQiOjE2NzkyNzcwNDd9.TEGzkMogC0x6w_d_VaN_5fM0tImNTgf7pbn_89f79-efPKE3fLk8eY';
+
+        // options.headers['authorization'] = aaa;
+        // Logger().e('============${options.headers['authorization'] == aaa}');
 
         Logger().i('request options.headers:${options.headers}');
         Logger().i('request options.uri:${options.uri}');
@@ -94,12 +111,14 @@ class HttpHelper {
 
         var statusCode = err.response!.statusCode;
         Logger().w('statusCode:$statusCode');
-
-        Map<String, dynamic>? error = err.response!.data;
+        Logger().w('err.response:${err.response}');
+        var error = err.response!.data;
 
         switch (statusCode) {
           case 401:
-            await getToken();
+            // handler.reject(err);
+            // throw Exception(
+            //     "[$statusCode],runtimeType ${error.runtimeType} $error");
             // Future.delayed(const Duration(seconds: 2), () {
             //   handler.next(err);
             // });
@@ -124,10 +143,5 @@ class HttpHelper {
     ));
 
     return _dio!;
-  }
-
-  static Future getToken() {
-    Logger().w('getToken');
-    return Future.delayed(const Duration(seconds: 5));
   }
 }

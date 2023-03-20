@@ -5,14 +5,14 @@ part 'connect_dto.g.dart';
 @JsonSerializable()
 class ConnectDto {
   ConnectDto({
-    required this.webScoketUrl,
+    required this.webSocketUrl,
     this.pingIntervalSeconds = 3,
     this.timeoutSeconds = 30,
     this.heartbeatSeconds = 10,
     this.expireSeconds = 60,
   });
 
-  final String webScoketUrl;
+  final String webSocketUrl;
 
   @JsonKey(defaultValue: 3)
   final int pingIntervalSeconds;

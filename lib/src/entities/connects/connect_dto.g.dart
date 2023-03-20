@@ -7,7 +7,7 @@ part of 'connect_dto.dart';
 // **************************************************************************
 
 ConnectDto _$ConnectDtoFromJson(Map<String, dynamic> json) => ConnectDto(
-      webScoketUrl: json['webScoketUrl'] as String,
+      webSocketUrl: json['webSocketUrl'] as String,
       pingIntervalSeconds: json['pingIntervalSeconds'] as int? ?? 3,
       timeoutSeconds: json['timeoutSeconds'] as int? ?? 30,
       heartbeatSeconds: json['heartbeatSeconds'] as int? ?? 10,
@@ -16,7 +16,7 @@ ConnectDto _$ConnectDtoFromJson(Map<String, dynamic> json) => ConnectDto(
 
 Map<String, dynamic> _$ConnectDtoToJson(ConnectDto instance) =>
     <String, dynamic>{
-      'webScoketUrl': instance.webScoketUrl,
+      'webSocketUrl': instance.webSocketUrl,
       'pingIntervalSeconds': instance.pingIntervalSeconds,
       'timeoutSeconds': instance.timeoutSeconds,
       'heartbeatSeconds': instance.heartbeatSeconds,
