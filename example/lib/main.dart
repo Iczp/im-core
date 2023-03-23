@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:im_core/im_core.dart';
@@ -54,6 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
   MediaDto mediaDto = MediaDto(id: 'ddd', name: 'test');
+  late StreamSubscription<PushPayload> _pushPaylaodSubscription;
 
   @override
   void initState() {
@@ -66,6 +69,16 @@ class _MyHomePageState extends State<MyHomePage> {
       password: '1q2w3E*',
     ));
     super.initState();
+
+    _pushPaylaodSubscription = WebWocketManager.singleton.onMessage((message) {
+      Logger().d('msg:$message');
+    });
+  }
+
+  @override
+  void dispose() {
+    _pushPaylaodSubscription.cancel();
+    super.dispose();
   }
 
   void _incrementCounter() {
@@ -200,7 +213,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             InkWell(
               onTap: () {
-                TokenHelper.login(
+                TokenManager.login(
                   username: 'admin',
                   password: '1q2w3E*',
                 ).then((_) {
@@ -216,11 +229,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 FetchTicket().submit().then((_) {
                   // Logger().w('FetchTicket:$_');
                   Fluttertoast.showToast(msg: _.webSocketUrl);
+                  WebWocketManager.singleton.connect(_);
                 }).catchError((err, x) {
                   Logger().w('FetchTicket:${err},$x');
                 });
               },
-              child: const ListTile(title: Text('FetchTicket')),
+              child: const ListTile(title: Text('FetchTicket WebWocketHelper')),
             ),
           ],
         ),

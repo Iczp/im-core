@@ -26,13 +26,13 @@ class PushPayload extends Entity {
 
   final String command;
 
-  final Object payload;
+  final dynamic payload;
 
   ///FromJson
   factory PushPayload.fromJson(Map<String, dynamic> json) =>
       _$PushPayloadFromJson(json);
 
-  ///ToJson
+  @override
   Map<String, dynamic> toJson() => _$PushPayloadToJson(this);
 
   @override

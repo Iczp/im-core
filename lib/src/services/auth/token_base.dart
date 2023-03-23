@@ -13,7 +13,7 @@ abstract class TokenBase extends RequestPost<TokenDto> {
 
   ///
   @override
-  Dio get dio => TokenHelper.dio;
+  Dio get dio => TokenManager.dio;
 
   ///
   @override

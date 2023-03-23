@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 
 abstract class Entity {
@@ -15,5 +17,12 @@ abstract class Entity {
 
   mapToEntity(Map<String, dynamic> json) {
     throw UnimplementedError('Unimplemented method "mapToEntity"');
+  }
+
+  Map<String, dynamic> toJson();
+
+  @override
+  String toString() {
+    return jsonEncode(toJson());
   }
 }

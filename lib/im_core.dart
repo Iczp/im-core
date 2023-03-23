@@ -9,3 +9,5 @@ export 'extensions.dart';
 export 'services.dart';
 
 export 'pushs.dart';
+
+export 'src/websocket_manager.dart';

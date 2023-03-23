@@ -64,6 +64,6 @@ export 'src/services/auth/fetch_token.dart';
 
 export 'src/services/auth/refresh_token.dart';
 
-export 'src/services/auth/token_helper.dart';
+export 'src/services/auth/token_manager.dart';
 
 export 'src/services/tikets/fetch_ticket.dart';

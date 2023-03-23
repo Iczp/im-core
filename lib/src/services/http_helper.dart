@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
-import 'package:im_core/src/services/auth/token_helper.dart';
+import 'package:im_core/src/services/auth/token_manager.dart';
 
 import 'package:logger/logger.dart';
 
@@ -32,7 +32,7 @@ class HttpHelper {
 
     options.headers['__version__'] = '1.0';
 
-    TokenHelper.init(Dio(BaseOptions(
+    TokenManager.init(Dio(BaseOptions(
       baseUrl: httpConfig.authHost,
     )));
 
@@ -51,12 +51,13 @@ class HttpHelper {
         // options.baseUrl
 
         try {
-          var token = await TokenHelper.getToken();
+          var token = await TokenManager.getToken();
           if (token != null) {
             Logger().i('$i ${token.accessToken}');
             Logger().i(options.headers['authorization']);
             i++;
-            options.headers['authorization'] = 'Bearer ${token.accessToken}';
+            options.headers['authorization'] =
+                '${token.tokenType} ${token.accessToken}';
             Logger().i(token.creationTime);
 
             Logger().w(options.headers['authorization']);

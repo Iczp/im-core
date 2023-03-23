@@ -2,9 +2,22 @@ import 'package:dio/dio.dart';
 import 'package:im_core/im_core.dart';
 import 'package:logger/logger.dart';
 
-class TokenHelper {
+class TokenManager {
+  //私有构造函数
+  TokenManager._internal();
+
+  //保存单例
+  static final _singleton = TokenManager._internal();
+
+  //工厂构造函数
+  static TokenManager get singleton => _singleton;
+
   ///
   static TokenDto? _token;
+
+  static TokenDto get token => _token!;
+
+  static String get authorization => '${token.tokenType} ${token.accessToken}';
 
   // static TokenDto? get token => _token;
 
