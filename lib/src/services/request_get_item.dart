@@ -1,9 +1,9 @@
 import 'request_get.dart';
 
 abstract class RequestGetItem<T, Tkey> extends RequestGet<T> {
-  ///
-  @override
-  Map<String, dynamic>? getQueryParameters() => {'id': id};
+  // ///
+  // @override
+  // Map<String, dynamic>? getQueryParameters() => {'id': id};
 
   ///
   RequestGetItem({

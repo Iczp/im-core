@@ -10,6 +10,12 @@ ChatObjectGetList _$ChatObjectGetListFromJson(Map<String, dynamic> json) =>
     ChatObjectGetList(
       objectType:
           $enumDecodeNullable(_$ChatObjectTypesEnumEnumMap, json['objectType']),
+      parentId: json['parentId'] as int?,
+      isEnabledParentId: json['isEnabledParentId'] as bool?,
+      isImportChildCategory: json['isImportChildCategory'] as bool?,
+      categoryIdList: (json['categoryIdList'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       maxResultCount: json['maxResultCount'] as int? ?? 10,
       skipCount: json['skipCount'] as int? ?? 0,
       sorting: json['sorting'] as String?,
@@ -23,6 +29,10 @@ Map<String, dynamic> _$ChatObjectGetListToJson(ChatObjectGetList instance) =>
       'sorting': instance.sorting,
       'keyword': instance.keyword,
       'objectType': _$ChatObjectTypesEnumEnumMap[instance.objectType],
+      'parentId': instance.parentId,
+      'isEnabledParentId': instance.isEnabledParentId,
+      'isImportChildCategory': instance.isImportChildCategory,
+      'categoryIdList': instance.categoryIdList,
     };
 
 const _$ChatObjectTypesEnumEnumMap = {

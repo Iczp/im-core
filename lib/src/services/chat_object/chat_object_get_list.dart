@@ -16,14 +16,16 @@ class ChatObjectGetList extends RequestGetList<PagedOuput<ChatObject>> {
   ///
   ChatObjectGetList({
     this.objectType,
+    this.parentId,
+    this.isEnabledParentId,
+    this.isImportChildCategory,
+    this.categoryIdList,
     super.maxResultCount = 10,
     super.skipCount = 0,
     super.sorting,
     super.keyword,
   })  : assert(skipCount >= 0),
         assert(maxResultCount > 0 && maxResultCount < 1000);
-
-  final ChatObjectTypesEnum? objectType;
 
   ///FromJson
   factory ChatObjectGetList.fromJson(Map<String, dynamic> json) =>
@@ -41,4 +43,14 @@ class ChatObjectGetList extends RequestGetList<PagedOuput<ChatObject>> {
       items: getItems(data).map((x) => ChatObject.fromJson(x)).toList(),
     );
   }
+
+  final ChatObjectTypesEnum? objectType;
+
+  final int? parentId;
+
+  final bool? isEnabledParentId;
+
+  final bool? isImportChildCategory;
+
+  final List<String>? categoryIdList;
 }

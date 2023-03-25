@@ -4,7 +4,7 @@ import '../request_get_item.dart';
 class ChatObjectGet extends RequestGetItem<ChatObject, int> {
   ///
   @override
-  String get apiUrl => '/api/app/chat-object';
+  String get apiUrl => '/api/app/chat-object/$id';
 
   ///
   ChatObjectGet({
