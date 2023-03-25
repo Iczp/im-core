@@ -40,19 +40,6 @@ class WebWocketManager {
       pingInterval: Duration(seconds: connectDto.pingIntervalSeconds),
       connectTimeout: Duration(seconds: connectDto.timeoutSeconds),
     );
-// 监听连接状态
-    // channel.stream.listen((event) {
-    //   Logger().e('WebSocket event:$event');
-    // });
-    // WebSocket.connect(connectDto.webSocketUrl).then((webSocket) {
-    //   Logger().i('webSocket connected');
-    // }).catchError((err) {
-    //   Logger().e(err);
-    // });
-
-    channel.innerWebSocket?.done.then((value) {
-      Logger().e('webSocket connected');
-    });
 
     Logger().d('websocket connect to:${connectDto.webSocketUrl}');
     Logger().d('readyState:${channel.innerWebSocket?.readyState}');

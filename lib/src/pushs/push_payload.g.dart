@@ -12,7 +12,7 @@ PushPayload _$PushPayloadFromJson(Map<String, dynamic> json) => PushPayload(
           .map((e) => ScopeUnit.fromJson(e as Map<String, dynamic>))
           .toList(),
       command: json['command'] as String,
-      payload: json['payload'] as Object,
+      payload: json['payload'],
     );
 
 Map<String, dynamic> _$PushPayloadToJson(PushPayload instance) =>

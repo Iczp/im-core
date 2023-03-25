@@ -14,6 +14,9 @@ ChatObject _$ChatObjectFromJson(Map<String, dynamic> json) => ChatObject(
       objectType:
           $enumDecodeNullable(_$ChatObjectTypesEnumEnumMap, json['objectType']),
       appUserId: json['appUserId'] as String?,
+      depth: json['depth'] as int? ?? 0,
+      fullPath: json['fullPath'] as String?,
+      fullPathName: json['fullPathName'] as String?,
     );
 
 Map<String, dynamic> _$ChatObjectToJson(ChatObject instance) =>
@@ -24,6 +27,9 @@ Map<String, dynamic> _$ChatObjectToJson(ChatObject instance) =>
       'code': instance.code,
       'appUserId': instance.appUserId,
       'objectType': _$ChatObjectTypesEnumEnumMap[instance.objectType],
+      'depth': instance.depth,
+      'fullPath': instance.fullPath,
+      'fullPathName': instance.fullPathName,
     };
 
 const _$ChatObjectTypesEnumEnumMap = {

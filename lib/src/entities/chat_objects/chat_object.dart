@@ -17,6 +17,9 @@ class ChatObject extends Entity {
     this.code,
     this.objectType,
     this.appUserId,
+    this.depth = 0,
+    this.fullPath,
+    this.fullPathName,
   });
 
   final int id;
@@ -31,11 +34,18 @@ class ChatObject extends Entity {
 
   final ChatObjectTypesEnum? objectType;
 
+  final int depth;
+
+  final String? fullPath;
+
+  final String? fullPathName;
+
   ///FromJson
   factory ChatObject.fromJson(Map<String, dynamic> json) =>
       _$ChatObjectFromJson(json);
 
   ///ToJson
+  @override
   Map<String, dynamic> toJson() => _$ChatObjectToJson(this);
 
   @override
