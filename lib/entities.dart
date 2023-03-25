@@ -38,3 +38,6 @@ export 'src/entities/tokens/token_dto.dart';
 export 'src/options/http_config.dart';
 
 export 'src/entities/connects/connect_dto.dart';
+
+///
+export 'src/entities/friendship_request/friendship_request_dto.dart';

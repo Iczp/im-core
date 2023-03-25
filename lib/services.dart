@@ -78,3 +78,10 @@ export 'src/services/auth/refresh_token.dart';
 export 'src/services/auth/token_manager.dart';
 
 export 'src/services/tikets/fetch_ticket.dart';
+
+/// friendshipRequest
+export 'src/services/friendship_request/friendship_request_create.dart';
+export 'src/services/friendship_request/friendship_request_handle.dart';
+export 'src/services/friendship_request/friendship_request_get_item.dart';
+export 'src/services/friendship_request/friendship_request_get_list.dart';
+export 'src/services/friendship_request/friendship_request_get_many.dart';
