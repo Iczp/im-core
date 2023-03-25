@@ -52,12 +52,23 @@ export 'src/services/messages/send_video_message.dart';
 
 export 'src/services/messages/send_file_message.dart';
 
-///
-export 'src/services/chat_object/chat_object_get_list.dart';
+/// chat_object
 
 export 'src/services/chat_object/chat_object_get.dart';
 
 export 'src/services/chat_object/chat_object_get_many.dart';
+
+export 'src/services/chat_object/chat_object_get_by_code.dart';
+
+export 'src/services/chat_object/chat_object_get_by_user_id.dart';
+
+export 'src/services/chat_object/chat_object_get_list.dart';
+
+export 'src/services/chat_object/chat_object_get_list_by_current_user.dart';
+
+export 'src/services/chat_object/chat_object_create_room.dart';
+
+export 'src/services/chat_object/chat_object_update.dart';
 
 ///
 export 'src/services/auth/fetch_token.dart';

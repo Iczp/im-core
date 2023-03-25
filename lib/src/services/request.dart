@@ -1,7 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:json_annotation/json_annotation.dart';
 import 'package:logger/logger.dart';
 import '../../src/extensions/map_extension.dart';
 import 'http_helper.dart';

@@ -213,6 +213,29 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             InkWell(
               onTap: () {
+                ChatObjectCreateRoom(
+                  name: 'CreateRoom-${DateTime.now()}',
+                  chatObjectIdList: <int>[100, 1008, 108, 111, 112],
+                ).submit().then((entity) {
+                  Logger().w('result:$entity');
+                });
+              },
+              child: const ListTile(title: Text('ChatObjectCreateRoom')),
+            ),
+            InkWell(
+              onTap: () {
+                ChatObjectUpdate(
+                  id: 5841,
+                  name: 'UpdateRoom-${DateTime.now()}',
+                  description: 'description${DateTime.now()}',
+                ).submit().then((entity) {
+                  Logger().w('result:$entity');
+                });
+              },
+              child: const ListTile(title: Text('ChatObject - UpdateRoom')),
+            ),
+            InkWell(
+              onTap: () {
                 TokenManager.login(
                   username: 'admin',
                   password: '1q2w3E*',

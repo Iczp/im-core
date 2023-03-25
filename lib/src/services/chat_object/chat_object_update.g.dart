@@ -6,8 +6,8 @@ part of 'chat_object_update.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-ChatObjectGetUpdate _$ChatObjectGetUpdateFromJson(Map<String, dynamic> json) =>
-    ChatObjectGetUpdate(
+ChatObjectUpdate _$ChatObjectUpdateFromJson(Map<String, dynamic> json) =>
+    ChatObjectUpdate(
       id: json['id'] as int,
       parentId: json['parentId'] as int?,
       name: json['name'] as String,
@@ -16,8 +16,7 @@ ChatObjectGetUpdate _$ChatObjectGetUpdateFromJson(Map<String, dynamic> json) =>
       sorting: json['sorting'] as int? ?? 0,
     );
 
-Map<String, dynamic> _$ChatObjectGetUpdateToJson(
-        ChatObjectGetUpdate instance) =>
+Map<String, dynamic> _$ChatObjectUpdateToJson(ChatObjectUpdate instance) =>
     <String, dynamic>{
       'parentId': instance.parentId,
       'name': instance.name,

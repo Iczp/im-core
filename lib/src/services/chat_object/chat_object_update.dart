@@ -5,7 +5,7 @@ import 'package:json_annotation/json_annotation.dart';
 part 'chat_object_update.g.dart';
 
 @JsonSerializable()
-class ChatObjectGetUpdate extends RequestPost<ChatObject> {
+class ChatObjectUpdate extends RequestPost<ChatObject> {
   ///
   @override
   String get apiUrl => '/api/app/chat-object';
@@ -15,11 +15,7 @@ class ChatObjectGetUpdate extends RequestPost<ChatObject> {
   Map<String, dynamic>? getQueryParameters() => {'id': id};
 
   ///
-  @override
-  dynamic getPostData() => toJson();
-
-  ///
-  ChatObjectGetUpdate({
+  ChatObjectUpdate({
     required this.id,
     this.parentId,
     required this.name,
@@ -29,12 +25,12 @@ class ChatObjectGetUpdate extends RequestPost<ChatObject> {
   });
 
   ///FromJson
-  factory ChatObjectGetUpdate.fromJson(Map<String, dynamic> json) =>
-      _$ChatObjectGetUpdateFromJson(json);
+  factory ChatObjectUpdate.fromJson(Map<String, dynamic> json) =>
+      _$ChatObjectUpdateFromJson(json);
 
   ///ToJson
   @override
-  Map<String, dynamic> toJson() => _$ChatObjectGetUpdateToJson(this);
+  Map<String, dynamic> toJson() => _$ChatObjectUpdateToJson(this);
 
   @override
   ChatObject mapToResult(dynamic data) {
