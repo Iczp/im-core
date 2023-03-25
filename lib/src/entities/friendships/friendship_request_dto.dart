@@ -1,10 +1,5 @@
-import 'dart:convert';
-
 import 'package:im_core/entities.dart';
-import 'package:im_core/src/entities/entity.dart';
 import 'package:json_annotation/json_annotation.dart';
-
-import '../../enums/chat_object_types_enum.dart';
 
 part 'friendship_request_dto.g.dart';
 
@@ -45,9 +40,4 @@ class FriendshipRequestDto extends Entity {
   @override
   FriendshipRequestDto mapToEntity(Map<String, dynamic> json) =>
       _$FriendshipRequestDtoFromJson(json);
-
-  @override
-  String toString() {
-    return jsonEncode(toJson());
-  }
 }

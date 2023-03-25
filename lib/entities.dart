@@ -39,5 +39,6 @@ export 'src/options/http_config.dart';
 
 export 'src/entities/connects/connect_dto.dart';
 
-///
-export 'src/entities/friendship_request/friendship_request_dto.dart';
+///friendships
+export 'src/entities/friendships/friendship_request_dto.dart';
+export 'src/entities/friendships/friendship_tag_dto.dart';
