@@ -17,13 +17,15 @@ const _$HttpMethod = {
 };
 
 abstract class Request<T> {
-  ///
-  Request({
-    this.onSendProgress,
-    this.options,
-    this.cancelToken,
-    this.onReceiveProgress,
-  });
+  // Request();
+
+  // ///
+  // Request({
+  //   this.onSendProgress,
+  //   this.options,
+  //   this.cancelToken,
+  //   this.onReceiveProgress,
+  // });
 
   ///
   @required
@@ -44,24 +46,29 @@ abstract class Request<T> {
   ///
   Map<String, dynamic>? get headers => null;
 
-  ///
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  final Options? options;
+  // ///
+  // @JsonKey(includeFromJson: false, includeToJson: false)
+  // final Options? options;
+
+  // ///
+  // @JsonKey(includeFromJson: false, includeToJson: false)
+  // final CancelToken? cancelToken;
+
+  // /// https://github.com/google/json_serializable.dart/blob/06718b94d8e213e7b057326e3d3c555c940c1362/json_annotation/lib/src/json_key.dart#L45-L49
+  // @JsonKey(includeFromJson: false, includeToJson: false)
+  // final ProgressCallback? onSendProgress;
+
+  // ///
+  // @JsonKey(includeFromJson: false, includeToJson: false)
+  // final ProgressCallback? onReceiveProgress;
 
   ///
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  final CancelToken? cancelToken;
-
-  /// https://github.com/google/json_serializable.dart/blob/06718b94d8e213e7b057326e3d3c555c940c1362/json_annotation/lib/src/json_key.dart#L45-L49
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  final ProgressCallback? onSendProgress;
-
-  ///
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  final ProgressCallback? onReceiveProgress;
-
-  ///
-  Future<Response<dynamic>> request() async {
+  Future<Response<dynamic>> request({
+    Options? options,
+    CancelToken? cancelToken,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
     Logger().d('apiUrl', apiUrl);
     Logger().d('baseUrl', dio.options.baseUrl);
     var ret = await dio.request(
@@ -78,8 +85,18 @@ abstract class Request<T> {
   }
 
   ///
-  Future<T> submit() async {
-    var res = await request();
+  Future<T> submit({
+    Options? options,
+    CancelToken? cancelToken,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    var res = await request(
+      options: options,
+      cancelToken: cancelToken,
+      onReceiveProgress: onReceiveProgress,
+      onSendProgress: onSendProgress,
+    );
     return mapToResult(res.data);
   }
 

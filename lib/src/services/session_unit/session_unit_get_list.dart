@@ -27,10 +27,6 @@ class SessionUnitGetList extends RequestGetList<PagedOuput<SessionUnit>> {
     super.skipCount = 0,
     super.sorting,
     super.keyword,
-    super.options,
-    super.cancelToken,
-    super.onReceiveProgress,
-    super.onSendProgress,
   })  : assert(skipCount >= 0),
         assert(maxResultCount > 0 && maxResultCount < 1000);
 

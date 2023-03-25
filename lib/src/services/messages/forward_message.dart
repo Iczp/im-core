@@ -35,10 +35,6 @@ class ForwardMessage extends RequestPost<List<int>> {
     required this.senderId,
     required this.sessionUnitId,
     this.ignoreConnections,
-    super.options,
-    super.cancelToken,
-    super.onReceiveProgress,
-    super.onSendProgress,
   });
 
   final String sessionUnitId;

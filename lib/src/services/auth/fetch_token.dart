@@ -13,10 +13,6 @@ class FetchToken extends TokenBase {
     this.grantType = "password",
     required super.clientId,
     super.clientSecret,
-    super.options,
-    super.cancelToken,
-    super.onReceiveProgress,
-    super.onSendProgress,
   });
 
   final String username;

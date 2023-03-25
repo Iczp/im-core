@@ -11,10 +11,6 @@ class SessionUnitKillSession extends RequestPost {
 
   SessionUnitKillSession({
     required this.id,
-    super.options,
-    super.cancelToken,
-    super.onReceiveProgress,
-    super.onSendProgress,
   });
 
   final String id;

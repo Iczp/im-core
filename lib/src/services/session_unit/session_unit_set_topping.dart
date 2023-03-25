@@ -17,10 +17,6 @@ class SessionUnitSetTopping extends RequestPost<SessionUnit> {
   SessionUnitSetTopping({
     required this.id,
     required this.isTopping,
-    super.options,
-    super.cancelToken,
-    super.onReceiveProgress,
-    super.onSendProgress,
   });
 
   final String id;

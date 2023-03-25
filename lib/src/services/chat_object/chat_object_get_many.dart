@@ -1,32 +1,21 @@
 import 'package:im_core/entities.dart';
-import '../request_get.dart';
+import 'package:im_core/src/services/request_get_many.dart';
 
-// part 'session_unit_get.g.dart';
+// part 'chat_object_get_many.g.dart';
 
 // @JsonSerializable()
-class ChatObjectGetMany extends RequestGet<List<ChatObject>> {
+class ChatObjectGetMany extends RequestGetMany<List<ChatObject>, int> {
   ///
   @override
   String get apiUrl => '/api/app/chat-object/many';
 
-  @override
-  Map<String, dynamic>? getQueryParameters() => {
-        'idList': idList,
-      };
-
   ///
   ChatObjectGetMany({
-    required this.idList,
-    super.options,
-    super.cancelToken,
-    super.onReceiveProgress,
-    super.onSendProgress,
+    required super.idList,
   });
 
   @override
   List<ChatObject> mapToResult(dynamic data) {
     return (data as List).map((e) => ChatObject.fromJson(e)).toList();
   }
-
-  final List<int> idList;
 }

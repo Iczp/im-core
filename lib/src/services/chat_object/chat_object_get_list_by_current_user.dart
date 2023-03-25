@@ -1,21 +1,24 @@
 import 'package:im_core/entities.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-import '../../enums/chat_object_types_enum.dart';
 import '../base_dtos/paged_output.dart';
 import '../request_get_list.dart';
 
-part 'chat_object_get_list.g.dart';
+part 'chat_object_get_list_by_current_user.g.dart';
 
 @JsonSerializable()
-class ChatObjectGetList extends RequestGetList<PagedOuput<ChatObject>> {
+class ChatObjectGetListByCurrentUser
+    extends RequestGetList<PagedOuput<ChatObject>> {
   ///
   @override
-  String get apiUrl => '/api/app/chat-object';
+  String get apiUrl => '/api/app/chat-object/by-current-user';
 
   ///
-  ChatObjectGetList({
-    this.objectType,
+  @override
+  Map<String, dynamic>? getQueryParameters() => toJson();
+
+  ///
+  ChatObjectGetListByCurrentUser({
     super.maxResultCount = 10,
     super.skipCount = 0,
     super.sorting,
@@ -23,15 +26,13 @@ class ChatObjectGetList extends RequestGetList<PagedOuput<ChatObject>> {
   })  : assert(skipCount >= 0),
         assert(maxResultCount > 0 && maxResultCount < 1000);
 
-  final ChatObjectTypesEnum? objectType;
-
   ///FromJson
-  factory ChatObjectGetList.fromJson(Map<String, dynamic> json) =>
-      _$ChatObjectGetListFromJson(json);
+  factory ChatObjectGetListByCurrentUser.fromJson(Map<String, dynamic> json) =>
+      _$ChatObjectGetListByCurrentUserFromJson(json);
 
   ///ToJson
   @override
-  Map<String, dynamic> toJson() => _$ChatObjectGetListToJson(this);
+  Map<String, dynamic> toJson() => _$ChatObjectGetListByCurrentUserToJson(this);
 
   ///
   @override

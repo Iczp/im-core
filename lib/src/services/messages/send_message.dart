@@ -25,10 +25,6 @@ abstract class SendMessage<T extends MessageContent>
     required this.content,
     required this.sessionUnitId,
     this.ignoreConnections,
-    super.options,
-    super.cancelToken,
-    super.onReceiveProgress,
-    super.onSendProgress,
   });
 
   final String sessionUnitId;

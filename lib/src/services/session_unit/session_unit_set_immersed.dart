@@ -17,10 +17,6 @@ class SessionUnitSetImmersed extends RequestPost<SessionUnit> {
   SessionUnitSetImmersed({
     required this.id,
     required this.isImmersed,
-    super.options,
-    super.cancelToken,
-    super.onReceiveProgress,
-    super.onSendProgress,
   });
 
   final String id;

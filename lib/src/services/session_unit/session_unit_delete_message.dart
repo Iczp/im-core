@@ -13,10 +13,6 @@ class SessionUnitDeleteMessage extends RequestPost {
   SessionUnitDeleteMessage({
     required this.id,
     required this.messageId,
-    super.options,
-    super.cancelToken,
-    super.onReceiveProgress,
-    super.onSendProgress,
   });
 
   final String id;

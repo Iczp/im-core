@@ -16,10 +16,6 @@ class SessionUnitGetBadge extends RequestGet<int> {
   SessionUnitGetBadge({
     required this.ownerId,
     this.isImmersed,
-    super.options,
-    super.cancelToken,
-    super.onReceiveProgress,
-    super.onSendProgress,
   });
 
   ///

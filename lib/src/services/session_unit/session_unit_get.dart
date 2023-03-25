@@ -12,10 +12,6 @@ class SessionUnitGet extends RequestGet<SessionUnit> {
   ///
   SessionUnitGet({
     required this.id,
-    super.options,
-    super.cancelToken,
-    super.onReceiveProgress,
-    super.onSendProgress,
   });
 
   @override

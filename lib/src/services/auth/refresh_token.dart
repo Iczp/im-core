@@ -11,10 +11,6 @@ class RefreshToken extends TokenBase {
     this.grantType = "refresh_token",
     required super.clientId,
     required super.clientSecret,
-    super.options,
-    super.cancelToken,
-    super.onReceiveProgress,
-    super.onSendProgress,
   });
 
   @JsonKey(name: 'refresh_token')

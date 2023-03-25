@@ -7,15 +7,15 @@ abstract class RequestGetList<T extends PagedOuput> extends Request<T> {
   HttpMethod get httpMethod => HttpMethod.get;
 
   ///
+  @override
+  Map<String, dynamic>? getQueryParameters() => toJson();
+
+  ///
   RequestGetList({
     this.maxResultCount = 10,
     this.skipCount = 0,
     this.sorting,
     this.keyword,
-    super.options,
-    super.cancelToken,
-    super.onReceiveProgress,
-    super.onSendProgress,
   });
 
   ///

@@ -18,10 +18,6 @@ class SessionUnitSetReaded extends RequestPost<SessionUnit> {
     required this.id,
     required this.messageId,
     this.isForce = false,
-    super.options,
-    super.cancelToken,
-    super.onReceiveProgress,
-    super.onSendProgress,
   });
 
   final String id;

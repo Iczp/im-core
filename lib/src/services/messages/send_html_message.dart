@@ -29,9 +29,5 @@ class SendHtmlMessage extends SendMessage<HtmlContentDto> {
     required super.content,
     required super.sessionUnitId,
     super.ignoreConnections,
-    super.options,
-    super.cancelToken,
-    super.onReceiveProgress,
-    super.onSendProgress,
   });
 }

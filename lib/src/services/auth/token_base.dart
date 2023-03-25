@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:dio/dio.dart';
 import 'package:im_core/extensions.dart';
 import 'package:im_core/services.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -38,10 +37,6 @@ abstract class TokenBase extends RequestPost<TokenDto> {
   TokenBase({
     required this.clientId,
     this.clientSecret,
-    super.options,
-    super.cancelToken,
-    super.onReceiveProgress,
-    super.onSendProgress,
   });
 
   // ignore: non_constant_identifier_names

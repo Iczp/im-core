@@ -12,12 +12,7 @@ class FetchTicket extends RequestPost<ConnectDto> {
   String get apiUrl => '/api/app/ticket/generate';
 
   ///
-  FetchTicket({
-    super.options,
-    super.cancelToken,
-    super.onReceiveProgress,
-    super.onSendProgress,
-  });
+  FetchTicket();
 
   ///FromJson
   factory FetchTicket.fromJson(Map<String, dynamic> json) =>

@@ -12,10 +12,6 @@ class SessionUnitClearMessage extends RequestPost {
   ///
   SessionUnitClearMessage({
     required this.id,
-    super.options,
-    super.cancelToken,
-    super.onReceiveProgress,
-    super.onSendProgress,
   });
 
   final String id;
