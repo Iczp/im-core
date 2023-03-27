@@ -27,7 +27,7 @@ class TokenManager {
 
   static init(Dio dio) => _dio = dio;
 
-  static Future<TokenDto?> getToken() async {
+  Future<TokenDto?> getToken() async {
     // token ??= await FetchToken(
     //   clientId: HttpHelper.config.clientId!,
     //   clientSecret: HttpHelper.config.clientSecret,
@@ -52,12 +52,12 @@ class TokenManager {
     return _token;
   }
 
-  static TokenDto setToken(TokenDto token) {
+  TokenDto setToken(TokenDto token) {
     _token = token;
     return token;
   }
 
-  static Future<TokenDto> login({
+  Future<TokenDto> login({
     required String username,
     required String password,
     // String clientId = HttpHelper.config.clientId!,
@@ -74,7 +74,7 @@ class TokenManager {
     return _token!;
   }
 
-  static Future<TokenDto> refreshToken({required String refreshToken}) async {
+  Future<TokenDto> refreshToken({required String refreshToken}) async {
     _token = await TokenRefresh(
       refreshToken: refreshToken,
       clientId: HttpHelper.config.clientId!,
