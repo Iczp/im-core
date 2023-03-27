@@ -1,12 +1,12 @@
 import 'package:json_annotation/json_annotation.dart';
 
 import 'token_base.dart';
-part 'fetch_token.g.dart';
+part 'token_login.g.dart';
 
 @JsonSerializable()
-class FetchToken extends TokenBase {
+class TokenLogin extends TokenBase {
   ///
-  FetchToken({
+  TokenLogin({
     required this.username,
     required this.password,
     required this.scope,
@@ -26,10 +26,10 @@ class FetchToken extends TokenBase {
   final String grantType;
 
   ///FromJson
-  factory FetchToken.fromJson(Map<String, dynamic> json) =>
-      _$FetchTokenFromJson(json);
+  factory TokenLogin.fromJson(Map<String, dynamic> json) =>
+      _$TokenLoginFromJson(json);
 
   ///ToJson
   @override
-  Map<String, dynamic> toJson() => _$FetchTokenToJson(this);
+  Map<String, dynamic> toJson() => _$TokenLoginToJson(this);
 }

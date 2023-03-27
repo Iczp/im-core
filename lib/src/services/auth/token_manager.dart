@@ -60,19 +60,22 @@ class TokenManager {
   static Future<TokenDto> login({
     required String username,
     required String password,
+    // String clientId = HttpHelper.config.clientId!,
+    // String? clientSecret = HttpHelper.config.clientSecret,
+    String scope = 'IM offline_access roles profile phone email address',
   }) async {
-    _token = await FetchToken(
+    _token = await TokenLogin(
       clientId: HttpHelper.config.clientId!,
       clientSecret: HttpHelper.config.clientSecret,
       username: HttpHelper.config.username!,
       password: HttpHelper.config.password!,
-      scope: 'IM offline_access roles profile phone email address',
+      scope: scope,
     ).submit();
     return _token!;
   }
 
   static Future<TokenDto> refreshToken({required String refreshToken}) async {
-    _token = await RefreshToken(
+    _token = await TokenRefresh(
       refreshToken: refreshToken,
       clientId: HttpHelper.config.clientId!,
       clientSecret: HttpHelper.config.clientSecret!,

@@ -1,12 +1,12 @@
 import 'package:json_annotation/json_annotation.dart';
 
 import 'token_base.dart';
-part 'refresh_token.g.dart';
+part 'token_refresh.g.dart';
 
 @JsonSerializable()
-class RefreshToken extends TokenBase {
+class TokenRefresh extends TokenBase {
   ///
-  RefreshToken({
+  TokenRefresh({
     required this.refreshToken,
     this.grantType = "refresh_token",
     required super.clientId,
@@ -21,10 +21,10 @@ class RefreshToken extends TokenBase {
   final String grantType;
 
   ///FromJson
-  factory RefreshToken.fromJson(Map<String, dynamic> json) =>
-      _$RefreshTokenFromJson(json);
+  factory TokenRefresh.fromJson(Map<String, dynamic> json) =>
+      _$TokenRefreshFromJson(json);
 
   ///ToJson
   @override
-  Map<String, dynamic> toJson() => _$RefreshTokenToJson(this);
+  Map<String, dynamic> toJson() => _$TokenRefreshToJson(this);
 }

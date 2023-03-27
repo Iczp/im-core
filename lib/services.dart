@@ -73,9 +73,9 @@ export 'src/services/chat_object/chat_object_create_room.dart';
 export 'src/services/chat_object/chat_object_update.dart';
 
 ///
-export 'src/services/auth/fetch_token.dart';
+export 'src/services/auth/token_login.dart';
 
-export 'src/services/auth/refresh_token.dart';
+export 'src/services/auth/token_refresh.dart';
 
 export 'src/services/auth/token_manager.dart';
 

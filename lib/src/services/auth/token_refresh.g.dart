@@ -1,26 +1,22 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'fetch_token.dart';
+part of 'token_refresh.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-FetchToken _$FetchTokenFromJson(Map<String, dynamic> json) => FetchToken(
-      username: json['username'] as String,
-      password: json['password'] as String,
-      scope: json['scope'] as String,
-      grantType: json['grant_type'] as String? ?? "password",
+TokenRefresh _$TokenRefreshFromJson(Map<String, dynamic> json) => TokenRefresh(
+      refreshToken: json['refresh_token'] as String,
+      grantType: json['grant_type'] as String? ?? "refresh_token",
       clientId: json['client_id'] as String,
       clientSecret: json['client_secret'] as String?,
     );
 
-Map<String, dynamic> _$FetchTokenToJson(FetchToken instance) =>
+Map<String, dynamic> _$TokenRefreshToJson(TokenRefresh instance) =>
     <String, dynamic>{
       'client_id': instance.clientId,
       'client_secret': instance.clientSecret,
-      'username': instance.username,
-      'password': instance.password,
-      'scope': instance.scope,
+      'refresh_token': instance.refreshToken,
       'grant_type': instance.grantType,
     };
