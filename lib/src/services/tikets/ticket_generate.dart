@@ -3,24 +3,24 @@ import 'package:json_annotation/json_annotation.dart';
 
 import '../../entities/connects/connect_dto.dart';
 
-part 'fetch_ticket.g.dart';
+part 'ticket_generate.g.dart';
 
 @JsonSerializable()
-class FetchTicket extends RequestPost<ConnectDto> {
+class TicketGenerate extends RequestPost<ConnectDto> {
   ///
   @override
   String get apiUrl => '/api/app/ticket/generate';
 
   ///
-  FetchTicket();
+  TicketGenerate();
 
   ///FromJson
-  factory FetchTicket.fromJson(Map<String, dynamic> json) =>
-      _$FetchTicketFromJson(json);
+  factory TicketGenerate.fromJson(Map<String, dynamic> json) =>
+      _$TicketGenerateFromJson(json);
 
   ///ToJson
   @override
-  Map<String, dynamic> toJson() => _$FetchTicketToJson(this);
+  Map<String, dynamic> toJson() => _$TicketGenerateToJson(this);
 
   @override
   ConnectDto mapToResult(dynamic data) {

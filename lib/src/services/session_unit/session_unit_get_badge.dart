@@ -1,8 +1,9 @@
+import 'package:im_core/entities.dart';
 import 'package:im_core/src/extensions/map_extension.dart';
 
 import '../request_get.dart';
 
-class SessionUnitGetBadge extends RequestGet<int> {
+class SessionUnitGetBadge extends RequestGet<BadgeDto> {
   ///
   @override
   String get apiUrl => '/api/app/session-unit/badge/$ownerId';
@@ -20,8 +21,8 @@ class SessionUnitGetBadge extends RequestGet<int> {
 
   ///
   @override
-  int mapToResult(dynamic data) {
-    return (data as num).toInt();
+  BadgeDto mapToResult(dynamic data) {
+    return BadgeDto.fromJson(data);
   }
 
   final int ownerId;

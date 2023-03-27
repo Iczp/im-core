@@ -1,12 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'fetch_ticket.dart';
+part of 'ticket_generate.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-FetchTicket _$FetchTicketFromJson(Map<String, dynamic> json) => FetchTicket();
+TicketGenerate _$TicketGenerateFromJson(Map<String, dynamic> json) =>
+    TicketGenerate();
 
-Map<String, dynamic> _$FetchTicketToJson(FetchTicket instance) =>
+Map<String, dynamic> _$TicketGenerateToJson(TicketGenerate instance) =>
     <String, dynamic>{};

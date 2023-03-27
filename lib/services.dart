@@ -29,6 +29,8 @@ export 'src/services/session_unit/session_unit_delete_message.dart';
 
 export 'src/services/session_unit/session_unit_get_badge.dart';
 
+export 'src/services/session_unit/session_unit_get_badge_by_current_user.dart';
+
 export 'src/services/session_unit/session_unit_get_message.dart';
 
 export 'src/services/session_unit/session_unit_get_message_list.dart';
@@ -77,7 +79,8 @@ export 'src/services/auth/refresh_token.dart';
 
 export 'src/services/auth/token_manager.dart';
 
-export 'src/services/tikets/fetch_ticket.dart';
+///
+export 'src/services/tikets/ticket_generate.dart';
 
 /// friendshipRequest
 export 'src/services/friendship_request/friendship_request_create.dart';

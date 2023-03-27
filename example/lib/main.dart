@@ -249,7 +249,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             InkWell(
               onTap: () {
-                FetchTicket().submit().then((_) {
+                TicketGenerate().submit().then((_) {
                   // Logger().w('FetchTicket:$_');
                   Fluttertoast.showToast(msg: _.webSocketUrl);
                   WebWocketManager.singleton.connect(_);

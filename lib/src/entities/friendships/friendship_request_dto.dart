@@ -17,6 +17,7 @@ class FriendshipRequestDto extends Entity {
   });
 
   final String id;
+
   final int ownerId;
 
   final int? destinationId;

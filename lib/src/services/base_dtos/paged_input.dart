@@ -14,16 +14,16 @@ class PagedInput {
   });
 
   ///
-  int maxResultCount;
+  late int maxResultCount;
 
   ///
-  int skipCount;
+  late int skipCount;
 
   ///
-  String? sorting;
+  late String? sorting;
 
   ///
-  String? keyword;
+  late String? keyword;
 
   ///FromJson
   factory PagedInput.fromJson(Map<String, dynamic> json) =>
