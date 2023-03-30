@@ -10,6 +10,7 @@ SessionUnitOwner _$SessionUnitOwnerFromJson(Map<String, dynamic> json) =>
     SessionUnitOwner(
       id: json['id'] as String,
       sessionId: json['sessionId'] as String,
+      ownerId: json['ownerId'] as String,
       owner: json['owner'] == null
           ? null
           : ChatObject.fromJson(json['owner'] as Map<String, dynamic>),
@@ -25,6 +26,7 @@ Map<String, dynamic> _$SessionUnitOwnerToJson(SessionUnitOwner instance) =>
     <String, dynamic>{
       'id': instance.id,
       'sessionId': instance.sessionId,
+      'ownerId': instance.ownerId,
       'owner': instance.owner,
       'tagList': instance.tagList,
       'roleList': instance.roleList,

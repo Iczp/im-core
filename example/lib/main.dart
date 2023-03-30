@@ -215,7 +215,7 @@ class _MyHomePageState extends State<MyHomePage> {
               onTap: () {
                 ChatObjectCreateRoom(
                   name: 'CreateRoom-${DateTime.now()}',
-                  chatObjectIdList: <int>[100, 1008, 108, 111, 112],
+                  chatObjectIdList: <int>[13, 100, 1008, 108, 111, 112],
                 ).submit().then((entity) {
                   Logger().w('result:$entity');
                 });
@@ -236,10 +236,12 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             InkWell(
               onTap: () {
-                TokenManager.login(
+                TokenManager.singleton
+                    .login(
                   username: 'admin',
                   password: '1q2w3E*',
-                ).then((_) {
+                )
+                    .then((_) {
                   Logger().w('accessToken:${_.accessToken}');
                 }).catchError((err) {
                   Logger().w('totalCount:${err}');

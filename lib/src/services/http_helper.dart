@@ -51,7 +51,7 @@ class HttpHelper {
         // options.baseUrl
 
         try {
-          var token = await TokenManager.getToken();
+          var token = await TokenManager.singleton.getToken();
           if (token != null) {
             Logger().i('$i ${token.accessToken}');
             Logger().i(options.headers['authorization']);

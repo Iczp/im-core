@@ -79,10 +79,15 @@ class WebWocketManager {
       if (channel.closeCode != null) {
         //system close code
         switch (channel.closeCode) {
-          case 1002:
+          // case 1001:
+          case WebSocketStatus.goingAway:
             Logger().w('network problem 1002');
             break;
-          // 1005
+          // case 1002:
+          case WebSocketStatus.protocolError:
+            Logger().w('network problem 1002');
+            break;
+          // case 1005:
           case WebSocketStatus.noStatusReceived:
             Logger().w('Manually disconnect 1005');
             break;
@@ -106,7 +111,7 @@ class WebWocketManager {
   }
 
   void stopHeartbeat() {
-    Logger().d('stopHeartbeat');
+    Logger().e('stopHeartbeat');
     _heartbeatTimer?.cancel();
   }
 

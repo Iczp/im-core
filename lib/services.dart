@@ -2,9 +2,13 @@ export 'src/services/base_dtos/paged_output.dart';
 
 export 'src/services/base_dtos/paged_input.dart';
 
-///
+/// session
+export 'src/services/session/session_session_unit_get_list.dart';
+
+/// services base
 export 'src/services/http_helper.dart';
 
+///session_unit
 export 'src/services/session_unit/session_unit_service.dart';
 
 export 'src/services/session_unit/dtos/session_unit_get_list_input.dart';
