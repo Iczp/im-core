@@ -8,7 +8,7 @@ part of 'session_get_role_list.dart';
 
 SessionGetRoleList _$SessionGetRoleListFromJson(Map<String, dynamic> json) =>
     SessionGetRoleList(
-      sessionId: json['sessionId'] as String?,
+      sessionId: json['sessionId'] as String,
       maxResultCount: json['maxResultCount'] as int? ?? 10,
       skipCount: json['skipCount'] as int? ?? 0,
       sorting: json['sorting'] as String?,

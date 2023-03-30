@@ -8,7 +8,7 @@ part of 'session_get_tag_list.dart';
 
 SessionGetTagList _$SessionGetTagListFromJson(Map<String, dynamic> json) =>
     SessionGetTagList(
-      sessionId: json['sessionId'] as String?,
+      sessionId: json['sessionId'] as String,
       maxResultCount: json['maxResultCount'] as int? ?? 10,
       skipCount: json['skipCount'] as int? ?? 0,
       sorting: json['sorting'] as String?,

@@ -14,7 +14,7 @@ class SessionGetTagList extends RequestGetList<PagedOuput<SessionUnitTag>> {
 
   ///
   SessionGetTagList({
-    this.sessionId,
+    required this.sessionId,
     super.maxResultCount = 10,
     super.skipCount = 0,
     super.sorting,
@@ -22,7 +22,7 @@ class SessionGetTagList extends RequestGetList<PagedOuput<SessionUnitTag>> {
   })  : assert(skipCount >= 0),
         assert(maxResultCount > 0 && maxResultCount < 1000);
 
-  final String? sessionId;
+  final String sessionId;
 
   ///FromJson
   factory SessionGetTagList.fromJson(Map<String, dynamic> json) =>
