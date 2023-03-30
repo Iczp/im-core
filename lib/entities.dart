@@ -44,4 +44,5 @@ export 'src/entities/connects/connect_dto.dart';
 
 ///friendships
 export 'src/entities/friendships/friendship_request_dto.dart';
-export 'src/entities/friendships/friendship_tag_dto.dart';
+
+export 'src/entities/friendship_tags/friendship_tag_dto.dart';
