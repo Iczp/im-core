@@ -10,7 +10,7 @@ part 'session_get_list.g.dart';
 class SessionGetList extends RequestGetList<PagedOuput<Session>> {
   ///
   @override
-  String get apiUrl => '/api/app/session/role-list';
+  String get apiUrl => '/api/app/session';
 
   ///
   SessionGetList({
