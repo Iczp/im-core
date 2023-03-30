@@ -34,10 +34,6 @@ class SessionGetTagList extends RequestGetList<PagedOuput<SessionUnitTag>> {
 
   ///
   @override
-  Map<String, dynamic>? getQueryParameters() => toJson();
-
-  ///
-  @override
   PagedOuput<SessionUnitTag> mapToResult(dynamic data) {
     return PagedOuput<SessionUnitTag>(
       totalCount: getTotalCount(data),

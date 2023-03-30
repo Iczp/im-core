@@ -4,17 +4,17 @@ import 'package:json_annotation/json_annotation.dart';
 import '../base_dtos/paged_output.dart';
 import '../request_get_list.dart';
 
-part 'session_get_role_list.g.dart';
+part 'session_get_list.g.dart';
 
 @JsonSerializable()
-class SessionGetRoleList extends RequestGetList<PagedOuput<SessionUnitRole>> {
+class SessionGetList extends RequestGetList<PagedOuput<Session>> {
   ///
   @override
   String get apiUrl => '/api/app/session/role-list';
 
   ///
-  SessionGetRoleList({
-    required this.sessionId,
+  SessionGetList({
+    this.ownerId,
     super.maxResultCount = 10,
     super.skipCount = 0,
     super.sorting,
@@ -22,22 +22,22 @@ class SessionGetRoleList extends RequestGetList<PagedOuput<SessionUnitRole>> {
   })  : assert(skipCount >= 0),
         assert(maxResultCount > 0 && maxResultCount < 1000);
 
-  final String sessionId;
+  final int? ownerId;
 
   ///FromJson
-  factory SessionGetRoleList.fromJson(Map<String, dynamic> json) =>
-      _$SessionGetRoleListFromJson(json);
+  factory SessionGetList.fromJson(Map<String, dynamic> json) =>
+      _$SessionGetListFromJson(json);
 
   ///ToJson
   @override
-  Map<String, dynamic> toJson() => _$SessionGetRoleListToJson(this);
+  Map<String, dynamic> toJson() => _$SessionGetListToJson(this);
 
   ///
   @override
-  PagedOuput<SessionUnitRole> mapToResult(dynamic data) {
-    return PagedOuput<SessionUnitRole>(
+  PagedOuput<Session> mapToResult(dynamic data) {
+    return PagedOuput<Session>(
       totalCount: getTotalCount(data),
-      items: getItems(data).map((x) => SessionUnitRole.fromJson(x)).toList(),
+      items: getItems(data).map((x) => Session.fromJson(x)).toList(),
     );
   }
 }

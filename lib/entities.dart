@@ -28,6 +28,8 @@ export 'src/entities/badges/badge_dto.dart';
 ///
 export 'src/entities/chat_objects/chat_object.dart';
 
+export 'src/entities/sessions/session.dart';
+
 export 'src/entities/session_units/session_unit.dart';
 
 export 'src/entities/session_unit_roles/session_unit_role.dart';

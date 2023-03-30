@@ -1,3 +1,4 @@
+import 'package:im_core/entities.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'session.g.dart';
@@ -14,6 +15,10 @@ class Session {
   Session({
     required this.id,
     required this.sessionKey,
+    this.messageCount,
+    this.tagCount,
+    this.roleCount,
+    this.owner,
     this.title,
     this.desciption,
   });
@@ -22,9 +27,17 @@ class Session {
 
   final String sessionKey;
 
-  late final String? title;
+  final ChatObject? owner;
 
-  late final String? desciption;
+  final int? messageCount;
+
+  final int? tagCount;
+
+  final int? roleCount;
+
+  late String? title;
+
+  late String? desciption;
 
   ///FromJson
   factory Session.fromJson(Map<String, dynamic> json) =>
