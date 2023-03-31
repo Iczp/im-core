@@ -33,6 +33,8 @@ export 'src/entities/sessions/session_dto.dart';
 
 export 'src/entities/session_units/session_unit.dart';
 
+export 'src/entities/session_units/session_unit_owner.dart';
+
 export 'src/entities/session_unit_roles/session_unit_role.dart';
 
 export 'src/entities/session_unit_tags/session_unit_tag.dart';

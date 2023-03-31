@@ -18,6 +18,12 @@ class SessionUnit extends Entity implements Comparable<SessionUnit> {
     required this.sessionId,
     required this.ownerId,
     this.rename,
+    this.memberName,
+    this.remarks,
+    this.isCantacts = false,
+    this.isShowMemberName = true,
+    this.isShowReaded = false,
+    this.backgroundImage,
     this.destination,
     this.lastMessage,
     this.lastMessageId,
@@ -38,9 +44,25 @@ class SessionUnit extends Entity implements Comparable<SessionUnit> {
 
   final int ownerId;
 
-  final String? rename;
+  late String? rename;
 
-  final ChatObject? destination;
+  late String? memberName;
+
+  late String? remarks;
+
+  late bool isCantacts;
+
+  late bool isImmersed;
+
+  late bool isShowMemberName;
+
+  late bool isShowReaded;
+
+  late bool isImportant;
+
+  late String? backgroundImage;
+
+  late ChatObject? destination;
 
   late MessageDto? lastMessage;
 
@@ -63,10 +85,6 @@ class SessionUnit extends Entity implements Comparable<SessionUnit> {
   late DateTime? removeTime;
 
   late DateTime? clearTime;
-
-  late bool isImmersed;
-
-  late bool isImportant;
 
   bool get isTopping => sorting != 0;
 

@@ -1,4 +1,5 @@
 import 'package:im_core/src/entities/session_units/session_unit_owner.dart';
+import 'package:im_core/src/enums/chat_object_types_enum.dart';
 import 'package:im_core/src/enums/joinways_enum.dart';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -16,12 +17,13 @@ class SessionGetListBySessionId
 
   ///
   SessionGetListBySessionId({
-    this.ownerIdList,
     required this.sessionId,
     this.tagId,
     this.roleId,
     this.joinWay,
     this.inviterId,
+    this.ownerIdList,
+    this.ownerTypeList,
     super.maxResultCount = 10,
     super.skipCount = 0,
     super.sorting,
@@ -30,6 +32,8 @@ class SessionGetListBySessionId
         assert(maxResultCount > 0 && maxResultCount < 1000);
 
   final List<int>? ownerIdList;
+
+  final List<ChatObjectTypesEnum>? ownerTypeList;
 
   final String sessionId;
 
