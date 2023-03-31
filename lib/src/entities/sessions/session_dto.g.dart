@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'session.dart';
+part of 'session_dto.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-Session _$SessionFromJson(Map<String, dynamic> json) => Session(
+SessionDto _$SessionDtoFromJson(Map<String, dynamic> json) => SessionDto(
       id: json['id'] as String,
       sessionKey: json['sessionKey'] as String,
       messageCount: json['messageCount'] as int?,
@@ -19,7 +19,8 @@ Session _$SessionFromJson(Map<String, dynamic> json) => Session(
       desciption: json['desciption'] as String?,
     );
 
-Map<String, dynamic> _$SessionToJson(Session instance) => <String, dynamic>{
+Map<String, dynamic> _$SessionDtoToJson(SessionDto instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'sessionKey': instance.sessionKey,
       'owner': instance.owner,

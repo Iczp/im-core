@@ -11,12 +11,16 @@ class SessionUnitOwner extends Entity {
     required this.id,
     required this.sessionId,
     required this.ownerId,
+    this.rename,
     this.owner,
     this.roleList,
     this.tagList,
   });
 
   final String id;
+
+  ///在会话内的显示名称(如：群内名称)
+  final String? rename;
 
   final String sessionId;
 

@@ -75,12 +75,13 @@ class SessionUnit extends Entity implements Comparable<SessionUnit> {
       _$SessionUnitFromJson(json);
 
   ///ToJson
+  @override
   Map<String, dynamic> toJson() => _$SessionUnitToJson(this);
 
   @override
   mapToEntity(Map<String, dynamic> json) => _$SessionUnitFromJson(json);
 
-  int getLastMessageAutoId() {
+  int getLastMessageId() {
     if (lastMessage != null) {
       return lastMessage!.id!;
     }
@@ -91,8 +92,8 @@ class SessionUnit extends Entity implements Comparable<SessionUnit> {
   int compareTo(SessionUnit other) {
     var sortBySotring = -sorting.compareTo(other.sorting);
     if (sortBySotring == 0) {
-      var lastMessageAutoId = getLastMessageAutoId();
-      var otherLastMessageAutoId = other.getLastMessageAutoId();
+      var lastMessageAutoId = getLastMessageId();
+      var otherLastMessageAutoId = other.getLastMessageId();
       var sortByAutoId = -lastMessageAutoId.compareTo(otherLastMessageAutoId);
       return sortByAutoId;
     }

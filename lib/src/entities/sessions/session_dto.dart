@@ -1,18 +1,15 @@
 import 'package:im_core/entities.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-part 'session.g.dart';
+part 'session_dto.g.dart';
 
-/// <summary>
-/// 用户
-/// </summary>
 ///这个标注是告诉生成器，这个类是需要生成Model类的
 @JsonSerializable()
 
 ///
-class Session {
+class SessionDto extends Entity {
   ///
-  Session({
+  SessionDto({
     required this.id,
     required this.sessionKey,
     this.messageCount,
@@ -40,9 +37,10 @@ class Session {
   late String? desciption;
 
   ///FromJson
-  factory Session.fromJson(Map<String, dynamic> json) =>
-      _$SessionFromJson(json);
+  factory SessionDto.fromJson(Map<String, dynamic> json) =>
+      _$SessionDtoFromJson(json);
 
   ///ToJson
-  Map<String, dynamic> toJson() => _$SessionToJson(this);
+  @override
+  Map<String, dynamic> toJson() => _$SessionDtoToJson(this);
 }

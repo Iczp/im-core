@@ -7,7 +7,7 @@ import '../request_get_list.dart';
 part 'session_get_list.g.dart';
 
 @JsonSerializable()
-class SessionGetList extends RequestGetList<PagedOuput<Session>> {
+class SessionGetList extends RequestGetList<PagedOuput<SessionDto>> {
   ///
   @override
   String get apiUrl => '/api/app/session';
@@ -34,10 +34,10 @@ class SessionGetList extends RequestGetList<PagedOuput<Session>> {
 
   ///
   @override
-  PagedOuput<Session> mapToResult(dynamic data) {
-    return PagedOuput<Session>(
+  PagedOuput<SessionDto> mapToResult(dynamic data) {
+    return PagedOuput<SessionDto>(
       totalCount: getTotalCount(data),
-      items: getItems(data).map((x) => Session.fromJson(x)).toList(),
+      items: getItems(data).map((x) => SessionDto.fromJson(x)).toList(),
     );
   }
 }
