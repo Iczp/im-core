@@ -1,14 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'session_session_unit_get_list.dart';
+part of 'session_get_unit_list.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-SessionSessionUnitGetList _$SessionSessionUnitGetListFromJson(
-        Map<String, dynamic> json) =>
-    SessionSessionUnitGetList(
+SessionGetUnitList _$SessionGetUnitListFromJson(Map<String, dynamic> json) =>
+    SessionGetUnitList(
       ownerIdList: (json['ownerIdList'] as List<dynamic>?)
           ?.map((e) => e as int)
           .toList(),
@@ -23,8 +22,7 @@ SessionSessionUnitGetList _$SessionSessionUnitGetListFromJson(
       keyword: json['keyword'] as String?,
     );
 
-Map<String, dynamic> _$SessionSessionUnitGetListToJson(
-        SessionSessionUnitGetList instance) =>
+Map<String, dynamic> _$SessionGetUnitListToJson(SessionGetUnitList instance) =>
     <String, dynamic>{
       'maxResultCount': instance.maxResultCount,
       'skipCount': instance.skipCount,

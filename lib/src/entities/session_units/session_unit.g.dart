@@ -17,12 +17,12 @@ SessionUnit _$SessionUnitFromJson(Map<String, dynamic> json) => SessionUnit(
       lastMessage: json['lastMessage'] == null
           ? null
           : MessageDto.fromJson(json['lastMessage'] as Map<String, dynamic>),
-      lastMessageAutoId: json['lastMessageAutoId'] as int?,
+      lastMessageId: json['lastMessageId'] as int?,
       badge: json['badge'] as int?,
       reminderAllCount: json['reminderAllCount'] as int?,
       reminderMeCount: json['reminderMeCount'] as int?,
       sorting: (json['sorting'] as num?)?.toDouble() ?? 0,
-      readedMessageAutoId: json['readedMessageAutoId'] as int?,
+      readedMessageId: json['readedMessageId'] as int?,
       removeTime: json['removeTime'] == null
           ? null
           : DateTime.parse(json['removeTime'] as String),
@@ -43,14 +43,14 @@ Map<String, dynamic> _$SessionUnitToJson(SessionUnit instance) =>
       'rename': instance.rename,
       'destination': instance.destination,
       'lastMessage': instance.lastMessage,
-      'lastMessageAutoId': instance.lastMessageAutoId,
+      'lastMessageId': instance.lastMessageId,
       'badge': instance.badge,
       'reminderAllCount': instance.reminderAllCount,
       'reminderMeCount': instance.reminderMeCount,
       'sorting': instance.sorting,
       'title': instance.title,
       'description': instance.description,
-      'readedMessageAutoId': instance.readedMessageAutoId,
+      'readedMessageId': instance.readedMessageId,
       'removeTime': instance.removeTime?.toIso8601String(),
       'clearTime': instance.clearTime?.toIso8601String(),
       'isImmersed': instance.isImmersed,
