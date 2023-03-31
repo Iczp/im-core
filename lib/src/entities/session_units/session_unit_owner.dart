@@ -13,6 +13,8 @@ class SessionUnitOwner extends Entity {
     required this.ownerId,
     this.rename,
     this.owner,
+    this.joinWay,
+    this.inviterId,
     this.roleList,
     this.tagList,
   });
@@ -27,6 +29,10 @@ class SessionUnitOwner extends Entity {
   final String ownerId;
 
   final ChatObject? owner;
+
+  final JoinWaysEnum? joinWay;
+
+  final int? inviterId;
 
   final List<SessionUnitTag>? tagList;
 

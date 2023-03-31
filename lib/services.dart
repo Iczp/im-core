@@ -3,7 +3,7 @@ export 'src/services/base_dtos/paged_output.dart';
 export 'src/services/base_dtos/paged_input.dart';
 
 /// session
-export 'src/services/session/session_get_unit_list.dart';
+export 'src/services/session_unit/session_unit_get_list_by_session_id.dart';
 
 /// services base
 export 'src/services/http_helper.dart';

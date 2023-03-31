@@ -15,6 +15,8 @@ SessionUnitOwner _$SessionUnitOwnerFromJson(Map<String, dynamic> json) =>
       owner: json['owner'] == null
           ? null
           : ChatObject.fromJson(json['owner'] as Map<String, dynamic>),
+      joinWay: $enumDecodeNullable(_$JoinWaysEnumEnumMap, json['joinWay']),
+      inviterId: json['inviterId'] as int?,
       roleList: (json['roleList'] as List<dynamic>?)
           ?.map((e) => SessionUnitRole.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -30,6 +32,17 @@ Map<String, dynamic> _$SessionUnitOwnerToJson(SessionUnitOwner instance) =>
       'sessionId': instance.sessionId,
       'ownerId': instance.ownerId,
       'owner': instance.owner,
+      'joinWay': _$JoinWaysEnumEnumMap[instance.joinWay],
+      'inviterId': instance.inviterId,
       'tagList': instance.tagList,
       'roleList': instance.roleList,
     };
+
+const _$JoinWaysEnumEnumMap = {
+  JoinWaysEnum.normal: 0,
+  JoinWaysEnum.invitation: 1,
+  JoinWaysEnum.creator: 2,
+  JoinWaysEnum.scan: 3,
+  JoinWaysEnum.system: 4,
+  JoinWaysEnum.autoJoin: 5,
+};

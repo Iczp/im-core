@@ -5,18 +5,19 @@ import 'package:json_annotation/json_annotation.dart';
 import '../base_dtos/paged_output.dart';
 import '../request_get_list.dart';
 
-part 'session_get_unit_list.g.dart';
+part 'session_unit_get_list_by_session_id.g.dart';
 
 @JsonSerializable()
-class SessionGetUnitList extends RequestGetList<PagedOuput<SessionUnitOwner>> {
+class SessionGetListBySessionId
+    extends RequestGetList<PagedOuput<SessionUnitOwner>> {
   ///
   @override
-  String get apiUrl => '/api/app/session/session-unit-list';
+  String get apiUrl => '/api/app/session-unit/by-session-id';
 
   ///
-  SessionGetUnitList({
+  SessionGetListBySessionId({
     this.ownerIdList,
-    this.sessionId,
+    required this.sessionId,
     this.tagId,
     this.roleId,
     this.joinWay,
@@ -30,7 +31,7 @@ class SessionGetUnitList extends RequestGetList<PagedOuput<SessionUnitOwner>> {
 
   final List<int>? ownerIdList;
 
-  final String? sessionId;
+  final String sessionId;
 
   final String? tagId;
 
@@ -41,12 +42,12 @@ class SessionGetUnitList extends RequestGetList<PagedOuput<SessionUnitOwner>> {
   final int? inviterId;
 
   ///FromJson
-  factory SessionGetUnitList.fromJson(Map<String, dynamic> json) =>
-      _$SessionGetUnitListFromJson(json);
+  factory SessionGetListBySessionId.fromJson(Map<String, dynamic> json) =>
+      _$SessionGetListBySessionIdFromJson(json);
 
   ///ToJson
   @override
-  Map<String, dynamic> toJson() => _$SessionGetUnitListToJson(this);
+  Map<String, dynamic> toJson() => _$SessionGetListBySessionIdToJson(this);
 
   ///
   @override

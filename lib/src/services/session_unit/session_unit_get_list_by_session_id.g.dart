@@ -1,17 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'session_get_unit_list.dart';
+part of 'session_unit_get_list_by_session_id.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-SessionGetUnitList _$SessionGetUnitListFromJson(Map<String, dynamic> json) =>
-    SessionGetUnitList(
+SessionGetListBySessionId _$SessionGetListBySessionIdFromJson(
+        Map<String, dynamic> json) =>
+    SessionGetListBySessionId(
       ownerIdList: (json['ownerIdList'] as List<dynamic>?)
           ?.map((e) => e as int)
           .toList(),
-      sessionId: json['sessionId'] as String?,
+      sessionId: json['sessionId'] as String,
       tagId: json['tagId'] as String?,
       roleId: json['roleId'] as String?,
       joinWay: $enumDecodeNullable(_$JoinWaysEnumEnumMap, json['joinWay']),
@@ -22,7 +23,8 @@ SessionGetUnitList _$SessionGetUnitListFromJson(Map<String, dynamic> json) =>
       keyword: json['keyword'] as String?,
     );
 
-Map<String, dynamic> _$SessionGetUnitListToJson(SessionGetUnitList instance) =>
+Map<String, dynamic> _$SessionGetListBySessionIdToJson(
+        SessionGetListBySessionId instance) =>
     <String, dynamic>{
       'maxResultCount': instance.maxResultCount,
       'skipCount': instance.skipCount,
