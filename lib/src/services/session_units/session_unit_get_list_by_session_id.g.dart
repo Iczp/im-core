@@ -10,6 +10,7 @@ SessionGetListBySessionId _$SessionGetListBySessionIdFromJson(
         Map<String, dynamic> json) =>
     SessionGetListBySessionId(
       sessionId: json['sessionId'] as String,
+      isKilled: json['isKilled'] as bool?,
       tagId: json['tagId'] as String?,
       roleId: json['roleId'] as String?,
       joinWay: $enumDecodeNullable(_$JoinWaysEnumEnumMap, json['joinWay']),
@@ -38,6 +39,7 @@ Map<String, dynamic> _$SessionGetListBySessionIdToJson(
           ?.map((e) => _$ChatObjectTypesEnumEnumMap[e]!)
           .toList(),
       'sessionId': instance.sessionId,
+      'isKilled': instance.isKilled,
       'tagId': instance.tagId,
       'roleId': instance.roleId,
       'joinWay': _$JoinWaysEnumEnumMap[instance.joinWay],

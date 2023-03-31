@@ -1,16 +1,17 @@
 import '../request_post.dart';
 
-class SessionUnitRemoveSession extends RequestPost {
+/// 不显示会话
+class SessionUnitRemove extends RequestPost {
   ///
   @override
-  String get apiUrl => '/api/app/session-unit/$id/remove-session';
+  String get apiUrl => '/api/app/session-unit/$id/remove';
 
   ///
   @override
   mapToResult(dynamic data) {}
 
   ///
-  SessionUnitRemoveSession({
+  SessionUnitRemove({
     required this.id,
   });
 

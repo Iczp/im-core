@@ -29,9 +29,9 @@ export 'src/services/session_units/session_unit_set_immersed.dart';
 
 export 'src/services/session_units/session_unit_set_readed.dart';
 
-export 'src/services/session_units/session_unit_remove_session.dart';
+export 'src/services/session_units/session_unit_remove.dart';
 
-export 'src/services/session_units/session_unit_kill_session.dart';
+export 'src/services/session_units/session_unit_kill.dart';
 
 export 'src/services/session_units/session_unit_clear_message.dart';
 

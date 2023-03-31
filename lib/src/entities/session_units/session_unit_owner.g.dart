@@ -23,7 +23,7 @@ SessionUnitOwner _$SessionUnitOwnerFromJson(Map<String, dynamic> json) =>
       tagList: (json['tagList'] as List<dynamic>?)
           ?.map((e) => SessionUnitTag.fromJson(e as Map<String, dynamic>))
           .toList(),
-    );
+    )..isKilled = json['isKilled'] as bool;
 
 Map<String, dynamic> _$SessionUnitOwnerToJson(SessionUnitOwner instance) =>
     <String, dynamic>{
@@ -34,6 +34,7 @@ Map<String, dynamic> _$SessionUnitOwnerToJson(SessionUnitOwner instance) =>
       'owner': instance.owner,
       'joinWay': _$JoinWaysEnumEnumMap[instance.joinWay],
       'inviterId': instance.inviterId,
+      'isKilled': instance.isKilled,
       'tagList': instance.tagList,
       'roleList': instance.roleList,
     };

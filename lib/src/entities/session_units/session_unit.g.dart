@@ -38,6 +38,7 @@ SessionUnit _$SessionUnitFromJson(Map<String, dynamic> json) => SessionUnit(
       isImmersed: json['isImmersed'] as bool? ?? false,
       isImportant: json['isImportant'] as bool? ?? false,
     )
+      ..isKilled = json['isKilled'] as bool
       ..title = json['title'] as String?
       ..description = json['description'] as String?;
 
@@ -55,6 +56,7 @@ Map<String, dynamic> _$SessionUnitToJson(SessionUnit instance) =>
       'isShowReaded': instance.isShowReaded,
       'isImportant': instance.isImportant,
       'backgroundImage': instance.backgroundImage,
+      'isKilled': instance.isKilled,
       'destination': instance.destination,
       'lastMessage': instance.lastMessage,
       'lastMessageId': instance.lastMessageId,

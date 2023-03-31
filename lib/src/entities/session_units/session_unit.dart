@@ -62,6 +62,8 @@ class SessionUnit extends Entity implements Comparable<SessionUnit> {
 
   late String? backgroundImage;
 
+  late bool isKilled;
+
   late ChatObject? destination;
 
   late MessageDto? lastMessage;

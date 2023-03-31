@@ -34,6 +34,8 @@ class SessionUnitOwner extends Entity {
 
   final int? inviterId;
 
+  late bool isKilled;
+
   final List<SessionUnitTag>? tagList;
 
   final List<SessionUnitRole>? roleList;

@@ -18,6 +18,7 @@ class SessionGetListBySessionId
   ///
   SessionGetListBySessionId({
     required this.sessionId,
+    this.isKilled,
     this.tagId,
     this.roleId,
     this.joinWay,
@@ -36,6 +37,8 @@ class SessionGetListBySessionId
   final List<ChatObjectTypesEnum>? ownerTypeList;
 
   final String sessionId;
+
+  final bool? isKilled;
 
   final String? tagId;
 
