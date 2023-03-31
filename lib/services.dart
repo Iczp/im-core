@@ -45,8 +45,6 @@ export 'src/services/session_units/session_unit_get_message.dart';
 
 export 'src/services/session_units/session_unit_get_message_list.dart';
 
-export 'src/services/session_units/session_unit_get_session_member_list.dart';
-
 ///
 export 'src/services/messages/send_text_message.dart';
 
