@@ -20,12 +20,12 @@ class SessionUnit extends Entity implements Comparable<SessionUnit> {
     this.rename,
     this.destination,
     this.lastMessage,
-    this.lastMessageAutoId,
+    this.lastMessageId,
     this.badge,
     this.reminderAllCount,
     this.reminderMeCount,
     this.sorting = 0,
-    this.readedMessageAutoId,
+    this.readedMessageId,
     this.removeTime,
     this.clearTime,
     this.isImmersed = false,
@@ -44,7 +44,7 @@ class SessionUnit extends Entity implements Comparable<SessionUnit> {
 
   late MessageDto? lastMessage;
 
-  late int? lastMessageAutoId;
+  late int? lastMessageId;
 
   late int? badge;
 
@@ -58,7 +58,7 @@ class SessionUnit extends Entity implements Comparable<SessionUnit> {
 
   late String? description;
 
-  late int? readedMessageAutoId;
+  late int? readedMessageId;
 
   late DateTime? removeTime;
 
@@ -85,28 +85,18 @@ class SessionUnit extends Entity implements Comparable<SessionUnit> {
     if (lastMessage != null) {
       return lastMessage!.id!;
     }
-    return lastMessageAutoId ?? 0;
+    return lastMessageId ?? 0;
   }
 
   @override
   int compareTo(SessionUnit other) {
     var sortBySotring = -sorting.compareTo(other.sorting);
     if (sortBySotring == 0) {
-      var lastMessageAutoId = getLastMessageId();
-      var otherLastMessageAutoId = other.getLastMessageId();
-      var sortByAutoId = -lastMessageAutoId.compareTo(otherLastMessageAutoId);
+      var lastMessageId = getLastMessageId();
+      var otherLastMessageId = other.getLastMessageId();
+      var sortByAutoId = -lastMessageId.compareTo(otherLastMessageId);
       return sortByAutoId;
     }
     return sortBySotring;
-
-    // if (lastMessageAutoId < otherLastMessageAutoId) {
-    //   return 1;
-    //   // return lastMessageAutoId;
-    // } else if (lastMessageAutoId > otherLastMessageAutoId) {
-    //   // return lastMessageAutoId;
-    //   return -1;
-    // } else {
-    //   return 0;
-    // }
   }
 }
