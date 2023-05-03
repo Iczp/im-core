@@ -15,8 +15,8 @@ SessionUnitGetList _$SessionUnitGetListFromJson(Map<String, dynamic> json) =>
       isTopping: json['isTopping'] as bool?,
       isRemind: json['isRemind'] as bool?,
       isBadge: json['isBadge'] as bool?,
-      minAutoId: json['minAutoId'] as int?,
-      maxAutoId: json['maxAutoId'] as int?,
+      minMessageId: json['minAutoId'] as int?,
+      maxMessageId: json['maxAutoId'] as int?,
       maxResultCount: json['maxResultCount'] as int? ?? 10,
       skipCount: json['skipCount'] as int? ?? 0,
       sorting: json['sorting'] as String?,
@@ -36,8 +36,8 @@ Map<String, dynamic> _$SessionUnitGetListToJson(SessionUnitGetList instance) =>
       'isTopping': instance.isTopping,
       'isRemind': instance.isRemind,
       'isBadge': instance.isBadge,
-      'minAutoId': instance.minAutoId,
-      'maxAutoId': instance.maxAutoId,
+      'minAutoId': instance.minMessageId,
+      'maxAutoId': instance.maxMessageId,
     };
 
 const _$ChatObjectTypesEnumEnumMap = {

@@ -18,11 +18,15 @@ class SessionUnitGetList extends RequestGetList<PagedOuput<SessionUnit>> {
     this.ownerId,
     this.destinationId,
     this.destinationObjectType,
+    this.isCreator,
+    this.isCantacts,
+    this.isImmersed,
+    this.isKilled,
     this.isTopping,
     this.isRemind,
     this.isBadge,
-    this.minAutoId,
-    this.maxAutoId,
+    this.minMessageId,
+    this.maxMessageId,
     super.maxResultCount = 10,
     super.skipCount = 0,
     super.sorting,
@@ -36,15 +40,23 @@ class SessionUnitGetList extends RequestGetList<PagedOuput<SessionUnit>> {
 
   final ChatObjectTypesEnum? destinationObjectType;
 
+  final bool? isCreator;
+
+  final bool? isCantacts;
+
+  final bool? isImmersed;
+
+  final bool? isKilled;
+
   final bool? isTopping;
 
   final bool? isRemind;
 
   final bool? isBadge;
 
-  final int? minAutoId;
+  final int? minMessageId;
 
-  final int? maxAutoId;
+  final int? maxMessageId;
 
   ///FromJson
   factory SessionUnitGetList.fromJson(Map<String, dynamic> json) =>
